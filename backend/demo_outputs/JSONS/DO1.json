@@ -1,0 +1,323 @@
+{
+"dashboard_meta": {
+"report_title": "Strategic Site Assessment: Sher Service Station",
+"station_entity": "",
+"parent_brand": "",
+"historic_owner": "",
+"primary_artery": "",
+"locality": "",
+"lock_number": "1539",
+"ro_code": "DL-0102",
+"pincode": "110058",
+"generated_on": "2026-02-06",
+"prepared_by": "Deep Research AI",
+"data_confidence": "High",
+"asset_classification": "High-Volume Urban Retail Outlet (City Retail)"
+},
+
+"executive_summary": {
+"one_liner": "Sher Service Station is a legacy, high-volume IOCL city-retail outlet on Pankha Road (Janakpuri) with a premium product mix (XP100/XP95/XtraGreen/CNG) and high operational friction due to corridor congestion and legacy political visibility.",
+"key_strengths": [
+"Established legacy dealership with low-integer RO code (early allotment)",
+"Full product suite including XP100 (ultra-premium), XP95, XtraGreen diesel, and high-throughput CNG",
+"Integration into IOCL fleet & loyalty programs (Xtrapower) and 'Fuel at Call' services",
+"Robust fire-safety renewal history and visible compliance track record"
+],
+"key_constraints": [
+"Severe ingress/egress friction due to Pankha Road congestion",
+"Risk from stalled Janakpuri flyover project and other long-running public works",
+"Historical political risk (2002–03 Shiv Sena vandalism) that remains a non-zero reputational data point",
+"Ambiguous EV readiness (no confirmed fast DC charger)"
+],
+"operational_feasibility": {
+"dashboard_feasibility_score": "High",
+"recommended_dashboard_flags": [
+"CNG_Peak_Hours",
+"Ingress_Risk_During_Red_Zones",
+"Justdial-weighted_review_index"
+]
+}
+},
+
+"entity_profile": {
+"trade_name": "Sher Service Station",
+"brand_affiliation": "Indian Oil Corporation Limited",
+"legal_structure_inference": "Proprietorship (single-owner operational control implied by PAN/GST encoding)",
+"gstin": "07AAJPK1526E1Z1",
+"gst_registered_on": "2017-06-30",
+"business_activity_codes": [
+"Retail sale of automotive fuel",
+"Lubricating preparations (HSN 34031100)"
+],
+"historical_ownership_notes": [
+"Historically associated with Aslam Sher Khan (public figure)",
+"Legacy political allotment patterns typical of early 2000s dealership allocations"
+],
+"key_operational_contact": {
+"named_contact_from_fire_inspection": "Sh. Bhim Singh",
+"roles": "Sales Manager / Operational contact during Fire Safety audits"
+}
+},
+
+"geospatial_and_urban_context": {
+"address": {
+"street": "Pankha Road (Near Janak Cinema)",
+"neighbourhood": "Janakpuri / Sagarpur",
+"city": "New Delhi",
+"pincode": "110058"
+},
+"corridor_characteristics": {
+"arterial_function": "Primary West Delhi connector linking to Ring Road and Delhi Cantt",
+"traffic_profile": "Extremely high daily passerby volume; episodic gridlock during peak windows",
+"peak_red_zones": [
+{
+"time_window": "08:30–11:00",
+"impact": "Morning entry friction; commuter avoidance behavior"
+},
+{
+"time_window": "17:30–21:30",
+"impact": "Evening congestion; forecourt entry deterrence"
+}
+]
+},
+"planned_infrastructure_risk": {
+"project": "Janakpuri Flyover (PWD)",
+"status": "Stalled/multiple failed tenders; prolonged uncertainty",
+"implication_if_built": "Potential relegation to slip-road visibility loss; if not built, station retains prime frontage but suffers persistent congestion"
+},
+"catchment_demographics": {
+"janakpuri_blocks": "Affluent DDA colony residents - premium fuel consumers (XP95/XP100)",
+"sagarpur_uttam_nagar": "High-density, largely price-sensitive diesel & regular petrol demand",
+"transit_traffic": "High CNG demand from autos/taxis and local fleet operators"
+}
+},
+
+"product_portfolio_and_services": {
+"hydrocarbon_product_mix": [
+{
+"product": "XP100",
+"octane": 100,
+"role": "Ultra-premium; attracts high-value customers; limited distribution"
+},
+{
+"product": "XP95",
+"octane": 95,
+"role": "Modern passenger car requirement (BS-VI era)"
+},
+{
+"product": "XtraGreen Diesel",
+"role": "Additive-enhanced diesel for improved economy and emissions"
+},
+{
+"product": "Motor Spirit (Regular Petrol)",
+"role": "Mass-market two-wheeler and small-car demand"
+}
+],
+"alternative_fuels": {
+"cng": {
+"status": "High volume",
+"operational_role": "Primary volume driver; causes forecourt queues; hygiene product in Delhi",
+"notes": "Mandatory for many commercial vehicles; major contributor to footfall"
+},
+"ev_infrastructure": {
+"status": "Unconfirmed / Passive",
+"risk": "Missing fast DC provision; potential shortfall versus local peers"
+}
+},
+"non_fuel_retail_and_value_adds": [
+"PUC center (regulatory footfall)",
+"Servo lubricants retail",
+"Air filling (free) as loss leader",
+"Fuel at Call (B2B diesel deliveries)"
+]
+},
+
+"operational_infrastructure_and_safety": {
+"forecourt_layout": {
+"format": "Full-service retail outlet",
+"dispensers": "Multi-product dispensers (MPDs) present; exact count to be captured via site audit",
+"lanes": "Combined CNG and liquid fuel flow; forecourt cannibalization risk during CNG peaks"
+},
+"safety_and_certifications": {
+"fire_safety_certificates": [
+{
+"issue_year": 2016,
+"reference": "F6/DFS/MS/2016/WZ/1292",
+"issue_date": "2016-09-18"
+},
+{
+"issue_year": 2019,
+"issue_date": "2019-05-03"
+}
+],
+"peso_and_hazardous_handling": "Form XIV licensing implied for petroleum operations (PESO governed)",
+"safety_protocols_observed": [
+"Fire suppression systems",
+"Escape route maintenance",
+"Periodic third-party inspections"
+]
+},
+"environmental_controls": {
+"vrs_stage_1_and_2": "Mandated by NGT/DPCC (assumed compliant unless audit indicates otherwise)",
+"waste_management": "Oil–water separation, oily sludge handling",
+"dg_set_constraints": "Subject to GRAP seasonal restrictions; backup grid or gas-based solutions required"
+}
+},
+
+"historical_incidents_and_reputational_profile": {
+"major_incidents": [
+{
+"year": "2002-2003",
+"event": "Political vandalism and ransacking by Shiv Sena activists",
+"context": "Accusations of cheating customers in quality/quantity; protest escalated to property damage",
+"implication": "Legacy political visibility; black-swan risk factor for civil unrest modeling"
+}
+],
+"digital_footprint": {
+"primary_platforms": {
+"justdial": {
+"note": "High volume of ratings (~2,698) — local search dominance"
+},
+"google_maps": {
+"note": "Fewer reviews relative to Justdial; weight Justdial higher for local traffic estimates"
+}
+},
+"average_user_rating": 3.8,
+"review_themes": [
+"Primary friction: CNG queue spillover",
+"Improving service quality in late 2025–early 2026",
+"Perception legacy from historical allegations (resolved over time)"
+]
+}
+},
+
+"competition_and_cluster_analysis": {
+"competitive_cluster_character": "Hyper-cluster in Janakpuri / Hari Nagar with mixed brand presence and differentiated service models",
+"primary_competitors": [
+{
+"name": "Jay Garud Gas Station",
+"distance_km": 1.5,
+"strengths": "Higher CNG satisfaction / perceived better pressure",
+"digital_rating": 4.1
+},
+{
+"name": "Speedways Service Centre",
+"distance_km": 2.5,
+"strengths": "EV charging leadership (Tata Power tie-ups at peer sites), service-centre model",
+"threat": "Attracts early-adopter EV demographics"
+},
+{
+"name": "C M Enterprises",
+"proximity_note": "Near Hyatt Residency / District Centre — captures premium hotel traffic",
+"strengths": "Premium catchment"
+},
+{
+"name": "Sushanti Filling Station (Dwarka)",
+"role": "Pre-emptive intercept for Dwarka commuters; high rating consumer pull"
+}
+],
+"competitive_matrix": {
+"visibility_vs_access": "Sher: absolute visibility but poor access during peaks; Jay Garud: interior access with steady local conversion",
+"differentiation_levers": [
+"XP100 availability (Sher advantage)",
+"EV provision (peer advantage - Speedways)",
+"CNG pressure & management (service retention lever)"
+]
+}
+},
+
+"customer_experience_and_operational_bottlenecks": {
+"primary_bottleneck": "CNG queue cannibalization causing forecourt blockage and lost petrol/diesel conversions",
+"observed_behavioural_trends": [
+"Drivers avoid entry when long CNG queues present",
+"Positive mid-2025 to early-2026 trend in service interactions suggests management-led improvement",
+"Justdial volume implies large daily transaction counts (proxy for footfall)"
+],
+"recommended_operational_tactics": [
+"Dedicated CNG queue management staff during peak windows",
+"Visible calibration checks (5L measure) to address short-fueling perception",
+"Signage and lane markers to segregate passenger vs. CNG flows"
+]
+},
+
+"regulatory_and_labor_environment": {
+"gst_and_tax_compliance": {
+"gstin": "07AAJPK1526E1Z1",
+"status": "Active since 2017",
+"implication": "Transparent filing; reduces risk of e-way/tanker delivery disruption"
+},
+"fire_and_peso_compliance": "Regular fire certificate renewals; PESO licensing implied",
+"labor_and_wages": {
+"minimum_wage_context": "Higher Delhi minimum wages increase OPEX vs. peripheral competitors",
+"labor_risk": "Reliance on transient/low-skilled labor can degrade CX; statutory PF/ESI compliance must be enforced"
+}
+},
+
+"financial_and_throughput_model": {
+"qualitative_revenue_drivers": [
+"High daily passerby volume on Pankha Road",
+"XP100 premium sales (high-margin, low-volume)",
+"CNG throughput (high-volume, low-margin)"
+],
+"dashboard_ready_metrics_to_capture": [
+"Daily liters sold by product (XP100 / XP95 / MS / HSD)",
+"Daily CNG kg dispensed and peak-hour queue lengths",
+"Fleet card redemptions (Xtrapower volumes)",
+"PUC tests per day (cross-sell conversion rate)"
+],
+"valuation_flags": {
+"asset_type": "Core urban retail (city retail) — stable revenue but throughput-constrained",
+"value_drivers": [
+"Real estate frontage value",
+"Premium product authorization (XP100)",
+"Non-fuel retail potential (QSR, convenience)"
+]
+}
+},
+
+"scorecard": {
+"methodology_weights": {
+"locational_advantage": 0.25,
+"product_portfolio": 0.20,
+"operational_stability": 0.15,
+"traffic_feasibility": 0.15,
+"consumer_sentiment": 0.15,
+"competitive_resilience": 0.10
+},
+"subscores": {
+"locational_advantage_score": 22,
+"product_portfolio_score": 19,
+"operational_stability_score": 14,
+"traffic_feasibility_score": 8,
+"consumer_sentiment_score": 11,
+"competitive_resilience_score": 7
+},
+"final_score": 81,
+"classification": "Core Network Asset - High Maintenance"
+},
+
+"strategic_recommendations": {
+"short_term": [
+"Monitor and tag CNG peak windows in dashboard; deploy dedicated queue managers in those windows",
+"Introduce visible calibration & reconciliation signage to mitigate short-fueling perception",
+"Weight Justdial data more heavily in footfall estimation models for this site"
+],
+"medium_term": [
+"Pilot a segregated CNG lane or time-windowed CNG service to avoid forecourt cannibalization",
+"Negotiate express ingress/egress lane markings with municipal traffic department",
+"Explore targeted promotion of XP100 among Janakpuri premium vehicle owners (loyalty outreach)"
+],
+"long_term": [
+"Assess EV fast-charger deployment (DC) or BPCL E-Drive tie-ups to capture emerging EV demand",
+"Evaluate non-fuel retail (QSR drive-thru, convenience store) to monetise real estate frontage",
+"Maintain active engagement with PWD on flyover planning to protect long-term access"
+]
+},
+
+"appendix_and_data_notes": {
+"report_date": "2026-02-06",
+"word_count_note": "Optimized for exhaustive detail",
+"source_disclaimer": "Data synthesized from municipal records, digital sentiment aggregates, public safety filings, historical news archives, and proprietary site intelligence. On-site physical audit recommended for meter-level counts, MPD inventory lists, and exact forecourt geometry.",
+"rendering_note_for_dashboard_engineers": "This JSON is structured for direct ingestion into a BI layer; field-level metrics (daily throughput, queue-length samples, MPD counts) should be treated as required inputs for time-series widgets."
+}
+}

@@ -1,0 +1,752 @@
+{
+  "station_profile": {
+    "basic_information": {
+      "name": "Jay Garud Gas Station",
+      "brand": "IndianOil",
+      "type": "Retail Outlet (RO)",
+      "ro_number": "Not publicly disclosed",
+      "station_id": "196976",
+      "establishment_status": "Operational since early 2000s (estimated)",
+      "owner_information": {
+        "owner_name": "Jay Garud (LinkedIn profile indicates owner at IOCL Pumps, based in Madhya Pradesh - may be different person or family member)",
+        "ownership_type": "Dealer Owned Dealer Operated (DODO) - likely B-site",
+        "dealer_status": "Authorized IndianOil Dealer",
+        "compliance_status": "Licensed and operational",
+        "note": "Limited public information available on specific owner details for privacy reasons"
+      }
+    },
+    "location_details": {
+      "address": {
+        "full_address": "Lok 99, Lock No I/99, Community Centre, Block B Jankpuri, Super Bazar, Delhi-110058",
+        "locality": "Janakpuri",
+        "block": "Block B",
+        "district": "West Delhi",
+        "state": "Delhi (NCT)",
+        "pincode": "110058",
+        "landmark": "Community Centre, Janakpuri"
+      },
+      "coordinates": {
+        "latitude": "28.6200",
+        "longitude": "77.0944",
+        "accuracy": "Approximate based on Janakpuri center"
+      },
+      "accessibility": {
+        "road_type": "Community Centre area - local road",
+        "visibility": "High - located in commercial center",
+        "entry_exit": "Kerbside parking available",
+        "signage": "Standard IndianOil branding"
+      }
+    },
+    "operational_details": {
+      "operating_hours": {
+        "monday": "06:00 AM - 11:00 PM",
+        "tuesday": "06:00 AM - 11:00 PM",
+        "wednesday": "06:00 AM - 11:00 PM",
+        "thursday": "06:00 AM - 11:00 PM",
+        "friday": "06:00 AM - 11:00 PM",
+        "saturday": "06:00 AM - 11:00 PM",
+        "sunday": "06:00 AM - 11:00 PM",
+        "total_hours_per_day": 17,
+        "is_24_hours": false,
+        "note": "Operates 17 hours daily, closed from 11 PM to 6 AM"
+      },
+      "contact_information": {
+        "phone_primary": "+919810571470",
+        "phone_alternate": "011-25624955 (from Maps of India)",
+        "email": "Not publicly available",
+        "website": "https://locator.iocl.com/indianoil-jay-garud-gas-station-petrol-pump-jankpuri-new-delhi-196976/",
+        "justdial_listing": "https://www.justdial.com/Delhi/Jay-Garud-Gas-Station/011PXX11-XX11-241205231308-Z7N3_BZDET"
+      }
+    }
+  },
+  "fuel_products_and_services": {
+    "fuel_types": {
+      "petrol": {
+        "available": true,
+        "grade": "Regular MS (Motor Spirit)",
+        "premium_options": "Potentially XP95/XP100 (IndianOil premium fuels)",
+        "quality_standard": "BS-VI compliant"
+      },
+      "diesel": {
+        "available": true,
+        "grade": "Regular HSD (High Speed Diesel)",
+        "quality_standard": "BS-VI compliant"
+      },
+      "cng": {
+        "available": "Not confirmed - no explicit mention",
+        "note": "Many Janakpuri pumps have CNG, but not confirmed for this specific station"
+      },
+      "ev_charging": {
+        "available": "Not confirmed",
+        "note": "IndianOil expanding EV charging but not verified at this location"
+      }
+    },
+    "additional_services": {
+      "car_wash": {
+        "available": true,
+        "price_starting_from": "₹250 onwards per service",
+        "type": "Basic car wash services"
+      },
+      "air_filling": {
+        "available": true,
+        "cost": "Free (as mentioned in reviews)"
+      },
+      "puc_certificate": {
+        "available": true,
+        "note": "Pollution Under Control certificate services available",
+        "issues_reported": "Some reviews mention PUC machines not working properly at times"
+      },
+      "vehicle_servicing": {
+        "available": true,
+        "services": "Minor repairs, denting and painting services",
+        "price_range": "₹300 onwards for denting/painting"
+      },
+      "convenience_store": {
+        "available": "Likely (standard at many IndianOil pumps)",
+        "confirmation": "Not explicitly verified"
+      },
+      "restrooms": {
+        "available": "Likely (standard facility)",
+        "confirmation": "Not explicitly verified"
+      }
+    },
+    "payment_methods": {
+      "cash": true,
+      "credit_card": true,
+      "debit_card": true,
+      "online_payment": true,
+      "upi": "Likely supported",
+      "digital_wallets": "Likely supported (Paytm, PhonePe, etc.)",
+      "indianoil_one_app": "Supported (corporate initiative)"
+    }
+  },
+  "location_intelligence": {
+    "area_demographics": {
+      "locality_name": "Janakpuri",
+      "classification": "Affluent residential and commercial area",
+      "total_population": 231688,
+      "male_population": 124360,
+      "female_population": 107328,
+      "area_size_sq_km": 9.33,
+      "population_density_per_sq_km": 24829,
+      "socioeconomic_profile": "Middle and upper-middle-class families, young professionals, business owners",
+      "vehicle_ownership": "High - multiple vehicles per household common",
+      "planned_development": "Well-planned DDA colony, one of Asia's largest residential colonies (late 1960s planning)"
+    },
+    "connectivity_score": {
+      "rating": "4.6/5.0 (Excellent)",
+      "metro_access": {
+        "nearest_station": "Janakpuri West Metro Station",
+        "lines": ["Blue Line", "Magenta Line"],
+        "interchange": true,
+        "distance_km": "Approximately 1-2 km",
+        "note": "Dual-line metro hub provides excellent connectivity"
+      },
+      "airport_access": {
+        "nearest_airport": "Indira Gandhi International Airport",
+        "distance": "5.22 km",
+        "travel_time": "15-25 minutes via NH-48"
+      },
+      "railway_access": {
+        "nearest_station": "Nasirpur Halt",
+        "distance": "2.16 km",
+        "major_station": "Delhi Cantonment (nearby)"
+      },
+      "road_connectivity": {
+        "major_roads": ["Outer Ring Road", "Pankha Road", "NH-48 corridor"],
+        "highway_access": "Excellent - NH-48 connects to Gurugram and airport",
+        "internal_roads": "Wide, well-maintained roads in most blocks"
+      }
+    },
+    "traffic_patterns": {
+      "delhi_congestion_level": {
+        "annual_average": "33% congestion level (2024)",
+        "world_rank": 147,
+        "average_speed": "19.9 km/h during peak hours",
+        "time_to_travel_10km": "27 min 51 sec average",
+        "congestion_increase_yoy": "+1% from 2023"
+      },
+      "peak_hours": {
+        "morning_rush": {
+          "time": "07:00 AM - 10:00 AM",
+          "congestion_level": "High",
+          "reason": "Office commute, school traffic"
+        },
+        "evening_rush": {
+          "time": "05:00 PM - 09:00 PM",
+          "congestion_level": "Very High",
+          "reason": "Return commute, highest emissions during this period",
+          "note": "Evening hours show maximum traffic congestion in Delhi"
+        },
+        "weekend_patterns": {
+          "saturday_market": "C4 Block Saturday market creates significant footfall",
+          "district_center": "High weekend traffic at Janakpuri District Centre"
+        }
+      },
+      "local_traffic_characteristics": {
+        "mixed_traffic": true,
+        "vehicle_types": ["Personal cars", "Two-wheelers", "Buses", "Auto-rickshaws", "Cycle rickshaws", "E-rickshaws"],
+        "traffic_signals_nearby": "Multiple signals with 120-180 second cycle times",
+        "congestion_hotspots": ["District Centre area", "Near INOX cinema", "Janakpuri West Metro Station"],
+        "recent_issues": "District Centre Flyover repair work (Aug 2025) caused diversions"
+      },
+      "fuel_station_specific": {
+        "estimated_daily_footfall": "High - urban location in commercial area",
+        "queue_patterns": "Morning and evening peaks likely",
+        "accessibility_during_peak": "May experience queues during 8-9 AM and 6-8 PM"
+      }
+    },
+    "area_development": {
+      "infrastructure_score": {
+        "environment": "3.5/5.0",
+        "safety": "3.6/5.0",
+        "connectivity": "4.6/5.0",
+        "lifestyle": "3.4/5.0"
+      },
+      "commercial_activity": {
+        "district_centre": {
+          "type": "Major commercial hub",
+          "facilities": ["INOX Janak Palace Cinema", "Cinepolis Cinema (C3 Block)", "Shopping mall", "Regional offices", "Food outlets", "Handicrafts bazaar"],
+          "footfall": "Very high on weekends, consistent on weekdays",
+          "commercial_rent": "₹150-250 per sq ft for shops, ₹60-90 per sq ft for offices"
+        },
+        "markets": {
+          "saturday_market": "One of Delhi's largest weekly markets (C4 Block)",
+          "local_shops": "Extensive retail presence throughout locality"
+        }
+      },
+      "real_estate_trends": {
+        "residential_price_per_sqft": "₹13,661 average (range: ₹10,350 - ₹16,980)",
+        "5_year_appreciation": "44.9%",
+        "builder_floors": "₹18,800 - ₹24,800 per sq ft",
+        "yoy_appreciation": "6.4% (stable, mature market)",
+        "rental_yields_residential": "2.5-4% gross",
+        "rental_yields_commercial": "6-8% for well-located properties"
+      }
+    }
+  },
+  "competitive_landscape": {
+    "nearby_competitors": {
+      "within_janakpuri": [
+        {
+          "name": "Jai Garud Gas Station (different location)",
+          "brand": "IndianOil",
+          "rating": "4.0/5",
+          "total_ratings": 1205,
+          "address": "IOC Petrol Pump, B-1, Comm, Opposite Happy Model School, Dharam Marg, Janakpuri",
+          "distance_estimate": "0.5-1 km",
+          "note": "Similar name, different location - possible confusion in listings"
+        },
+        {
+          "name": "C M Enterprises",
+          "brand": "IndianOil",
+          "rating": "4.1/5",
+          "total_ratings": 1342,
+          "location": "Janakpuri, adjoining Hyat Residency",
+          "distance_estimate": "1-2 km"
+        },
+        {
+          "name": "Citi Fuels",
+          "brand": "IndianOil",
+          "location": "Near Bharati College, Janakpuri",
+          "distance_estimate": "1-2 km"
+        },
+        {
+          "name": "Sher Service Station",
+          "brand": "IndianOil",
+          "location": "Pankha Road, Near Janak Cinema",
+          "distance_estimate": "1.5-2 km"
+        },
+        {
+          "name": "HP Petrol Pump (Hindustan Petroleum)",
+          "brand": "HPCL",
+          "rating": "4.0/5",
+          "total_ratings": 313,
+          "location": "Janakpuri",
+          "distance_estimate": "1-2 km"
+        },
+        {
+          "name": "Bhagwati Petrol Pump",
+          "brand": "Bharat Petroleum",
+          "location": "Lal Sain Mandir Marg, Janakpuri",
+          "distance_estimate": "1-2 km"
+        }
+      ],
+      "nearby_areas": [
+        {
+          "name": "Satya Service Station",
+          "brand": "IndianOil",
+          "location": "Block L, Hari Nagar",
+          "distance_estimate": "2-3 km"
+        },
+        {
+          "name": "Speedways Service Centre",
+          "brand": "IndianOil",
+          "location": "Jail Road, Near Hari Nagar Depot",
+          "distance_estimate": "2-3 km"
+        }
+      ],
+      "competition_density": {
+        "total_pumps_in_2km_radius": "6-8 fuel stations (estimated)",
+        "dominant_brand": "IndianOil",
+        "market_saturation": "High - multiple options within walking distance",
+        "differentiation_opportunity": "Service quality, wait times, ancillary services"
+      }
+    },
+    "market_positioning": {
+      "brand_advantage": "IndianOil - India's largest OMC with ~50% market share",
+      "location_advantage": "Commercial center location, high footfall area",
+      "competition_intensity": "Very high - Janakpuri has dense fuel station network",
+      "price_competition": "Minimal - retail prices largely uniform across brands (regulated)",
+      "service_competition": "Primary differentiator - quality, speed, additional services"
+    }
+  },
+  "customer_intelligence": {
+    "ratings_and_reviews": {
+      "justdial": {
+        "rating": "4.0/5",
+        "total_ratings": 1205,
+        "review_source": "Jai Garud Gas Station (similar/same location)",
+        "recent_trend": "Mixed ratings (1.0, 4.0, 5.0, 3.0, 5.0, 0.5, 5.0, 3.0, 5.0)",
+        "review_years": "2013-2025"
+      },
+      "key_positive_feedback": [
+        "Staff courtesy and friendliness",
+        "Quality of fuel (mentioned by multiple users)",
+        "Free air for tires available",
+        "Good service quality",
+        "Convenient location"
+      ],
+      "key_negative_feedback": [
+        "High petrol prices and refusal to give discounts (price controlled, not station-specific)",
+        "PUC machines not working properly at times",
+        "Extra charges for pollution check (occasional complaints)",
+        "Some reviews mention general petrol pump scam concerns (not specific to this station)"
+      ],
+      "service_quality_mentions": {
+        "car_wash": "Available, priced at ₹250+ per service",
+        "vehicle_repair": "Denting, painting, minor repairs available (₹300+)",
+        "waiting_time": "Not specifically mentioned - likely varies by time"
+      }
+    },
+    "customer_demographics": {
+      "primary_customers": [
+        "Local residents of Janakpuri",
+        "Commuters passing through West Delhi",
+        "Visitors to District Centre",
+        "Commercial vehicle operators",
+        "Two-wheeler owners"
+      ],
+      "customer_segments": {
+        "daily_commuters": "High percentage - office goers",
+        "weekend_shoppers": "District Centre and market visitors",
+        "service_seekers": "Car wash and repair customers",
+        "premium_segment": "Middle to upper-middle class"
+      }
+    },
+    "brand_perception": {
+      "trust_level": "High - IndianOil is most trusted fuel brand in India",
+      "fuel_quality_perception": "Generally positive - BS-VI compliant",
+      "service_perception": "Average to good based on reviews",
+      "concerns": "Standard petrol pump concerns (meter accuracy, service charges) - not unique to this station"
+    }
+  },
+  "financial_intelligence": {
+    "dealer_economics": {
+      "commission_structure": {
+        "petrol_commission": "₹3.8 - ₹4.4 per liter (Delhi, as of Aug 2024-2025)",
+        "diesel_commission": "₹2.5 - ₹3.0 per liter (Delhi, as of Aug 2024-2025)",
+        "recent_revision": "October 2024 - commission increased by ₹0.65/L petrol, ₹0.44/L diesel",
+        "commission_basis": "Graded formula based on volume - lower volume pumps get higher per-liter margins",
+        "note": "First major revision in 8 years (previous was March 2018)"
+      },
+      "revenue_model": {
+        "gross_profit_calculation": "Volume × Commission per liter",
+        "operating_expenses": [
+          "Staff salaries (₹50,000 - ₹1,50,000/month depending on staff size)",
+          "Electricity bills (₹15,000 - ₹40,000/month)",
+          "Maintenance costs",
+          "Loan EMIs (if applicable)",
+          "Bank charges",
+          "Statutory fees and licenses",
+          "Insurance premiums",
+          "Security expenses",
+          "Evaporation and handling losses"
+        ],
+        "typical_monthly_operating_cost": "₹2,50,000 - ₹3,00,000",
+        "ancillary_revenue": [
+          "Car wash services",
+          "Vehicle servicing and repairs",
+          "Convenience store (if available)",
+          "PUC certificates",
+          "Lubricants (SERVO brand)"
+        ]
+      },
+      "profitability_estimates": {
+        "urban_pump_sales_volume": "10,000 - 20,000 liters per day (typical)",
+        "estimated_daily_sales_jay_garud": "12,000 - 15,000 liters (medium-high estimate for commercial location)",
+        "estimated_monthly_sales": "360,000 - 450,000 liters (3.6 - 4.5 lakh liters)",
+        "gross_monthly_commission": "₹11,00,000 - ₹14,00,000 (before expenses)",
+        "net_monthly_profit_estimate": "₹1,50,000 - ₹2,50,000 (after operating costs)",
+        "annual_profit_estimate": "₹18,00,000 - ₹30,00,000",
+        "roi_consideration": "Setup cost ₹50L - ₹2Cr depending on land, 3-5 year payback typical",
+        "note": "These are industry averages - actual figures may vary significantly"
+      }
+    },
+    "market_economics": {
+      "india_petrol_pump_landscape": {
+        "total_pumps_india": "100,000+ (as of Dec 2024)",
+        "india_global_rank": "3rd largest network (after US and China)",
+        "growth_last_decade": "Nearly doubled from ~50,000",
+        "rural_percentage": "29% (up from 22% decade ago)"
+      },
+      "delhi_market": {
+        "road_density": "1,749 km per 100 km² (among highest in India)",
+        "total_road_length": "28,508 km (including 388 km National Highways)",
+        "fuel_demand_trend": "Petrol +110%, Diesel +32% over last decade",
+        "market_saturation": "High in urban areas, new outlets struggle with volume"
+      },
+      "pricing_dynamics": {
+        "retail_price_components": [
+          "Base price (crude + refining)",
+          "Excise duty (Central govt)",
+          "VAT (State govt)",
+          "Dealer commission",
+          "Freight and transport"
+        ],
+        "price_transparency": "High - prices updated daily, displayed publicly",
+        "dealer_influence": "Minimal - prices largely uniform due to regulation"
+      }
+    }
+  },
+  "regulatory_and_compliance": {
+    "licensing_and_permits": {
+      "required_licenses": [
+        "Petroleum Act, 1934 license",
+        "Delhi Pollution Control Committee (DPCC) authorization",
+        "Fire safety NOC",
+        "Explosives license (for storage)",
+        "Trade license from local municipality",
+        "Environmental clearance",
+        "PESO (Petroleum and Explosives Safety Organisation) approval",
+        "Weight and Measures certification"
+      ],
+      "dealer_eligibility": {
+        "citizenship": "Indian citizen required",
+        "pan_card": "Mandatory",
+        "age": "Minimum 21 years for individuals",
+        "land_requirement": "Owned or leased for 19 years 11 months minimum",
+        "educational_qualification": "Minimum 10th pass (varies by scheme)",
+        "financial_capacity": "Varies by location and type",
+        "criminal_record": "No convictions for moral turpitude/economic offences"
+      },
+      "ongoing_compliance": {
+        "weight_and_measures": "Regular calibration and inspection",
+        "fuel_quality_testing": "Periodic sampling by authorities",
+        "pollution_norms": "PUC equipment maintenance",
+        "safety_inspections": "Fire safety, storage tank integrity",
+        "labor_regulations": "Minimum wage compliance, ESI, PF",
+        "marketing_discipline": "Adherence to IndianOil guidelines"
+      }
+    },
+    "environmental_compliance": {
+      "fuel_standards": "BS-VI (Bharat Stage VI) compliant since April 2020",
+      "emission_norms": {
+        "storage_tank_safety": "Underground storage with vapor recovery",
+        "effluent_treatment": "Oil-water separation systems required",
+        "waste_management": "Proper disposal of oily sludge, used oil"
+      },
+      "indianoil_corporate_standards": {
+        "iso_14001": "Environmental management system certification",
+        "ohsas_18001": "Occupational health and safety",
+        "quality_certifications": "Multiple ISO certifications",
+        "sustainability_initiatives": "Solar energy adoption (2,665+ IndianOil pumps nationwide use solar)"
+      },
+      "pollution_under_control": {
+        "puc_services": "Mandatory to offer at fuel stations",
+        "equipment_status": "Some reviews indicate occasional maintenance issues",
+        "state_initiatives": "Odisha and some states enforcing no-PUC, no-fuel policy"
+      }
+    },
+    "safety_and_incidents": {
+      "safety_protocols": {
+        "fire_safety": "Mandatory fire extinguishers, safety equipment",
+        "tank_cleaning": "Professional services required (safety incidents reported at other pumps when not followed)",
+        "emergency_response": "ERP (Emergency Response Procedure) implementation required",
+        "staff_training": "Safety training mandatory for all personnel"
+      },
+      "industry_incident_awareness": {
+        "common_hazards": [
+          "LPG tanker explosions (rare but catastrophic)",
+          "Tank cleaning accidents (confined space hazards)",
+          "Fire incidents during refueling",
+          "Fuel theft and adulteration"
+        ],
+        "no_specific_incidents_reported": "No public records of major incidents at Jay Garud Gas Station",
+        "area_safety": "Janakpuri general safety rating 3.6/5.0",
+        "recent_local_incident": "Feb 2026 - Janakpuri area had road safety incident (uncovered pit), not related to fuel station"
+      }
+    }
+  },
+  "operational_intelligence": {
+    "infrastructure": {
+      "fuel_dispensers": "Not specified - likely 4-8 nozzles (standard for urban pumps)",
+      "storage_capacity": "Not disclosed - typically 2-4 lakh liters total underground storage",
+      "parking_facilities": "Kerbside parking available",
+      "service_bays": "Vehicle servicing available - likely 1-2 service bays",
+      "car_wash_facility": "Available (₹250+ per service)",
+      "staff_count": "Estimated 8-15 personnel (attendants, cashier, supervisor, mechanics)",
+      "automation": {
+        "digital_meters": "Standard digital dispensers",
+        "payment_systems": "Multiple payment options (cash, card, online, UPI)",
+        "automation_status": "Not confirmed if fully automated (30 cities have 100% automated IOCL pumps)"
+      }
+    },
+    "technology_adoption": {
+      "indianoil_one_app": "Mobile app for customer engagement",
+      "digital_payments": "Multiple digital payment options supported",
+      "solar_energy": "Not confirmed - IndianOil has 2,665+ solar-powered pumps nationwide",
+      "cctv_surveillance": "Likely present (industry standard for safety and customer monitoring)",
+      "iot_integration": "Emerging - IOCL researching IOT/AI for customer experience enhancement"
+    },
+    "supply_chain": {
+      "fuel_source": "IndianOil refineries (likely Panipat Refinery for Delhi NCR)",
+      "delivery_frequency": "Regular - typically every 2-3 days for urban high-volume pumps",
+      "storage_management": "Underground tanks with inventory management systems",
+      "quality_assurance": "IndianOil quality control protocols"
+    }
+  },
+  "strategic_insights": {
+    "strengths": [
+      "Excellent location in commercial center with high footfall",
+      "Strong brand association with IndianOil (market leader)",
+      "Diverse service offerings (fuel, wash, repair, PUC)",
+      "Superior connectivity (metro, airport, highways)",
+      "Affluent customer base in Janakpuri",
+      "Long operating hours (17 hours daily)",
+      "Multiple payment options",
+      "Established presence (likely 15-20 years operation)"
+    ],
+    "weaknesses": [
+      "High competition density (6-8 pumps within 2 km)",
+      "Not 24-hour operation (closes 11 PM - 6 AM)",
+      "Some negative reviews about PUC equipment reliability",
+      "Limited differentiation in pricing (regulated market)",
+      "Traffic congestion during peak hours may deter customers",
+      "No confirmed CNG or EV charging (if absent)"
+    ],
+    "opportunities": [
+      "Add EV charging infrastructure (growing EV adoption)",
+      "Install CNG facility if not present (demand in Delhi)",
+      "Expand convenience store offerings",
+      "Leverage IndianOil loyalty programs",
+      "Enhance digital customer experience",
+      "Solar power adoption for sustainability branding",
+      "Partnership with local businesses for cross-promotion",
+      "Extended hours or 24x7 operation",
+      "Premium fuel offerings (XP95/XP100) if not available"
+    ],
+    "threats": [
+      "EV adoption reducing long-term fuel demand",
+      "Market saturation - too many pumps in area",
+      "Price regulation limiting profit margins",
+      "Rising operational costs (labor, electricity)",
+      "Traffic congestion affecting accessibility",
+      "New pump openings by competitors",
+      "Potential fuel price volatility affecting volumes",
+      "Changing consumer preferences toward sustainability"
+    ]
+  },
+  "hidden_intelligence": {
+    "industry_secrets": {
+      "actual_profitability": "₹1.5-2.5L monthly net profit typical for medium-volume urban pump - not the 'money-printing machine' perception",
+      "volume_criticality": "Sales volume is everything - location determines 80% of success",
+      "ancillary_revenue_importance": "Car wash, repairs, convenience store can add 20-30% to bottom line",
+      "dealer_challenges": [
+        "High setup cost (₹50L - ₹2Cr) vs modest returns",
+        "3-5 year payback period typical",
+        "Staff management and pilferage control crucial",
+        "Fuel theft and meter manipulation by dishonest staff (if not monitored)",
+        "Working capital pressure (15-30 days credit from OMC, immediate cash payout for expenses)"
+      ],
+      "market_insider_knowledge": {
+        "new_pump_struggle": "First year is toughest - building customer base takes time",
+        "brand_loyalty_myth": "Customers often choose based on convenience, not brand",
+        "volume_concentration": "Top 20% of pumps generate 50%+ of total volumes",
+        "rural_vs_urban": "Urban pumps have competition, rural pumps have volume challenges",
+        "scam_prevalence": "Industry-wide issue - some pumps engage in meter manipulation, short-filling"
+      }
+    },
+    "competitive_intelligence": {
+      "janakpuri_market_dynamics": {
+        "demand_drivers": "Residential population 231K+ commuters + District Centre footfall",
+        "peak_demand_periods": "Morning rush (7-9 AM), evening rush (6-8 PM), Saturday market days",
+        "customer_switching": "High - multiple options within 1 km, customers switch based on queue length",
+        "loyalty_factors": "Service quality, wait times, additional services, staff behavior"
+      },
+      "differentiation_strategies_observed": {
+        "service_speed": "Fast fueling and minimal wait times attract customers",
+        "cleanliness": "Well-maintained pumps get repeat business",
+        "trust": "Transparent metering and honest practices build loyalty",
+        "convenience": "One-stop-shop (fuel + wash + repair) retains customers",
+        "digital_adoption": "App-based payments and digital receipts preferred by modern consumers"
+      }
+    },
+    "future_outlook": {
+      "5_year_projection": {
+        "fuel_demand": "Moderate growth (3-5% annually) as vehicle population increases",
+        "ev_impact": "Minimal near-term, growing post-2030",
+        "market_saturation": "Plateauing - unlikely to see significant new pump additions in Janakpuri",
+        "consolidation": "Some low-volume pumps may exit, strengthening survivors",
+        "alternative_fuels": "CNG, EV charging becoming standard offerings"
+      },
+      "investment_attractiveness": {
+        "for_new_investors": "Moderate - stable business but high capital requirement and modest returns",
+        "for_existing_dealers": "Good - established customer base, predictable cash flows",
+        "diversification_potential": "High - expand into allied services (convenience retail, EV charging)",
+        "exit_difficulty": "Moderate - can sell dealership but regulatory transfer process is complex"
+      }
+    }
+  },
+  "social_media_and_digital_presence": {
+    "search_results": {
+      "google_search": "Limited specific social media presence for individual station",
+      "facebook": "No dedicated page found",
+      "twitter_x": "No dedicated handle - IndianOil corporate handle @IndianOilcl active",
+      "instagram": "No dedicated presence",
+      "youtube": "No station-specific channel",
+      "reddit_mentions": "General petrol pump discussions, no specific mentions found for Jay Garud Janakpuri",
+      "note": "Individual fuel stations rarely maintain social media - brand presence through IndianOil corporate"
+    },
+    "indianoil_corporate_digital": {
+      "twitter_followers": "433.3K followers @IndianOilcl",
+      "engagement": "High engagement on corporate initiatives, product launches",
+      "customer_service": "Active customer service through corporate handles",
+      "digital_initiatives": "IndianOil ONE app, online payment promotions, loyalty programs"
+    },
+    "review_platforms": {
+      "justdial": "Primary review platform - 1205 ratings, 4.0/5",
+      "google_maps": "Active listing with contact info",
+      "other_platforms": "Maps of India, locator.iocl.com official listing"
+    }
+  },
+  "intelligent_score_card": {
+    "overall_score": "72/100",
+    "category_scores": {
+      "location_attractiveness": {
+        "score": "85/100",
+        "factors": "Excellent connectivity, high footfall commercial area, affluent demographics",
+        "weakness": "High competition density"
+      },
+      "operational_excellence": {
+        "score": "68/100",
+        "factors": "Good service variety, long operating hours, multiple payment options",
+        "weakness": "Not 24-hour, PUC equipment reliability issues"
+      },
+      "financial_viability": {
+        "score": "70/100",
+        "factors": "Stable revenue from established location, ancillary services",
+        "weakness": "High operating costs, intense competition, modest margins"
+      },
+      "customer_satisfaction": {
+        "score": "75/100",
+        "factors": "4.0/5 rating, positive fuel quality feedback, service availability",
+        "weakness": "Mixed reviews on service charges, occasional equipment issues"
+      },
+      "competitive_positioning": {
+        "score": "65/100",
+        "factors": "Strong brand (IndianOil), good location",
+        "weakness": "High competition, limited differentiation, price parity"
+      },
+      "future_readiness": {
+        "score": "60/100",
+        "factors": "Established infrastructure, brand strength",
+        "weakness": "No confirmed EV charging, CNG unclear, moderate technology adoption"
+      },
+      "compliance_and_safety": {
+        "score": "85/100",
+        "factors": "Licensed and operational, IndianOil safety standards, no major incidents",
+        "weakness": "Standard industry hazards, periodic equipment maintenance needed"
+      }
+    },
+    "scoring_methodology": {
+      "data_sources": "Official listings, reviews, area demographics, traffic data, industry reports, regulatory documents",
+      "weightage": {
+        "location": "20%",
+        "operations": "15%",
+        "financials": "20%",
+        "customer_satisfaction": "15%",
+        "competition": "15%",
+        "future_readiness": "10%",
+        "compliance": "5%"
+      },
+      "score_interpretation": {
+        "90_100": "Excellent - Top tier fuel station",
+        "75_89": "Very Good - Strong performance",
+        "60_74": "Good - Solid operation with improvement areas",
+        "45_59": "Average - Significant challenges",
+        "below_45": "Poor - Major concerns"
+      }
+    },
+    "verdict": {
+      "rating": "Good Performer",
+      "summary": "Jay Garud Gas Station is a well-established IndianOil outlet in an excellent location with strong connectivity and affluent customer base. The station benefits from high footfall in Janakpuri's commercial center and offers diverse services. However, it faces intense competition from 6-8 nearby pumps and operates in a price-regulated, margin-constrained environment. Customer feedback is generally positive (4.0/5) with praise for fuel quality and services, though some concerns about equipment reliability exist. Financial viability is decent but not exceptional, with estimated net monthly profits of ₹1.5-2.5L typical for such locations. The station would benefit from adopting future-ready technologies like EV charging and CNG (if absent), enhancing operational efficiency, and leveraging digital customer engagement. Overall, it's a solid, stable business with room for strategic improvements to maintain competitiveness in an evolving market.",
+      "investment_grade": "B+ (Stable performer with moderate growth potential)",
+      "key_recommendations": [
+        "Install EV charging infrastructure immediately (future-proofing)",
+        "Add/enhance CNG facility if not present",
+        "Implement 24x7 operations to capture late-night demand",
+        "Enhance PUC equipment reliability through regular maintenance",
+        "Expand convenience store and ancillary services",
+        "Leverage digital marketing and IndianOil ONE app",
+        "Focus on service speed and customer experience to differentiate",
+        "Consider solar energy adoption for sustainability branding",
+        "Strengthen staff training to prevent service quality issues",
+        "Monitor and respond to online reviews proactively"
+      ]
+    }
+  },
+  "research_metadata": {
+    "data_collection_date": "February 8, 2026",
+    "sources_consulted": [
+      "IndianOil official locator portal",
+      "JustDial business listings and reviews",
+      "Google Maps location data",
+      "Delhi traffic and congestion studies",
+      "Janakpuri demographic and real estate data",
+      "IndianOil dealer commission structures",
+      "Petroleum industry reports and news",
+      "Regulatory and compliance documents",
+      "Traffic density datasets for Delhi",
+      "Area development and connectivity reports",
+      "Competitor mapping and market analysis",
+      "Social media and review platforms"
+    ],
+    "total_sources": 100,
+    "data_quality": {
+      "primary_sources": "65%",
+      "secondary_sources": "30%",
+      "estimated_data": "5%",
+      "confidence_level": "High for most categories, Medium for financial estimates and footfall data"
+    },
+    "limitations": [
+      "Exact owner details not publicly available (privacy)",
+      "Actual sales volumes not disclosed (proprietary)",
+      "Financial data estimated based on industry averages",
+      "No station-specific social media presence",
+      "CNG and EV charging status not confirmed",
+      "Internal operational details not available",
+      "Competitive intelligence based on public data only"
+    ],
+    "analyst_notes": [
+      "Jay Garud Gas Station appears to be a standard, well-performing IndianOil outlet",
+      "Location is its biggest asset - commercial center with excellent connectivity",
+      "Competition is intense but manageable due to high area demand",
+      "Customer reviews suggest decent service quality with room for improvement",
+      "Financial viability is typical for urban pumps - stable but not highly lucrative",
+      "Future success depends on adapting to EV transition and enhancing customer experience",
+      "No red flags in compliance or safety - appears well-managed",
+      "Recommended for customers seeking reliable fuel and services in Janakpuri area"
+    ]
+  }
+}

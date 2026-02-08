@@ -1,0 +1,193 @@
+I need you to conduct an exhaustive, multi-layered intelligence investigation on this fuel station:
+
+**Target: Jai shree ganesh filling station, NH-44, GT Karnal Rd, near Carnival Pearl Grand, Alipur, Delhi, 110036**
+
+## Research Mandate
+
+You are building a strategic asset intelligence dashboard. This requires complete information archaeology - every data point that exists in the public domain must be discovered, verified, and structured.
+
+## Research Methodology
+
+### Phase 1: Foundation Layer - Verified Identity & Regulatory Footprint
+- Legal entity structure, ownership records, and business registration details
+- All regulatory compliance documents: petroleum licenses, environmental clearances, fire safety certifications, pollution control approvals
+- Tax compliance: GST registration with GSTIN, PAN details, taxpayer classification
+- Specific license numbers, approval dates, issuing authorities, and jurisdiction details
+- Historical ownership transfers, name changes, or corporate restructuring
+
+### Phase 2: Operational Infrastructure - Physical & Digital Assets
+- Precise geolocation coordinates (multiple verification sources)
+- Complete address with landmark triangulation
+- Facility specifications: number of dispensers, underground tank capacity, service bay count, canopy dimensions
+- Automation systems: brand and model of dispensing equipment, payment infrastructure, inventory management systems
+- Product portfolio: every fuel grade offered (regular, premium, ultra-premium with octane/cetane ratings), lubricant brands, ancillary products
+- Operating hours (actual, not assumed), 24/7 status verification
+- All contact channels: phone numbers (primary + alternate), email addresses, official website, mobile app presence
+- Amenities: restrooms, drinking water, air filling, tire pressure, car wash (manual/automatic), vehicle servicing, PUC center, convenience store
+- Technology adoption: digital payment systems, mobile apps, loyalty programs, EV charging stations, solar installations, IoT integration
+
+### Phase 3: Financial Intelligence - Economics & Profitability
+- Dealer commission structures (per-liter rates for each fuel type, recent revisions, historical changes)
+- Estimated daily/monthly sales volumes (cross-referenced with location type, competition, traffic patterns)
+- Revenue breakdown: fuel sales vs ancillary services vs retail
+- Operating cost structure: staffing (count + salary ranges), electricity, maintenance, statutory fees, security, insurance, losses
+- Pricing for all services: car wash packages, vehicle repair services, PUC certificates, other paid amenities
+- Gross margin estimates and net profitability ranges
+- GST turnover bracket or revenue band (from public filings if available)
+- Return on investment timelines, setup cost ranges, payback periods
+- Working capital patterns, credit terms with oil marketing company
+
+### Phase 4: Market & Competitive Dynamics
+- Identify every competing fuel station within 3km radius with exact names, brands, addresses, distances
+- Competitor ratings, review volumes, service offerings, pricing strategies
+- Market share estimation for the micro-market
+- Competitive advantages: unique products (XP95/XP100 availability), services not offered by competitors, location benefits
+- Competitive threats: proximity of major competitors, overlapping catchments, superior facilities nearby
+- Market saturation analysis: pump density per capita, demand vs supply dynamics
+- Brand distribution in area: IOCL vs HPCL vs BPCL vs private player presence
+
+### Phase 5: Location Intelligence - Catchment & Demographics
+- Comprehensive area demographics: total population, male/female split, age distribution, household size, income brackets
+- Socioeconomic profiling: LIG/MIG/HIG mix, occupational distribution, vehicle ownership rates, multi-vehicle households
+- Land area, population density, urban planning classification (residential/commercial/mixed)
+- Educational institutions, hospitals, corporate offices, hotels, malls within catchment (with names and distances)
+- Residential complexes, housing societies, apartment towers in immediate vicinity
+- Planning authority, zoning regulations, land use patterns
+- Real estate metrics: property values (residential/commercial per sq ft), rental rates, appreciation trends (1-year, 5-year), yields
+- Commercial activity: nearby markets, district centers, shopping complexes, weekly bazaars, footfall estimates
+
+### Phase 6: Traffic & Accessibility Analysis
+- Precise connectivity scoring: nearest metro station (name, lines, distance, walking time), bus stops, railway stations
+- Major road network: highway access, arterial roads, internal road widths, traffic signal locations
+- Airport proximity (distance, travel time, route)
+- Citywide and locality-specific congestion data: annual congestion percentages, peak hour speeds, world rankings, time to travel benchmarks
+- Peak traffic windows: morning rush timing and intensity, evening rush timing and intensity, weekend patterns
+- Traffic composition: percentage of cars, two-wheelers, commercial vehicles, public transport
+- Parking infrastructure: on-site capacity, kerbside availability, parking restrictions
+- Ingress/egress analysis: entry/exit points, queue spillover risk, visibility from main road
+- Recent or ongoing infrastructure projects affecting traffic flow (flyover repairs, metro construction, road widening)
+
+### Phase 7: Customer Intelligence - Sentiment & Behavior
+- Aggregate ratings from ALL platforms: Google Maps, JustDial, Facebook, IndianOil locator, Sulekha, YellowPages, etc.
+- Total review volume across all platforms, review date ranges (earliest to most recent)
+- Sentiment categorization: positive feedback themes (with specific quotes or paraphrased comments), negative feedback themes, neutral observations
+- Service quality mentions: fuel quality, staff behavior, waiting times, cleanliness, honesty/meter accuracy
+- Specific complaints: equipment failures (PUC machines, air compressors), pricing disputes, service charges, fuel adulteration allegations
+- Customer segment identification: local residents, daily commuters, commercial fleet operators, weekend shoppers, institutional users
+- Loyalty indicators: repeat customer mentions, long-term patronage comments
+- Switching behavior: reasons customers choose or avoid this station vs competitors
+
+### Phase 8: Risk & Reputation Assessment
+- Litigation history: consumer cases, regulatory violations, environmental infractions, labor disputes
+- Specific case types: short-fueling allegations, quality complaints, billing disputes, accident claims
+- Current pending cases vs resolved matters
+- Safety incidents: fires, leaks, accidents (at this station or industry-wide context)
+- Ownership risk: proprietorship liability exposure, succession uncertainties, financial distress signals
+- Operational risks: single point of failure infrastructure, dependency on specific customer segments, regulatory non-compliance exposure
+- Reputational risks: negative media coverage, social media controversies, viral complaints
+
+### Phase 9: Regulatory & Compliance Deep Dive
+- All active licenses with license numbers, issuing dates, expiry dates, renewal status
+- Environmental compliance: Pollution Control Board authorizations (consent to establish/operate), category classification (Red/Orange/Green), conditions imposed
+- Effluent treatment plant (ETP) specifications, oil-water separator presence
+- Vapor recovery systems: Stage-1 (tanker-to-tank), Stage-2 (nozzle-to-vehicle), compliance verification
+- Fire safety: NOC details, fire extinguisher audit dates, emergency response plan status
+- Weights and measures: calibration certificates, last inspection dates, legal metrology compliance
+- Labor compliance: ESI/PF registration, minimum wage adherence, working hours regulations
+- Dealer agreements: DODO (Dealer Owned Dealer Operated) vs COCO (Company Owned Company Operated) vs COFO status
+- Industry certifications: ISO 14001, OHSAS 18001, quality management systems
+
+### Phase 10: Digital Footprint & Social Signals
+- Social media presence: Facebook pages, Instagram accounts, Twitter/X handles, YouTube channels (with follower counts, engagement rates, posting frequency)
+- Corporate parent social media: IndianOil official accounts, mentions or features of this specific outlet
+- Reddit mentions, discussions, recommendations or warnings
+- Local community forums, WhatsApp group discussions (if publicly visible)
+- News coverage: local newspapers, industry publications, press releases
+- Blog mentions, influencer reviews, YouTube vlogs featuring the station
+- Online directories: completeness of listings, consistency of information, photo uploads by users
+
+### Phase 11: Industry Context & Benchmarking
+- Total fuel retail outlets in city/state/country
+- Market share of IndianOil vs competitors nationally and locally
+- Fuel consumption trends: petrol vs diesel demand shifts over past decade, growth rates
+- Industry profitability benchmarks: typical dealer margins, high-performing vs low-performing outlet characteristics
+- Regulatory environment: recent policy changes, subsidy structures, price deregulation status
+- Technology trends: automation adoption rates, digital payment penetration, alternative fuel mandates
+- Future disruption factors: EV adoption curves, CNG/LNG expansion, hydrogen fueling prospects
+
+### Phase 12: Strategic Outlook & Recommendations
+- Growth opportunities: untapped services, underserved customer segments, capacity expansion potential
+- Operational improvement areas: queue management, service speed enhancement, customer complaint resolution
+- Technology upgrade pathways: automation, mobile apps, loyalty programs, predictive maintenance
+- Competitive positioning strategies: differentiation tactics, premium service development
+- Risk mitigation priorities: compliance gaps, safety upgrades, reputation management
+- Investment thesis: asset quality rating, cash flow stability, entry barriers, long-term viability
+- Specific actionable recommendations ranked by impact and feasibility
+
+## Output Requirements
+
+### JSON Structure Specifications
+- Create logical, hierarchical sections that map naturally to dashboard components
+- Use clear, descriptive key names that indicate data type and purpose
+- Include metadata for every data point where possible: source, date retrieved, confidence level
+- Provide numerical scores, ratings, or metrics wherever qualitative judgments are made
+- Maintain consistent formatting: dates in ISO format, currency with symbols, percentages as decimals
+- Include arrays for multi-item categories (competitors, services, amenities)
+- Nest related information logically (e.g., owner details under entity_profile)
+- Add "notes" or "context" fields to explain complex or ambiguous data points
+
+### Data Quality Standards
+- **Verification**: Cross-reference critical facts across minimum 3 sources
+- **Specificity**: Use exact names, numbers, dates, locations - avoid "approximately" or "around" unless truly uncertain
+- **Completeness**: If information exists but is unavailable, state "Not publicly disclosed" rather than omitting
+- **Recency**: Prioritize most recent data; note data staleness if older than 6 months
+- **Attribution**: For estimated/inferred data, clearly mark as such and explain methodology
+- **Granularity**: Provide ranges when exact figures unavailable (e.g., "₹15,000-20,000" not "around ₹15,000")
+
+### Research Depth Mandate
+You will systematically visit and extract information from:
+- Official IndianOil locator and corporate website
+- Google Maps (reviews, photos, Q&A, business hours, attributes)
+- Business directories: JustDial, Sulekha, YellowPages, IndiaMart, TradeIndia
+- Government portals: MCA (Ministry of Corporate Affairs), state pollution board websites, petroleum ministry sites, legal metrology departments
+- Real estate platforms: MagicBricks, 99acres, Housing.com for area demographics and pricing
+- Traffic data sources: TomTom Traffic Index, Uber Movement, Google traffic layers, local transport authority reports
+- Review aggregators: Mouthshut, Google Reviews, Facebook Reviews, Yelp (if present)
+- Social media: Facebook, Instagram, Twitter/X, YouTube (search station name + location)
+- Reddit: r/Delhi, r/India, city-specific subreddits for mentions
+- News archives: Google News search for station name, owner name, incidents
+- Industry reports: petroleum ministry statistics, oil marketing company annual reports
+- Court databases: consumer forum cases, high court judgments (if publicly searchable)
+- Academic sources: urban planning studies, traffic studies mentioning the area
+- Competitor websites and listings for comparative analysis
+- Local area blogs, community websites, resident welfare association sites
+
+### Forbidden Shortcuts
+- Do NOT provide generic industry information as a substitute for station-specific data
+- Do NOT assume standard features ("likely has restrooms") - confirm or mark as unverified
+- Do NOT use placeholder estimates without showing calculation methodology
+- Do NOT conflate information about other stations with similar names
+- Do NOT aggregate when granular data is available (separate out by product, service, time period)
+- Do NOT stop researching when initial sources are exhausted - dig deeper into niche databases
+
+### Quality Assurance Checklist
+Before finalizing JSON, verify:
+- [ ] Regulatory identifiers present (GSTIN, license numbers, approval IDs)
+- [ ] Owner name confirmed with supporting evidence
+- [ ] At least 5 competitors identified with ratings
+- [ ] Traffic patterns quantified with peak hour timings
+- [ ] Operating costs estimated with line-item breakdown
+- [ ] Customer reviews analyzed with specific sentiment themes
+- [ ] Real estate context provided for surrounding area
+- [ ] Technology adoption status verified (not assumed)
+- [ ] Financial model includes volume estimates and profitability ranges
+- [ ] Actionable recommendations provided (minimum 5)
+- [ ] Multi-dimensional scoring with category breakdowns
+- [ ] Source count exceeds 50 unique references
+- [ ] Every section contains new information not present in standard listings
+
+## Final Output
+
+Deliver a comprehensive JSON structure representing the complete intelligence profile of this fuel station. The JSON should be immediately parsable by a dashboard UI that dynamically creates bento grid sections. Prioritize information density, accuracy, and actionability over brevity.
+
+**Your research is the foundation for critical business decisions. Leave no stone unturned.**
