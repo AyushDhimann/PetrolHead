@@ -1,0 +1,182 @@
+{
+  "dashboard_meta": {
+    "report_title": "Fuel Station Intelligence Report",
+    "station_name": "N/A - Station identification pending CID resolution",
+    "brand": "N/A - Station identification pending CID resolution",
+    "location": "Delhi, India",
+    "generated_on": "2026-02-08",
+    "data_confidence": 0.25
+  },
+  "executive_summary": {
+    "title": "Executive Summary",
+    "summary_points": [
+      "This report details the necessary steps for a comprehensive intelligence investigation into a specific fuel station identified by a Google Maps CID (16308439406462062655).",
+      "A critical limitation exists as the CID alone cannot be resolved to a specific station name, address, or brand without further information or direct access to mapping services.",
+      "Essential prerequisites for a full 12-phase investigation include resolving the CID to specific location data, verifying operational status, and establishing baseline coordinates.",
+      "The provided search results offer extensive general data on Delhi's fuel retail market, regulatory frameworks, operational economics, and competitive landscapes, but lack station-specific details tied to the given CID.",
+      "Options for proceeding include: 1) Providing specific station identification (name, address), 2) Generating a generalized market intelligence report as a template, or 3) Attempting to resolve the CID via web searches.",
+      "A significant portion of the market is dominated by Public Sector Undertakings (PSUs), holding approximately 79.25% market share."
+    ]
+  },
+  "station_identification_requirement": {
+    "title": "Station Identification Requirement",
+    "description": "Before proceeding with a detailed 12-phase investigation, the following foundational steps are required:",
+    "required_steps": [
+      {
+        "step_number": 1,
+        "description": "Resolve the Google Maps CID (16308439406462062655) to specific location data, including station name, address, and brand affiliation.",
+        "status": "Pending Identification"
+      },
+      {
+        "step_number": 2,
+        "description": "Verify the current operational status of the identified station to confirm it is active and not closed or relocated.",
+        "status": "Pending Identification"
+      },
+      {
+        "step_number": 3,
+        "description": "Establish precise baseline coordinates for the station to anchor all subsequent research.",
+        "status": "Pending Identification"
+      }
+    ],
+    "identified_challenge": "Google Maps CIDs are location identifiers that cannot be directly mapped to specific station details through available tools without explicit station name/address or public databases linking the CID.",
+    "provided_search_results_context": "While extensive data on Delhi's fuel stations, regulations, market dynamics, and competition exists in the search results, none directly link the provided CID to a particular station."
+  },
+  "path_forward_options": {
+    "title": "Recommended Path Forward",
+    "options": [
+      {
+        "option_id": "A",
+        "recommendation_level": "High",
+        "description": "User provides station's business name, complete address, and operating company/dealer name to enable targeted, station-specific research across all 12 phases.",
+        "action_required": "User input"
+      },
+      {
+        "option_id": "B",
+        "recommendation_level": "Medium",
+        "description": "Proceed with a generalized strategic model for Delhi fuel stations using provided search results. This would create a template for regulatory compliance, market intelligence, financial benchmarking, risk assessment, technology adoption, and profitability models, with station-specific details marked as 'to be populated with primary research'.",
+        "action_required": "User confirmation"
+      },
+      {
+        "option_id": "C",
+        "recommendation_level": "Low",
+        "description": "Deploy web searches to attempt to identify the station by CID. This approach is less reliable due to tool limitations in direct CID resolution.",
+        "action_required": "System execution (with low confidence)"
+      }
+    ]
+  },
+  "delhi_fuel_retail_market_overview": {
+    "title": "Delhi Fuel Retail Market Overview",
+    "market_share_analysis": {
+      "psu_dominance": {
+        "percentage": 79.25,
+        "description": "Public Sector Undertakings hold a significant majority of the market share in Delhi."
+      }
+    },
+    "growth_trajectory": "Details to be populated with primary research.",
+    "competitive_landscape": "Details to be populated with primary research."
+  },
+  "regulatory_compliance_framework": {
+    "title": "Regulatory Compliance Framework (Delhi)",
+    "licensing_requirements": {
+      "description": "Adherence to established licensing procedures for fuel stations.",
+      "details_to_be_populated": true
+    },
+    "environmental_clearances": {
+      "description": "Obtainment and maintenance of necessary environmental permits.",
+      "details_to_be_populated": true
+    },
+    "fire_safety_protocols": {
+      "description": "Implementation and regular auditing of fire safety measures.",
+      "details_to_be_populated": true
+    },
+    "pollution_control_standards": {
+      "description": "Compliance with emission and pollution control regulations.",
+      "details_to_be_populated": true
+    }
+  },
+  "operational_economics_general": {
+    "title": "Operational Economics (General)",
+    "margin_structures": {
+      "description": "Analysis of typical profit margins in the fuel retail sector.",
+      "details_to_be_populated": true
+    },
+    "profitability_drivers": {
+      "description": "Identification of key factors influencing station profitability.",
+      "details_to_be_populated": true
+    },
+    "cost_breakdowns": {
+      "description": "Understanding of major operational cost components.",
+      "details_to_be_populated": true
+    },
+    "investment_models": {
+      "description": "Examination of typical investment requirements and models for fuel stations.",
+      "details_to_be_populated": true
+    }
+  },
+  "competitive_analysis_general": {
+    "title": "Competitive Analysis (General)",
+    "identified_competitors": {
+      "description": "List of identified competitors operating in the Delhi region.",
+      "competitors": [
+        "Details to be populated with primary research."
+      ]
+    },
+    "service_differentiation": {
+      "description": "Strategies and examples of service differentiation among competitors.",
+      "details_to_be_populated": true
+    },
+    "technology_adoption": {
+      "description": "Trends and examples of technology adoption in competitor operations.",
+      "details_to_be_populated": true
+    }
+  },
+  "location_intelligence_general": {
+    "title": "Location Intelligence (Delhi)",
+    "demographics": {
+      "description": "Analysis of relevant demographic data for potential station locations.",
+      "details_to_be_populated": true
+    },
+    "traffic_patterns": {
+      "description": "Understanding of typical traffic volumes and flow.",
+      "details_to_be_populated": true
+    },
+    "congestion_metrics": {
+      "description": "Data on traffic congestion and its impact.",
+      "details_to_be_populated": true
+    },
+    "accessibility_data": {
+      "description": "Assessment of station accessibility and ingress/egress.",
+      "details_to_be_populated": true
+    }
+  },
+  "customer_insights_general": {
+    "title": "Customer Insights (General)",
+    "service_quality_expectations": {
+      "description": "Common expectations of fuel station customers regarding service.",
+      "details_to_be_populated": true
+    },
+    "feedback_themes": {
+      "description": "Recurring themes observed in customer feedback.",
+      "details_to_be_populated": true
+    },
+    "switching_behaviors": {
+      "description": "Factors influencing customer decisions to switch fuel providers.",
+      "details_to_be_populated": true
+    }
+  },
+  "strategic_recommendations_general": {
+    "title": "Strategic Recommendations (General)",
+    "market_positioning": {
+      "description": "Guidance on establishing a strong market position.",
+      "details_to_be_populated": true
+    },
+    "growth_vectors": {
+      "description": "Potential avenues for business growth.",
+      "details_to_be_populated": true
+    },
+    "risk_mitigation": {
+      "description": "Strategies for identifying and mitigating operational risks.",
+      "details_to_be_populated": true
+    }
+  }
+}

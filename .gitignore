@@ -100,7 +100,7 @@ dist/
 .nuxt/
 .next/
 .nitro/
-.cache/
+!.cache/
 .output/
 .env
 .env.*

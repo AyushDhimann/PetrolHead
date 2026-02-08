@@ -45,6 +45,12 @@ function Navbar() {
           >
             Demos
           </Link>
+          <Link
+            href="/researches"
+            className="text-gray-600 hover:text-gray-900 transition-colors font-medium"
+          >
+            Researches
+          </Link>
         </div>
       </div>
     </nav>

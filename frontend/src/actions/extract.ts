@@ -16,6 +16,7 @@ import {
   SentimentSchema,
   ScoreSchema,
   AnomaliesSchema,
+  PaymentMethodsSchema,
 } from "@/schemas/dashboard";
 
 // ─── Model ──────────────────────────────────────────────────────
@@ -23,10 +24,16 @@ const model = google("gemini-2.5-flash-lite");
 
 // ─── Cache Directory ────────────────────────────────────────────
 const CACHE_DIR = path.join(process.cwd(), ".cache", "extractions");
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+function getShortCacheKey(text: string, section: string): string {
+  const hash = crypto.createHash("md5").update(text).digest("hex").slice(0, 12);
+  return `${section}_${hash}`;
+}
 
 function getCacheKey(text: string, section: string): string {
-  const hash = crypto.createHash("md5").update(text).digest("hex").slice(0, 12);
-  return path.join(CACHE_DIR, `${section}_${hash}.json`);
+  const shortKey = getShortCacheKey(text, section);
+  return path.join(CACHE_DIR, `${shortKey}.json`);
 }
 
 async function readCache<T>(cacheKey: string): Promise<T | undefined> {
@@ -50,6 +57,36 @@ async function writeCache<T>(cacheKey: string, data: T): Promise<void> {
   }
 }
 
+// ─── Supabase Cache Layer ───────────────────────────────────────
+
+async function readSupabaseCache<T>(shortKey: string): Promise<T | undefined> {
+  try {
+    const res = await fetch(`${API_BASE}/api/cache/get/${shortKey}`);
+    if (res.ok) {
+      const json = await res.json();
+      if (json.data) {
+        console.log(`[extract] Supabase cache HIT: ${shortKey}`);
+        return json.data as T;
+      }
+    }
+  } catch {
+    // Supabase cache miss — ignore
+  }
+  return undefined;
+}
+
+async function writeSupabaseCache(shortKey: string, section: string, textHash: string, data: unknown): Promise<void> {
+  try {
+    await fetch(`${API_BASE}/api/cache/set`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ cache_key: shortKey, section, text_hash: textHash, data }),
+    });
+  } catch {
+    // Supabase cache write failure is not critical
+  }
+}
+
 // ─── Generic Extraction Helper ──────────────────────────────────
 
 async function extractSection<T>(
@@ -58,12 +95,23 @@ async function extractSection<T>(
   prompt: string,
   text: string
 ): Promise<T | null> {
-  // Check cache first
   const key = getCacheKey(text, sectionName);
+  const shortKey = getShortCacheKey(text, sectionName);
+  const textHash = crypto.createHash("md5").update(text).digest("hex").slice(0, 12);
+
+  // Check file cache first
   const cached = await readCache<T>(key);
   if (cached !== undefined) {
-    console.log(`[extract] Cache HIT: ${sectionName}`);
+    console.log(`[extract] File cache HIT: ${sectionName}`);
     return cached;
+  }
+
+  // Check Supabase cache second
+  const supabaseCached = await readSupabaseCache<T>(shortKey);
+  if (supabaseCached !== undefined) {
+    // Write to file cache for faster future access
+    await writeCache(key, supabaseCached);
+    return supabaseCached;
   }
 
   try {
@@ -73,8 +121,9 @@ async function extractSection<T>(
       schema,
       prompt: `${prompt}\n\n--- BEGIN REPORT ---\n${text}\n--- END REPORT ---`,
     });
-    // Write to cache
+    // Write to both caches
     await writeCache(key, object);
+    await writeSupabaseCache(shortKey, sectionName, textHash, object);
     return object;
   } catch (error) {
     console.error(`[extract] Failed: ${sectionName}`, error);
@@ -216,6 +265,24 @@ Your job is to find what a "summarizer" AI would normally DISCARD:
 - FUTURE OUTLOOK: Forward-looking strategic insights — EV transition impact, RRTS construction impact, Non-Fuel Retail (NFR) potential, real estate opportunity, technology risks — with estimated timeframes.
 
 If the text is rich, this section should be DENSE. Don't leave intel on the table.`,
+    text
+  );
+}
+
+export async function getPaymentMethodsData(text: string) {
+  return extractSection(
+    PaymentMethodsSchema,
+    "payment_methods",
+    `Extract PAYMENT METHODS and TRANSACTION INFRASTRUCTURE from this fuel station report.
+
+EXTRACT EVERYTHING RELATED TO PAYMENTS:
+- All accepted payment methods: Cash, UPI (Google Pay, PhonePe, Paytm, etc.), Credit/Debit cards, mobile wallets, QR code payments.
+- Fleet cards: Xtrapower, SmartDrive, HPCL DriveTrack, or any other fleet card programs accepted.
+- Loyalty programs: Any rewards, points, or loyalty schemes available.
+- POS infrastructure: Terminal brands, count, capabilities (contactless/NFC/chip).
+- Digital payment adoption level — how advanced is the station's payment infrastructure.
+- Any notes about payment limits, surcharges, or restrictions.
+- Even if payment methods are not explicitly discussed, infer from available info (e.g., automation/e-RO typically means digital payments are available).`,
     text
   );
 }

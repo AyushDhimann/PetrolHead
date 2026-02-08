@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     SUPABASE_ENABLED: bool = False
 
     # Provider
-    PRIMARY_PROVIDER: str = "perplexity"
+    PRIMARY_PROVIDER: str = "gemini"
     FALLBACK_PROVIDER: str = "perplexity"
     AUTO_FALLBACK_ENABLED: bool = True
 
@@ -52,7 +52,7 @@ class Settings(BaseSettings):
 
     # Converter
     CONVERTER_MODEL: str = "gemini-2.5-flash-lite"
-    CONVERTER_ENABLED: bool = True
+    CONVERTER_ENABLED: bool = False
     CONVERTER_SKIP_IF_JSON: bool = True
 
     # Demo

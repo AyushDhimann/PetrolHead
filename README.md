@@ -1,4 +1,4 @@
-# 🚀 Nawgati — Fuel Station Profile Dashboard
+# 🚀 Nawgati — Fuel Station Intelligence Platform
 
 **AI-powered deep research & forensic intelligence dashboard for fuel station competitive analysis**
 
@@ -12,11 +12,13 @@
 ## 📋 Table of Contents
 
 - [Overview](#overview)
+- [Architecture](#architecture)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Quick Start](#quick-start)
 - [Project Structure](#project-structure)
 - [Usage](#usage)
+- [Research Pipeline](#research-pipeline)
 - [API Reference](#api-reference)
 - [Dashboard Components](#dashboard-components)
 - [Caching](#caching)
@@ -26,49 +28,104 @@
 
 ## 🎯 Overview
 
-Nawgati is a full-stack intelligence platform that transforms plaintext fuel station reports into interactive, forensic-grade dashboards. It extracts and visualizes:
+Nawgati is a full-stack intelligence platform that conducts deep AI research on fuel stations, then transforms the raw text reports into interactive forensic-grade dashboards. Enter a station name (or paste a Google Maps link) and the system will:
 
-- **Identity & Litigation Profiles** — Station details, key personnel, ownership history, and legal disputes
-- **Operational Intelligence** — Fuel significance, automation, safety compliance, non-fuel retail
-- **Competitive Analysis** — Threat levels, comparative metrics, catchment splits, market saturation
-- **Financial Metrics** — OPEX breakdown, dealer margins, GST turnover, revenue estimates
-- **Location Risk** — Demand drivers with seasonal variations, infrastructure risks, access analysis
-- **Customer Sentiment** — Platform-specific ratings, review anomalies, theme analysis
-- **Strategic Score** — Methodology-weighted scoring with drill-down reasoning
-- **Anomalies & Leftovers** — Data anomalies, environmental compliance, miscellaneous intel, future outlook
+1. **Deep Research** — Gemini Deep Research Agent (primary) conducts exhaustive multi-source investigation with real-time progress streaming
+2. **Fallback** — Perplexity sonar-deep-research activates automatically if Gemini fails
+3. **Extraction** — Frontend extracts structured data from the raw report using 9 parallel Zod-schema server actions powered by Gemini 2.5 Flash Lite
+4. **Dashboard** — Interactive 9-card bento grid with forensic-level detail, anomaly detection, and strategic scoring
 
-**Agentic Chat:** Natural language Q&A over the station profile with streaming responses powered by **Gemini 2.5 Flash**.
+### What gets extracted:
+
+- **Identity & Litigation** — Station details, key personnel, ownership history, specific legal disputes with plaintiff names
+- **Operational Infrastructure** — Fuel types with significance, automation, safety compliance, non-fuel retail
+- **Competitive Landscape** — Threat levels, comparative metrics, catchment splits, market saturation
+- **Financial Intelligence** — OPEX breakdown, dealer margins, GST turnover, revenue estimates
+- **Location Risk** — Seasonal demand drivers, infrastructure risks, binary catalysts, access analysis
+- **Customer Sentiment** — Multi-platform ratings, review anomalies, specific quote analysis
+- **Strategic Score** — Weighted scoring methodology with drill-down reasoning
+- **Payment Methods** — Digital payment adoption, fleet cards, loyalty programs, POS infrastructure
+- **Anomalies & Overflow** — Data anomalies, environmental compliance, miscellaneous intel, future outlook
+
+---
+
+## 🏗 Architecture
+
+```
+User Query / Google Maps URL
+        │
+        ▼
+┌──────────────────┐    Fallback    ┌─────────────────────┐
+│  Gemini Deep     │ ────────────► │  Perplexity sonar   │
+│  Research Agent  │   (auto)      │  deep-research      │
+│  (Method 1)     │                │  (Method 2)         │
+└────────┬─────────┘                └──────────┬──────────┘
+         │                                     │
+         ▼                                     ▼
+    Raw Text Report (saved to disk + Supabase)
+         │
+         ▼
+┌────────────────────────────────────────────┐
+│  Frontend: 9 parallel Zod + Gemini Flash   │
+│  Server Actions (extract.ts)               │
+│  ┌─────────┐ ┌─────────┐ ┌──────────┐     │
+│  │Identity │ │Opertnl  │ │Competitor│ ... │
+│  └─────────┘ └─────────┘ └──────────┘     │
+│  File Cache → Supabase Cache → Gemini API  │
+└────────────────────────────────────────────┘
+         │
+         ▼
+    9-Card Dashboard + Agentic Chat
+```
 
 ---
 
 ## ✨ Features
 
-### 🧠 Forensic Extraction
-- **Vercel AI SDK** with **Zod** schemas for structured data extraction
+### 🧠 Forensic Extraction (9 Sections)
+- **Vercel AI SDK** with **Zod** schemas for typed structured extraction
 - **Gemini 2.5 Flash Lite** for fast, cost-effective analysis
-- Forensic prompts that capture specific evidence (plaintiff names, exact allegations, seasonal details)
-- Avoids "smoothing effect" — surfaces raw data, not summaries
+- **9 parallel server actions** — Identity, Operational, Competitors, Financial, Location, Sentiment, Score, PaymentMethods, Anomalies
+- Forensic prompts that capture specific evidence (plaintiff names, exact allegations, seasonal peaks)
+- Avoids "smoothing effect" — surfaces raw anomalous data, not summaries
 
-### 💾 Intelligent Caching
-- **File-system cache** (MD5 hash of report text) in `.cache/extractions/`
-- Eliminates duplicate API calls on repeated dashboard loads
-- Console logs `CACHE HIT/MISS` for transparency
-- Session-independent persistence
+### 🔬 Dual-Provider Research
+- **Primary**: Gemini Deep Research Agent (`deep-research-pro-preview-12-2025`) — shown as "Method 1" in dashboard
+- **Fallback**: Perplexity `sonar-deep-research` — shown as "Method 2" in dashboard
+- Automatic failover with `AUTO_FALLBACK_ENABLED`
+- Real-time streaming of research progress and AI thought summaries
+
+### 🗺️ Google Maps URL Support
+- Paste a Google Maps link instead of typing a station name
+- Auto-detected by the prompt builder
+- AI instructed to resolve the URL to the actual station identity before researching
+
+### 💾 Intelligent 3-Layer Caching
+1. **File-system cache** — MD5 hash of report text → `.cache/extractions/{section}_{hash}.json`
+2. **Supabase cache** — `extraction_cache` table with 30-day TTL per section
+3. **API call** — Only when both caches miss
+- Console logs `CACHE HIT` / `CACHE MISS` per section for transparency
+
+### 📂 Researches Page
+- View all ongoing, completed, and failed research sessions at `/researches`
+- Auto-refreshes every 5 seconds for live progress updates
+- Merges in-memory sessions with Supabase-persisted past researches
+- Direct links to progress page or dashboard
 
 ### 🎨 Rich Data Visualization
-- **8 interactive pastel-themed cards** in a responsive bento grid layout
+- **9 interactive pastel-themed cards** in a responsive bento grid layout
 - **Litigation profile** with specific cases and source quotes
 - **Comparative metrics table** for competitor benchmarking
 - **OPEX breakdown** and dealer margin charts
-- **Demand drivers timeline** with peak seasons
-- **Sentiment heatmap** with platform disparities
+- **Demand drivers timeline** with peak season months
+- **Payment methods** with fleet cards and loyalty programs
+- **Sentiment analysis** with platform-specific disparities
 - **Future outlook timeline** for strategic planning
 
 ### 💬 Agentic Chat Widget
 - Floating chat panel (bottom-right corner)
-- Streaming responses from Claude/Gemini with full report context
+- Streaming responses from Gemini with full report context
 - Clear history, smooth animations
-- No session persistence (fresh per load, or use cookies for persistence)
 
 ### ⚡ CLI Runner
 - `python -m nawgati setup` — Install all dependencies
@@ -81,27 +138,36 @@ Nawgati is a full-stack intelligence platform that transforms plaintext fuel sta
 ## 🛠 Tech Stack
 
 ### Backend
-- **FastAPI** — High-performance API framework
-- **Python 3.11+** — Core runtime
-- **Google Generative AI** — LLM for extraction
-- **Pydantic** — Data validation
-- **Uvicorn** — ASGI server
+| Technology | Purpose |
+|---|---|
+| **FastAPI** | High-performance async API framework |
+| **Python 3.11+** | Core runtime |
+| **Google Generative AI** | Gemini Deep Research Agent + Flash extraction |
+| **Perplexity API** | Fallback deep research provider |
+| **Supabase** | PostgreSQL for sessions, results, logs, extraction cache |
+| **Pydantic Settings** | Typed configuration from `.env` |
+| **SSE-Starlette** | Server-sent events for real-time streaming |
+| **Uvicorn** | ASGI server |
 
 ### Frontend
-- **Next.js 16.1.6** — React meta-framework
-- **React 19.2.3** — UI library
-- **TypeScript** — Type safety
-- **Tailwind CSS v4** — Utility-first styling
-- **Vercel AI SDK v6** — LLM streaming & chat hooks
-- **Zod** — Runtime schema validation
-- **Framer Motion** — Animation library
-- **Lucide React** — Icon set
-- **Recharts** — Data visualization
+| Technology | Purpose |
+|---|---|
+| **Next.js 16.1.6** | React meta-framework with server actions |
+| **React 19.2.3** | UI library |
+| **TypeScript** | Type safety |
+| **Tailwind CSS v4** | Utility-first styling |
+| **Vercel AI SDK v6** | `generateObject()` for typed LLM extraction |
+| **Zod** | 9 forensic extraction schemas |
+| **Framer Motion** | Animations |
+| **Lucide React** | Icon set |
+| **Recharts** | Data visualization |
 
 ### Infrastructure
-- **Port 8000** — Backend API
-- **Port 3000** — Frontend dev server
-- **.env.local** — Environment configuration
+| Component | Port |
+|---|---|
+| Backend API | `8000` |
+| Frontend dev server | `3000` |
+| API docs (Swagger) | `8000/docs` |
 
 ---
 
@@ -115,21 +181,19 @@ Nawgati is a full-stack intelligence platform that transforms plaintext fuel sta
 ### 1. Clone & Setup
 
 ```bash
-# Navigate to project
 cd Nawgati-Assignment
-
-# Install all dependencies (backend + frontend)
 python -m nawgati setup
 ```
 
 ### 2. Environment Setup
 
-Create `.env` files:
-
 **Backend** (`backend/.env`):
 ```env
 GEMINI_API_KEY=your_google_api_key_here
-PERPLEXITY_API_KEY=your_perplexity_key_here (optional)
+PERPLEXITY_API_KEY=your_perplexity_key_here
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_anon_key
+SUPABASE_ENABLED=true
 DEMO_MODE_ENABLED=true
 PRIMARY_PROVIDER=gemini
 FALLBACK_PROVIDER=perplexity
@@ -144,20 +208,12 @@ GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key_here
 ### 3. Run Full Stack
 
 ```bash
-# Start both backend & frontend with one command
 python -m nawgati run
 
 # Backend: http://localhost:8000
 # Frontend: http://localhost:3000
 # API Docs: http://localhost:8000/docs
 ```
-
-### 4. Access the Dashboard
-
-1. Open http://localhost:3000
-2. Click on a **Demo** (DO1, DO2, DO3)
-3. Watch the dashboard load with 8 data-rich cards
-4. Try the floating **Nawgati Analyst** chat on the bottom-right
 
 ---
 
@@ -166,247 +222,209 @@ python -m nawgati run
 ```
 Nawgati-Assignment/
 ├── backend/                           # FastAPI backend
-│   ├── main.py                       # App entry point
+│   ├── main.py                       # App entry + router registration
 │   ├── requirements.txt               # Python dependencies
-│   ├── .env                          # API keys
+│   ├── database.sql                  # Supabase schema (sessions, results, logs, extraction_cache)
 │   ├── config/
-│   │   ├── settings.py               # Configuration
+│   │   ├── settings.py               # Pydantic Settings (all config from .env)
 │   │   └── logging_config.py         # Logging setup
 │   ├── features/
-│   │   ├── research/                 # Deep research (web scraping)
-│   │   ├── converter/                # Text extraction
-│   │   ├── dashboard/                # Dashboard endpoints
-│   │   │   └── router.py             # /api/dashboard/demo/{id}/text
-│   │   └── session/                  # Session management
-│   └── demo_outputs/
-│       ├── JSONS/                    # Pre-generated demo data
-│       └── PlainTexts/               # Demo report files (DO1-DO3)
+│   │   ├── research/                 # Deep research pipeline
+│   │   │   ├── service.py            # Orchestrator with provider fallback
+│   │   │   ├── router.py             # /api/research/* endpoints + SSE streaming
+│   │   │   ├── gemini_client.py      # Gemini Deep Research Agent client
+│   │   │   ├── perplexity_client.py  # Perplexity sonar-deep-research client
+│   │   │   └── models.py            # Research status, result models
+│   │   ├── converter/                # Text→JSON conversion (currently disabled)
+│   │   ├── dashboard/                # Dashboard + past-researches endpoints
+│   │   ├── session/                  # In-memory session store + session API
+│   │   ├── cache/                    # Supabase extraction cache API
+│   │   └── supabase/                 # Supabase client + CRUD service
+│   ├── utils/
+│   │   ├── prompt_builder.py         # Prompt template builder + Google Maps URL detection
+│   │   └── file_manager.py           # Research output file management
+│   ├── prompts/
+│   │   ├── User Prompts/prompt.txt   # 12-phase research mandate template
+│   │   └── System Prompts/           # Perplexity system prompt
+│   └── demo_outputs/                 # Pre-built demo reports (DO1-DO3)
 │
 ├── frontend/                          # Next.js frontend
-│   ├── package.json                  # Node dependencies
-│   ├── tsconfig.json                 # TypeScript config
-│   ├── tailwind.config.ts            # Tailwind configuration
-│   ├── .env.local                    # API keys
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── page.tsx              # Home page
-│   │   │   ├── demos.tsx             # Demos listing
-│   │   │   ├── api/
-│   │   │   │   └── chat/route.ts     # Chat API endpoint
-│   │   │   ├── demo/
-│   │   │   │   └── [id]/page.tsx     # Dashboard page
+│   │   │   ├── page.tsx              # Home — search bar to start research
+│   │   │   ├── layout.tsx            # Root layout with nav (Home/Demos/Researches)
+│   │   │   ├── demos/page.tsx        # Demo listing page
+│   │   │   ├── demo/[id]/page.tsx    # Demo dashboard (9 cards)
 │   │   │   ├── research/
-│   │   │   │   └── [sessionId]/      # Live research page
-│   │   │   ├── layout.tsx            # Root layout
-│   │   │   └── globals.css           # Global styles
+│   │   │   │   └── [sessionId]/
+│   │   │   │       ├── page.tsx      # Live research progress with SSE streaming
+│   │   │   │       └── dashboard/
+│   │   │   │           └── page.tsx  # Live research dashboard (9 cards + Method badge)
+│   │   │   ├── researches/page.tsx   # All researches — ongoing/completed/failed
+│   │   │   └── api/chat/             # Chat API route (Gemini streaming)
 │   │   ├── schemas/
-│   │   │   └── dashboard.ts          # 8 Zod schemas (forensic)
+│   │   │   └── dashboard.ts          # 9 Zod schemas (forensic extraction)
 │   │   ├── actions/
-│   │   │   └── extract.ts            # Server actions + caching
-│   │   ├── components/
-│   │   │   └── dashboard/
-│   │   │       ├── Skeletons.tsx     # 8 loading skeletons
-│   │   │       ├── IdentityCard.tsx
-│   │   │       ├── OperationalCard.tsx
-│   │   │       ├── CompetitorCard.tsx
-│   │   │       ├── FinancialCard.tsx
-│   │   │       ├── LocationCard.tsx
-│   │   │       ├── SentimentCard.tsx
-│   │   │       ├── ScoreCard.tsx
-│   │   │       ├── AnomaliesCard.tsx
-│   │   │       └── ChatWidget.tsx    # Agentic chat panel
+│   │   │   └── extract.ts            # Server actions + 3-layer caching
+│   │   ├── components/dashboard/
+│   │   │   ├── IdentityCard.tsx
+│   │   │   ├── OperationalCard.tsx    # CNG auto-normalization
+│   │   │   ├── CompetitorCard.tsx
+│   │   │   ├── FinancialCard.tsx
+│   │   │   ├── LocationCard.tsx       # Seasonal demand drivers
+│   │   │   ├── SentimentCard.tsx
+│   │   │   ├── ScoreCard.tsx
+│   │   │   ├── PaymentMethodsCard.tsx # Payment methods, fleet cards, loyalty
+│   │   │   ├── AnomaliesCard.tsx
+│   │   │   ├── ChatWidget.tsx
+│   │   │   └── Skeletons.tsx          # 9 loading skeletons
 │   │   └── lib/
-│   │       └── api.ts                # API client
-│   ├── .cache/
-│   │   └── extractions/              # Hash-based cache directory
-│   └── public/                       # Static assets
+│   │       ├── api.ts                # Backend API client
+│   │       ├── cookies.ts            # Session cookie helpers
+│   │       └── dashboard-utils.ts    # Dashboard utilities
+│   └── .cache/extractions/           # File-system extraction cache
 │
 ├── nawgati/                          # CLI package
-│   ├── __init__.py
-│   ├── __main__.py                   # Entry point: `python -m nawgati`
-│   ├── run.py                        # Runner: starts backend + frontend
-│   └── setup.py                      # Setup: installs dependencies
+│   ├── __main__.py                   # Entry: `python -m nawgati`
+│   ├── run.py                        # Concurrent backend + frontend runner
+│   └── setup.py                      # Dependency installer
 │
 ├── README.md                         # This file
-├── LICENSE
-├── demand.md                         # Requirements document
-└── mega_prompt.txt                   # System prompt for research
+├── PLANNING.md                       # Architecture planning notes
+└── LICENSE
 ```
 
 ---
 
 ## 🎮 Usage
 
-### Run Dashboard Demo
+### Live Research
 
-1. **Start the stack:**
-   ```bash
-   python -m nawgati run
-   ```
-
+1. **Start the stack:** `python -m nawgati run`
 2. **Open http://localhost:3000**
+3. **Enter a station name** or **paste a Google Maps link**
+4. **Watch live progress** — real-time streaming of AI thought process
+5. **Dashboard loads** automatically when research completes — 9 forensic cards
 
-3. **Click a Demo Card:**
-   - **Demo 1**: Sher Service Station (IndianOil, Janakpuri)
-   - **Demo 2**: Jay Garud Gas Station (IndianOil, Janakpuri)
-   - **Demo 3**: Jai Shree Ganesh Filling Station (BPCL, NH-44)
+### Demo Mode
 
-4. **Watch the Dashboard Load:**
-   - Progressive extraction via Suspense
-   - Skeletons for instant feedback
-   - Cache HIT/MISS logged to console
-   - 8 forensic cards populate in 2-3 seconds
+1. Navigate to **Demos** (nav bar)
+2. Click a demo card (DO1, DO2, or DO3)
+3. Dashboard loads with pre-built reports — instant extraction
 
-5. **Chat with the Analyst:**
-   - Click the 💬 button (bottom-right)
-   - Ask questions like:
-     - "What are the litigation risks?"
-     - "How does this station compare to competitors?"
-     - "What's the revenue estimate?"
-     - "Are there environmental compliance issues?"
+### Researches Page
 
-### Extract Custom Report
+1. Navigate to **Researches** (nav bar)
+2. View all sessions — ongoing (live progress), completed (click to dashboard), failed
+3. Auto-refreshes every 5 seconds
 
-1. **Backend API** (POST to `/api/dashboard/demo/{id}/extract`):
-   ```bash
-   curl -X GET http://localhost:8000/api/dashboard/demo/1/text
-   ```
+---
 
-2. **Returns plaintext report**, which frontend then extracts via 8 parallel server actions.
+## 🔬 Research Pipeline
+
+### Provider Configuration
+
+| Setting | Default | Description |
+|---|---|---|
+| `PRIMARY_PROVIDER` | `gemini` | First provider attempted (shown as "Method 1") |
+| `FALLBACK_PROVIDER` | `perplexity` | Automatic fallback (shown as "Method 2") |
+| `AUTO_FALLBACK_ENABLED` | `true` | Whether to auto-switch on primary failure |
+| `CONVERTER_ENABLED` | `false` | Backend text→JSON conversion (disabled; frontend handles extraction) |
+
+### Flow
+
+1. User enters query → `prompt_builder.py` inserts it into the 12-phase research template
+2. If query is a Google Maps URL → extra resolution instructions are injected
+3. Primary provider (Gemini Deep Research Agent) streams progress + thought summaries via SSE
+4. On failure → auto-fallback to Perplexity sonar-deep-research
+5. Raw text report saved to `outputs/research/` and Supabase `research_results`
+6. Frontend navigates to dashboard → 9 parallel `extractSection()` calls with Zod schemas
+7. Each extraction checks: file cache → Supabase cache → Gemini Flash Lite API
 
 ---
 
 ## 🔌 API Reference
 
-### Backend Endpoints
+### Research
+| Method | Endpoint | Description |
+|---|---|---|
+| `POST` | `/api/research/start` | Start a new research session |
+| `GET` | `/api/research/stream/{session_id}` | SSE stream of progress + thoughts |
 
-#### Dashboard
-- **`GET /api/dashboard/demo/{id}/text`** — Fetch plaintext report for a demo
+### Session
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/session/{session_id}` | Get session status + progress |
+| `GET` | `/api/session/{session_id}/result` | Get research result (raw text + metadata) |
+| `GET` | `/api/session/list` | List all in-memory sessions |
 
-#### Session
-- **`POST /api/session/save`** — Save extraction session
-- **`GET /api/session/{sessionId}`** — Retrieve session
+### Dashboard
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/dashboard/demos` | List available demos |
+| `GET` | `/api/dashboard/demo/{id}` | Get demo data |
+| `GET` | `/api/dashboard/live/{session_id}` | Get live dashboard data |
+| `GET` | `/api/dashboard/past-researches` | List past researches from Supabase |
 
-#### Health
-- **`GET /api/health`** — Service status
+### Cache
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/cache/get/{cache_key}` | Get cached extraction |
+| `POST` | `/api/cache/set` | Store extraction in Supabase cache |
 
-### Frontend API Routes
-
-#### Chat
-- **`POST /api/chat`** — Stream chat responses
-  
-  **Body:**
-  ```json
-  {
-    "messages": [
-      { "id": "1", "role": "user", "parts": [{ "type": "text", "text": "..." }] }
-    ],
-    "reportText": "Full station report text..."
-  }
-  ```
-  
-  **Response:** Server-sent events (SSE) stream with UIMessageChunk format
+### Other
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/health` | Health check + config info |
+| `POST` | `/api/chat` | Streaming chat (frontend route) |
 
 ---
 
-## 🎨 Dashboard Components
+## 🎨 Dashboard Components (9 Cards)
 
-### 1. IdentityCard
-Shows station fundamentals, brand, owner, established year, key personnel (name/role/source), ownership history, litigation profile with specific cases (plaintiff → allegation → status), and risk factors.
-
-**Forensic Fields:**
-- `keyPersonnel`: Array of {name, role, source}
-- `litigationProfile`: {riskLevel, specificCases[{plaintiff, allegation, status, sourceQuote}]}
-- `ownershipHistory`: Chronological ownership changes
-
-### 2. OperationalCard
-Fuel types with significance levels, automation/EV status, amenities, non-fuel retail, safety compliance (certification name + details), forecourt layout, and dispenser info.
-
-**Forensic Fields:**
-- `fuelTypes[].significance`: Why this fuel matters (e.g., "High demand due to highway traffic")
-- `nonFuelRetail[]`: Specific retail offerings
-- `safetyCompliance[]{certification, details}`
-
-### 3. CompetitorCard
-Market saturation badge, competitor list with threat levels (Critical/High/Medium/Low), distance, rating, and key strengths. Includes catchment split %, comparative metrics table (Subject vs Competitors), and "Our Moat" section.
-
-**Forensic Fields:**
-- `competitors[].threatLevel`: Enum for risk assessment
-- `catchmentSplit`: Geographic breakdown
-- `comparativeTable[]`: {metric, subjectValue, competitorValues{}}
-
-### 4. FinancialCard
-Estimated monthly throughput (petrol/diesel/CNG), revenue/OPEX/net income estimates, GST turnover category, OPEX breakdown table (staff, electricity, maintenance), and dealer margins per fuel type.
-
-**Forensic Fields:**
-- `opexBreakdown[]{item, amount}`: Granular expense breakdown
-- `dealerMargins[]{fuelType, margin}`: Per-fuel-type profitability
-- `gstTurnoverCategory`: Categorical turnover band
-
-### 5. LocationCard
-Catchment type & demographics, access analysis, peak demand hours, seasonal demand drivers with peak months and impact type (High/Medium/Low), infrastructure risks (binary risk flags for RRTS/flyover construction), and nearby landmarks.
-
-**Forensic Fields:**
-- `demandDrivers[]{driver, peakMonths[], impactType, details}`: Seasonal specifics
-- `infrastructureRisks[]{risk, details, isBinaryRisk}`: Construction, highway work
-
-### 6. SentimentCard
-Overall rating, total review count, sentiment verdict, platform breakdown (Justdial vs Google Maps with anomaly notes), positive/negative themes, notable review quotes with sentiment coloring, and digital presence score.
-
-**Forensic Fields:**
-- `platformBreakdown[]{platform, rating, reviewCount, note}`: Platform disparities
-- `notableReviews[]{quote, sentiment, theme}`: Exemplary reviews
-
-### 7. ScoreCard
-SVG progress ring, overall score with verdict badge, subscores breakdown (categories with max points and reasoning), scoring methodology weights, and recommendations.
-
-**Forensic Fields:**
-- `scoringMethodology[]{dimension, weight}`: Transparent weighting
-- `subscores[]{category, score, maxScore, reasoning}`: Detailed scoring logic
-
-### 8. AnomaliesCard
-**Data Anomalies**: Unusual data points (e.g., "Oxygen Filling Services" at a petrol pump) with confidence levels and implications.
-
-**Environmental Compliance**: DPCC category, trigger reason, consent status, and compliance items.
-
-**Miscellaneous Intel**: Categorized facts (e.g., "Staff Culture", "Operational Quirks").
-
-**Future Outlook**: Strategic topics with 12-month outlook (risks, growth, initiatives).
+| # | Card | Color Theme | Key Forensic Fields |
+|---|---|---|---|
+| 1 | **IdentityCard** | Rose | `keyPersonnel`, `litigationProfile.specificCases[]`, `ownershipHistory` |
+| 2 | **OperationalCard** | Emerald | `fuelTypes[].significance`, `nonFuelRetail[]`, `safetyCompliance[]` — CNG auto-detected from name |
+| 3 | **CompetitorCard** | Amber | `competitors[].threatLevel`, `catchmentSplit`, `comparativeTable[]` |
+| 4 | **FinancialCard** | Indigo | `opexBreakdown[]`, `dealerMargins[]`, `gstTurnoverCategory` |
+| 5 | **LocationCard** | Cyan | `demandDrivers[]{peakMonths[], impactType}`, `infrastructureRisks[].isBinaryRisk` |
+| 6 | **SentimentCard** | Orange | `platformBreakdown[]`, `notableReviews[]{quote, sentiment}` |
+| 7 | **ScoreCard** | Yellow | `scoringMethodology[]`, `subscores[]{reasoning}` |
+| 8 | **PaymentMethodsCard** | Violet | `acceptedMethods[]`, `fleetCards[]`, `loyaltyPrograms[]`, `posInfrastructure` |
+| 9 | **AnomaliesCard** | Red/Gray | `dataAnomalies[]`, `environmentalCompliance`, `miscIntel[]`, `futureOutlook[]` |
 
 ---
 
 ## 💾 Caching
 
-### How It Works
-
-1. **Request arrives** → Extract text from plaintext report
-2. **MD5 hash** of text is computed → e.g., `abc123def456`
-3. **Cache check** → `.cache/extractions/{section}_{hash}.json` exists?
-   - **HIT**: Return cached JSON
-   - **MISS**: Call Gemini API
-4. **Response written** to cache directory for future requests
-5. **Console logs** `[CACHE HIT]` or `[CACHE MISS]` per section
-
-### Cache Structure
+### 3-Layer Cache Hierarchy
 
 ```
-frontend/.cache/extractions/
-├── identity_abc123def456.json
-├── operational_abc123def456.json
-├── competitors_abc123def456.json
-├── financial_abc123def456.json
-├── location_abc123def456.json
-├── sentiment_abc123def456.json
-├── score_abc123def456.json
-└── anomalies_abc123def456.json
+Request → File cache (.cache/extractions/{section}_{hash}.json)
+    ↓ MISS
+  Supabase cache (extraction_cache table, 30-day TTL)
+    ↓ MISS
+  Gemini 2.5 Flash Lite API call
+    ↓ RESULT
+  Write to both file cache + Supabase cache
 ```
 
-### Benefits
+### Cache Key Format
+- `{section}_{md5_hash_first_12_chars}` — e.g., `identity_abc123def456`
 
-- **Cost**: Eliminates repeated $$ API calls
-- **Speed**: Instant response on cache hits (~0ms vs 2-3s)
-- **Transparency**: Console logs show cache state
-- **Session-Independent**: Works across sessions/devices
+### Supabase extraction_cache Schema
+```sql
+CREATE TABLE extraction_cache (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  cache_key TEXT NOT NULL UNIQUE,
+  section TEXT NOT NULL,
+  text_hash TEXT NOT NULL,
+  extracted_data JSONB NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  expires_at TIMESTAMPTZ DEFAULT (now() + INTERVAL '30 days')
+);
+```
 
 ---
 
@@ -428,17 +446,25 @@ npm run dev
 
 ### Environment Variables
 
-**Backend** (`.env`):
-- `GEMINI_API_KEY` — Google Generative AI key
-- `PERPLEXITY_API_KEY` — Perplexity API key (optional fallback)
-- `DEMO_MODE_ENABLED` — Enable demo endpoints (true/false)
-- `PRIMARY_PROVIDER` — Default LLM provider (gemini/perplexity)
-- `FALLBACK_PROVIDER` — Fallback provider
-- `CORS_ORIGINS` — Allowed CORS origins (default: http://localhost:3000)
+**Backend** (`backend/.env`):
+| Variable | Required | Description |
+|---|---|---|
+| `GEMINI_API_KEY` | Yes | Google Generative AI key |
+| `PERPLEXITY_API_KEY` | No | Perplexity key (for fallback) |
+| `SUPABASE_URL` | No | Supabase project URL |
+| `SUPABASE_KEY` | No | Supabase anon key |
+| `SUPABASE_ENABLED` | No | Enable Supabase persistence (default: false) |
+| `PRIMARY_PROVIDER` | No | Primary LLM provider (default: gemini) |
+| `FALLBACK_PROVIDER` | No | Fallback provider (default: perplexity) |
+| `AUTO_FALLBACK_ENABLED` | No | Auto-switch on failure (default: true) |
+| `DEMO_MODE_ENABLED` | No | Enable demo endpoints (default: true) |
+| `CORS_ORIGINS` | No | Allowed CORS origins (default: http://localhost:3000) |
 
-**Frontend** (`.env.local`):
-- `NEXT_PUBLIC_API_URL` — Backend URL (default: http://localhost:8000)
-- `GOOGLE_GENERATIVE_AI_API_KEY` — For Vercel AI SDK
+**Frontend** (`frontend/.env.local`):
+| Variable | Required | Description |
+|---|---|---|
+| `NEXT_PUBLIC_API_URL` | No | Backend URL (default: http://localhost:8000) |
+| `GOOGLE_GENERATIVE_AI_API_KEY` | Yes | For Vercel AI SDK extraction |
 
 ### Building for Production
 
@@ -448,42 +474,30 @@ cd frontend
 npm run build
 npm start
 
-# Backend (separate terminal)
+# Backend
 cd backend
 python -m uvicorn main:app --host 0.0.0.0 --port 8000
 ```
 
-### Adding a New Card
+### Adding a New Dashboard Card
 
 1. **Create Zod schema** in `frontend/src/schemas/dashboard.ts`
-2. **Create server action** in `frontend/src/actions/extract.ts`
+2. **Create extraction function** in `frontend/src/actions/extract.ts`
 3. **Create skeleton loader** in `frontend/src/components/dashboard/Skeletons.tsx`
 4. **Create card component** in `frontend/src/components/dashboard/YourCard.tsx`
-5. **Add to demo page** in `frontend/src/app/demo/[id]/page.tsx`
+5. **Wire into pages** — `demo/[id]/page.tsx` and `research/[sessionId]/dashboard/page.tsx`
 
 ---
 
-## 📊 Sample Report Data
+## 📊 Demo Reports
 
-The project includes 3 pre-built demo reports:
+3 pre-built reports in `backend/demo_outputs/PlainTexts/`:
 
-- **DO1.txt**: Sher Service Station (Janakpuri, Delhi)
-- **DO2.txt**: Jay Garud Gas Station (Janakpuri, Delhi)
-- **DO3.txt**: Jai Shree Ganesh Filling Station (NH-44, Delhi)
-
-These are loaded by the backend and serve as test data for the dashboard.
-
----
-
-## 🤝 Contributing
-
-To add features or fix issues:
-
-1. Create a feature branch
-2. Make your changes
-3. Test locally with `python -m nawgati run`
-4. Build: `npm run build` (frontend) + verify backend logs
-5. Submit changes
+| Demo | Station | Brand | Location |
+|---|---|---|---|
+| DO1 | Sher Service Station | IndianOil | Janakpuri, Delhi |
+| DO2 | Jay Garud Gas Station | IndianOil | Janakpuri, Delhi |
+| DO3 | Jai Shree Ganesh Filling Station | BPCL | NH-44, Delhi |
 
 ---
 
@@ -493,13 +507,4 @@ See [LICENSE](LICENSE) file.
 
 ---
 
-## 📞 Support
-
-For questions or issues:
-- Check the [demand.md](demand.md) requirements document
-- Review [mega_prompt.txt](mega_prompt.txt) for system prompt details
-- Inspect backend logs at `/backend/demo_outputs/logs/`
-
----
-
-**Built with ❤️ using Next.js, FastAPI, and Gemini AI**
+**Built with Next.js, FastAPI, Gemini AI, and Supabase**

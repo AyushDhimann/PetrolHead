@@ -131,19 +131,31 @@ class GeminiDeepResearchClient:
         """
         Run deep research with streaming support.
         Calls on_thought/on_text callbacks as data arrives.
-        Supports reconnection on failure.
+        Supports reconnection on failure with wall-clock timeout.
         """
         logger.info(f"[{session_id}] Starting Gemini deep research (streaming mode)")
         start_time = time.time()
+        max_wait_seconds = self.settings.GEMINI_MAX_WAIT_MINUTES * 60
         interaction_id = None
         last_event_id = None
         is_complete = False
+        timed_out = False
         collected_text = []
         thoughts = []
 
+        def _check_timeout() -> bool:
+            """Return True if we've exceeded the wall-clock time limit."""
+            return (time.time() - start_time) > max_wait_seconds
+
         def process_stream(event_stream):
-            nonlocal interaction_id, last_event_id, is_complete
+            nonlocal interaction_id, last_event_id, is_complete, timed_out
             for event in event_stream:
+                # Wall-clock timeout check inside stream processing
+                if _check_timeout():
+                    logger.warning(f"[{session_id}] Streaming timed out after {max_wait_seconds}s (inside stream)")
+                    timed_out = True
+                    return
+
                 if event.event_type == "interaction.start":
                     interaction_id = event.interaction.id
                     logger.info(f"[{session_id}] Interaction started: {interaction_id}")
@@ -173,6 +185,7 @@ class GeminiDeepResearchClient:
         # Initial streaming request
         try:
             logger.info(f"[{session_id}] Creating streaming research request...")
+            logger.info(f"[{session_id}] Max wait: {self.settings.GEMINI_MAX_WAIT_MINUTES} minutes")
             initial_stream = self._client.interactions.create(
                 input=prompt,
                 agent=self.settings.GEMINI_DEEP_RESEARCH_AGENT,
@@ -187,10 +200,16 @@ class GeminiDeepResearchClient:
         except Exception as e:
             logger.warning(f"[{session_id}] Initial stream connection dropped: {e}")
 
-        # Reconnection loop
-        max_retries = 10
+        # Reconnection loop with wall-clock timeout
+        max_retries = 20
         retry_count = 0
-        while not is_complete and interaction_id and retry_count < max_retries:
+        while not is_complete and not timed_out and interaction_id and retry_count < max_retries:
+            # Check timeout before reconnecting
+            if _check_timeout():
+                logger.warning(f"[{session_id}] Streaming timed out after {max_wait_seconds}s (reconnection loop)")
+                timed_out = True
+                break
+
             retry_count += 1
             logger.info(f"[{session_id}] Reconnecting (attempt {retry_count})... from event {last_event_id}")
             time.sleep(2)
@@ -206,12 +225,22 @@ class GeminiDeepResearchClient:
 
         elapsed = time.time() - start_time
         full_text = "".join(collected_text)
-        logger.info(f"[{session_id}] Streaming complete. {len(full_text)} chars in {elapsed:.1f}s")
+
+        if timed_out:
+            logger.warning(f"[{session_id}] Research timed out after {elapsed:.1f}s. "
+                         f"Collected {len(full_text)} chars, {len(thoughts)} thoughts")
+            # If we collected text despite timeout, treat as completed
+            status = "completed" if full_text else "timeout"
+        else:
+            status = "completed" if is_complete and full_text else "failed"
+
+        logger.info(f"[{session_id}] Streaming {'timed out' if timed_out else 'complete'}. "
+                    f"{len(full_text)} chars in {elapsed:.1f}s")
 
         return {
             "text": full_text if full_text else None,
             "interaction_id": interaction_id,
-            "status": "completed" if is_complete and full_text else "failed",
+            "status": status,
             "thoughts": thoughts,
             "time_taken": elapsed,
         }

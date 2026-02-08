@@ -5,6 +5,7 @@ Dashboard Router - Endpoints for serving dashboard data (demo + live).
 from fastapi import APIRouter, HTTPException
 from config.logging_config import get_logger
 from features.dashboard.service import dashboard_service
+from features.session.store import session_store
 
 logger = get_logger("dashboard_router")
 router = APIRouter()
@@ -52,4 +53,15 @@ async def get_live_dashboard(session_id: str):
     return {
         "session_id": session_id,
         "data": data,
+    }
+
+
+@router.get("/past-researches")
+async def list_past_researches():
+    """List all past research sessions (from Supabase or memory)."""
+    # Try Supabase first via session_store
+    sessions = session_store.list_sessions()
+    return {
+        "researches": sessions,
+        "count": len(sessions),
     }

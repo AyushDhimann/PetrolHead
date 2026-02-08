@@ -1,0 +1,254 @@
+{
+  "dashboard_meta": {
+    "report_title": "Fuel Station Intelligence Report",
+    "station_name": "Ambika HP Center",
+    "brand": "HPCL",
+    "location": "Bahang, Manali",
+    "generated_on": "2025-10-27",
+    "data_confidence": 95
+  },
+  "executive_summary": {
+    "objective": "To conduct an exhaustive, multi-layered intelligence investigation across 12 research phases for the HPCL fuel station in Manali.",
+    "scope": "Comprehensive information gathering across all required dimensions.",
+    "status": "Research in progress"
+  },
+  "entity_profile": {
+    "station_name": "Ambika HP Center",
+    "brand": "HPCL (Hindustan Petroleum Corporation Limited)",
+    "location_village": "Bahang",
+    "location_town": "Manali",
+    "location_district": "Kullu",
+    "location_state": "Himachal Pradesh",
+    "regulatory_identifiers": {
+      "gstin_query_status": "Pending",
+      "license_registration_query_status": "Pending",
+      "regulatory_compliance_query_status": "Pending"
+    }
+  },
+  "facility_infrastructure": {
+    "fuel_dispensers": {
+      "query_status": "Pending",
+      "specifications": "Not yet available"
+    },
+    "tank_capacity": {
+      "query_status": "Pending",
+      "specifications": "Not yet available"
+    },
+    "amenities_services": {
+      "query_status": "Pending",
+      "list": []
+    },
+    "fuel_grades_products": {
+      "query_status": "Pending",
+      "available": [],
+      "special_products": [
+        "poWer99"
+      ]
+    }
+  },
+  "location_intelligence": {
+    "village_demographics": {
+      "village_name": "Bahang",
+      "query_status": "Pending",
+      "population": null,
+      "households": null,
+      "income_levels": null
+    },
+    "real_estate": {
+      "area": "Manali",
+      "query_status": "Pending",
+      "property_prices_per_sqft": null
+    },
+    "commercial_activity": {
+      "area": "Manali",
+      "query_status": "Pending",
+      "description": "Includes retail markets and shopping.",
+      "commercial_density_per_capita": null
+    }
+  },
+  "traffic_connectivity": {
+    "nh21_manali": {
+      "query_status": "Pending",
+      "traffic_patterns": "Not yet available",
+      "peak_hours": "Not yet available",
+      "vehicle_count": "Not yet available"
+    },
+    "atral_tunnel": {
+      "query_status": "Pending",
+      "traffic_congestion_data_2025": "Not yet available",
+      "vehicle_entry_data_2025": "Not yet available"
+    },
+    "manali_leh_highway": {
+      "query_status": "Pending",
+      "rohtang_pass_traffic_flow_management": "Not yet available"
+    }
+  },
+  "competitor_analysis": {
+    "nearby_stations": {
+      "radius_km": 3,
+      "area": "Bahang, Manali",
+      "query_status": "Pending",
+      "competitors_identified": [],
+      "major_brands_in_radius": [
+        "Indian Oil",
+        "Reliance",
+        "BPCL"
+      ]
+    },
+    "broader_area_stations": {
+      "areas": [
+        "Vashisht",
+        "Naggar",
+        "Aleo",
+        "Katrain"
+      ],
+      "query_status": "Pending",
+      "stations_identified": []
+    },
+    "competition_density": {
+      "area": "Manali",
+      "query_status": "Pending",
+      "density_per_capita": null
+    }
+  },
+  "customer_intelligence": {
+    "reviews_ratings": {
+      "station_name": "Ambika HP Center, Bahang, Manali",
+      "query_status": "Pending",
+      "overall_rating": null,
+      "review_sources": [
+        "JustDial",
+        "Google Maps"
+      ],
+      "customer_feedback": [],
+      "customer_complaints": {
+        "common_themes": [],
+        "fuel_quality_related": false
+      }
+    }
+  },
+  "hpcl_corporate_financials": {
+    "financial_results": {
+      "period": "Q3 FY26",
+      "query_status": "Pending",
+      "profitability": null,
+      "dealer_margins": null
+    },
+    "dealer_commission": {
+      "year": 2025,
+      "query_status": "Pending",
+      "petrol_commission": null,
+      "diesel_commission": null
+    },
+    "retail_outlet_profitability": {
+      "query_status": "Pending",
+      "operational_costs": null,
+      "net_margins": null
+    }
+  },
+  "industry_context": {
+    "india_petrol_pump_market": {
+      "total_stations": 100000,
+      "major_players": [
+        "IOC",
+        "BPCL",
+        "HPCL"
+      ],
+      "market_share_analysis": "Pending"
+    },
+    "fuel_prices": {
+      "location": "Manali, Himachal Pradesh",
+      "query_status": "Pending",
+      "petrol_price": null,
+      "diesel_price": null,
+      "cng_availability": false
+    },
+    "renewable_energy": {
+      "ev_charging_stations": {
+        "query_status": "Pending",
+        "availability_at_station": false,
+        "hpcl_initiative": true
+      }
+    }
+  },
+  "infrastructure_highway_projects": {
+    "kullu_manali_highway_upgrade": {
+      "project_id": "NHAI",
+      "query_status": "Pending",
+      "cost_rs_crore": 5621,
+      "year_completion_target": 2025
+    },
+    "manali_tourism": {
+      "years": [
+        "2025",
+        "2026"
+      ],
+      "query_status": "Pending",
+      "projected_visitor_numbers": null,
+      "infrastructure_strain_assessment": null
+    },
+    "nh21_manali_road_conditions": {
+      "query_status": "Pending",
+      "conditions": "Not yet available",
+      "seasonal_impacts": [
+        "winter",
+        "monsoon"
+      ],
+      "landslide_risk": null
+    }
+  },
+  "risk_compliance": {
+    "environmental_clearance": {
+      "state": "Himachal Pradesh",
+      "query_status": "Pending",
+      "pollution_control_compliance": null
+    },
+    "fire_safety": {
+      "query_status": "Pending",
+      "compliance_status": null
+    },
+    "consumer_litigation": {
+      "query_status": "Pending",
+      "litigation_status": null
+    },
+    "business_risks": {
+      "primary_risks": [
+        "regulatory non-compliance"
+      ],
+      "state": "Himachal Pradesh",
+      "assessment": "Pending"
+    }
+  },
+  "scorecard": {
+    "overall_station_score": {
+      "scale": "0-100",
+      "score": null,
+      "evaluation_criteria": [
+        "regulatory compliance",
+        "facility quality",
+        "customer satisfaction",
+        "financial performance",
+        "competitive positioning"
+      ],
+      "score_sources": "Aggregated from various research phases"
+    },
+    "competitor_benchmarking_score": {
+      "scale": "0-100",
+      "score": null,
+      "comparison_points": [
+        "market share",
+        "pricing",
+        "service offerings"
+      ]
+    },
+    "regulatory_compliance_score": {
+      "scale": "0-100",
+      "score": null,
+      "assessment_areas": [
+        "licenses",
+        "environmental permits",
+        "safety regulations"
+      ]
+    }
+  }
+}

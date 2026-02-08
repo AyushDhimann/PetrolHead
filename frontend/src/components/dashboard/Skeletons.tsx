@@ -162,3 +162,19 @@ export function AnomaliesSkeleton() {
     </div>
   );
 }
+
+export function PaymentMethodsSkeleton() {
+  return (
+    <div className="rounded-2xl border border-violet-100 bg-white p-6 space-y-4">
+      <Pulse className="h-5 w-40 !bg-violet-50" />
+      <div className="grid grid-cols-2 gap-2">
+        {[...Array(6)].map((_, i) => (
+          <Pulse key={i} className="h-10 w-full rounded-lg !bg-violet-50" />
+        ))}
+      </div>
+      {[...Array(2)].map((_, i) => (
+        <Pulse key={i} className="h-10 w-full rounded-lg !bg-gray-50" />
+      ))}
+    </div>
+  );
+}

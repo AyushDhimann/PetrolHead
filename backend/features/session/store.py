@@ -1,6 +1,6 @@
 """
-Session Store - In-memory session tracking for research progress.
-Thread-safe with expiry support.
+Session Store - In-memory + Supabase session tracking for research progress.
+Thread-safe with write-through persistence.
 """
 
 import threading
@@ -13,12 +13,24 @@ logger = get_logger("session_store")
 
 
 class SessionStore:
-    """Thread-safe in-memory session store with progress tracking."""
+    """Thread-safe session store with Supabase write-through persistence."""
 
     def __init__(self):
         self._sessions: Dict[str, Dict[str, Any]] = {}
         self._results: Dict[str, Dict[str, Any]] = {}
         self._lock = threading.Lock()
+        self._supa = None
+
+    @property
+    def supa(self):
+        """Lazy-load Supabase service (returns None if unavailable)."""
+        if self._supa is None:
+            try:
+                from features.supabase.service import supabase_service
+                self._supa = supabase_service
+            except Exception:
+                self._supa = False
+        return self._supa if self._supa else None
 
     def create_session(self, session_id: str, query: str):
         """Create a new research session."""
@@ -40,6 +52,10 @@ class SessionStore:
                 "created_at": datetime.now().isoformat(),
             }
         logger.info(f"[{session_id}] Session created for query: {query[:80]}...")
+
+        # Persist to Supabase
+        if self.supa:
+            self.supa.create_session(session_id, query)
 
     def update_progress(self, session_id: str, update: Any):
         """Update session progress. Accepts dict or ProgressUpdate."""
@@ -81,6 +97,24 @@ class SessionStore:
                 started = datetime.fromisoformat(session["started_at"])
                 session["time_taken_seconds"] = (datetime.now() - started).total_seconds()
 
+        # Persist progress to Supabase
+        if self.supa:
+            s = self._sessions.get(session_id)
+            if s:
+                self.supa.update_session(session_id, {
+                    "status": s["status"],
+                    "current_message": s["current_message"],
+                    "progress_percent": s["progress_percent"],
+                    "provider": s["provider"],
+                    "thought_summaries": s["thought_summaries"],
+                    "completed_at": s.get("completed_at"),
+                    "time_taken_seconds": s.get("time_taken_seconds"),
+                })
+                self.supa.add_log(
+                    session_id, "progress", s["current_message"],
+                    s["progress_percent"], s["provider"]
+                )
+
     def set_result(self, session_id: str, raw_text: str, json_data: Optional[dict], research_result: Any):
         """Store the final research result."""
         with self._lock:
@@ -101,27 +135,74 @@ class SessionStore:
 
         logger.info(f"[{session_id}] Result stored (json: {json_data is not None})")
 
+        # Persist result to Supabase
+        if self.supa:
+            r = self._results.get(session_id, {})
+            self.supa.save_result(
+                session_id, raw_text, json_data,
+                r.get("provider_used", "unknown"),
+                r.get("fallback_used", False),
+                r.get("fallback_reason"),
+                r.get("time_taken_seconds"),
+            )
+            self.supa.update_session(session_id, {
+                "has_result": True,
+                "fallback_used": r.get("fallback_used", False),
+                "fallback_reason": r.get("fallback_reason"),
+            })
+
     def get_session(self, session_id: str) -> Optional[dict]:
-        """Get session data."""
+        """Get session data (memory first, Supabase fallback)."""
         with self._lock:
-            return self._sessions.get(session_id, None)
+            session = self._sessions.get(session_id)
+            if session:
+                return session
+
+        # Fallback to Supabase
+        if self.supa:
+            db_session = self.supa.get_session(session_id)
+            if db_session:
+                with self._lock:
+                    self._sessions[session_id] = db_session
+                return db_session
+        return None
 
     def get_result(self, session_id: str) -> Optional[dict]:
-        """Get result data."""
+        """Get result data (memory first, Supabase fallback)."""
         with self._lock:
-            return self._results.get(session_id, None)
+            result = self._results.get(session_id)
+            if result:
+                return result
+
+        # Fallback to Supabase
+        if self.supa:
+            db_result = self.supa.get_result(session_id)
+            if db_result:
+                with self._lock:
+                    self._results[session_id] = db_result
+                return db_result
+        return None
 
     def list_sessions(self) -> list:
-        """List all active sessions."""
+        """List all sessions (Supabase preferred, memory fallback)."""
+        if self.supa:
+            db_list = self.supa.list_sessions()
+            if db_list:
+                return db_list
+
         with self._lock:
             return [
                 {
                     "session_id": sid,
                     "query": s.get("query", "")[:80],
                     "status": s.get("status"),
+                    "provider": s.get("provider"),
+                    "fallback_used": s.get("fallback_used", False),
                     "progress_percent": s.get("progress_percent", 0),
                     "has_result": s.get("has_result", False),
                     "started_at": s.get("started_at"),
+                    "completed_at": s.get("completed_at"),
+                    "time_taken_seconds": s.get("time_taken_seconds"),
                 }
                 for sid, s in self._sessions.items()
             ]

@@ -3,18 +3,62 @@
 import { useState, useEffect, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Search, Fuel, Sparkles, ArrowRight, Zap, Globe, BarChart3 } from "lucide-react";
+import { Search, Fuel, Sparkles, ArrowRight, Zap, Globe, BarChart3, Radio } from "lucide-react";
 import Link from "next/link";
 import { api, Demo } from "@/lib/api";
+import { getSessionCookie, clearSessionCookie, saveSessionCookie } from "@/lib/cookies";
 
 export default function HomePage() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [demos, setDemos] = useState<Demo[]>([]);
   const [loading, setLoading] = useState(false);
+  const [activeSession, setActiveSession] = useState<{
+    sessionId: string;
+    query: string;
+    status: string;
+  } | null>(null);
 
   useEffect(() => {
     api.listDemos().then((res) => setDemos(res.demos)).catch(() => {});
+
+    // Check for active research session via cookie
+    const cookie = getSessionCookie();
+    if (cookie && !["completed", "failed"].includes(cookie.status)) {
+      setActiveSession({
+        sessionId: cookie.sessionId,
+        query: cookie.query,
+        status: cookie.status,
+      });
+      // Verify it's still valid
+      api.getSessionStatus(cookie.sessionId).then((s) => {
+        if (["completed", "failed"].includes(s.status)) {
+          setActiveSession(null);
+          if (s.status === "completed") {
+            setActiveSession({
+              sessionId: cookie.sessionId,
+              query: s.query || cookie.query,
+              status: "completed",
+            });
+          }
+        } else {
+          setActiveSession({
+            sessionId: cookie.sessionId,
+            query: s.query || cookie.query,
+            status: s.status,
+          });
+        }
+      }).catch(() => {
+        clearSessionCookie();
+        setActiveSession(null);
+      });
+    } else if (cookie?.status === "completed") {
+      setActiveSession({
+        sessionId: cookie.sessionId,
+        query: cookie.query,
+        status: "completed",
+      });
+    }
   }, []);
 
   async function handleSearch(e: FormEvent) {
@@ -23,6 +67,14 @@ export default function HomePage() {
     setLoading(true);
     try {
       const res = await api.startResearch(query.trim());
+      // Save session cookie immediately so research page can pick it up
+      saveSessionCookie({
+        sessionId: res.session_id,
+        query: query.trim(),
+        status: "pending",
+        startedAt: new Date().toISOString(),
+        provider: res.provider || "unknown",
+      });
       router.push(`/research/${res.session_id}`);
     } catch (err) {
       alert(`Failed to start research: ${err}`);
@@ -32,6 +84,48 @@ export default function HomePage() {
 
   return (
     <div className="relative overflow-hidden">
+      {/* Active Research Banner */}
+      {activeSession && (
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mx-auto max-w-5xl px-4 pt-4 sm:px-6"
+        >
+          <Link href={
+            activeSession.status === "completed"
+              ? `/research/${activeSession.sessionId}/dashboard`
+              : `/research/${activeSession.sessionId}`
+          }>
+            <div className={`flex items-center gap-3 rounded-xl border px-5 py-3.5 shadow-sm transition-all hover:shadow-md ${
+              activeSession.status === "completed"
+                ? "border-emerald-200 bg-emerald-50"
+                : "border-blue-200 bg-blue-50"
+            }`}>
+              {activeSession.status === "completed" ? (
+                <Sparkles className="h-5 w-5 text-emerald-600 shrink-0" />
+              ) : (
+                <Radio className="h-5 w-5 text-blue-600 animate-pulse shrink-0" />
+              )}
+              <div className="flex-1 min-w-0">
+                <p className={`text-sm font-semibold ${
+                  activeSession.status === "completed" ? "text-emerald-800" : "text-blue-800"
+                }`}>
+                  {activeSession.status === "completed"
+                    ? "Research Complete — View Dashboard"
+                    : "Research In Progress"}
+                </p>
+                <p className="text-xs text-gray-600 truncate">
+                  &ldquo;{activeSession.query}&rdquo;
+                </p>
+              </div>
+              <ArrowRight className={`h-4 w-4 shrink-0 ${
+                activeSession.status === "completed" ? "text-emerald-600" : "text-blue-600"
+              }`} />
+            </div>
+          </Link>
+        </motion.div>
+      )}
+
       {/* Hero */}
       <section className="relative mx-auto max-w-5xl px-4 pt-20 pb-16 text-center sm:px-6">
         {/* Background decorations */}

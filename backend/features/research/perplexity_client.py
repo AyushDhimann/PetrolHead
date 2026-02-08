@@ -5,6 +5,7 @@ Uses the Agentic Research API with streaming support.
 
 import json
 import os
+import re
 import time
 import httpx
 from typing import Optional, Callable
@@ -70,6 +71,8 @@ class PerplexityResearchClient:
                 data = response.json()
 
             text = data["choices"][0]["message"]["content"]
+            # Strip <think>...</think> reasoning blocks
+            text = re.sub(r'<think>[\s\S]*?</think>', '', text).strip()
             citations = data.get("citations", [])
             elapsed = time.time() - start_time
 
@@ -155,6 +158,8 @@ class PerplexityResearchClient:
                             continue
 
             full_text = "".join(collected_text)
+            # Strip <think>...</think> reasoning blocks
+            full_text = re.sub(r'<think>[\s\S]*?</think>', '', full_text).strip()
             elapsed = time.time() - start_time
             logger.info(f"[{session_id}] Perplexity streaming complete. {len(full_text)} chars in {elapsed:.1f}s")
 

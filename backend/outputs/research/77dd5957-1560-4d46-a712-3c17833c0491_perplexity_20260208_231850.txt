@@ -1,0 +1,80 @@
+# Research Output
+# Session: 77dd5957-1560-4d46-a712-3c17833c0491
+# Provider: perplexity
+# Timestamp: 2026-02-08T23:18:50.733230
+# Length: 4137 chars
+============================================================
+
+<think>
+The user is asking me to conduct an exhaustive research investigation on a specific fuel station - IndianOil Millennium Petrocare at Lock No 819, Dwarka Sector 9, New Delhi 110077. This is a very detailed and comprehensive research mandate with 12 distinct phases covering everything from regulatory compliance to customer sentiment.
+
+Looking at the search results provided, I have significant information about this station already, but the user's mandate requires me to:
+1. Verify and expand every data point
+2. Cross-reference information across multiple sources
+3. Find competing stations
+4. Analyze financial metrics
+5. Assess regulatory compliance
+6. Evaluate customer sentiment
+7. Provide strategic recommendations
+
+The search results contain:
+- Multiple entries about IndianOil Millennium Petrocare specifically
+- Information about Dwarka location, infrastructure
+- Details about Indian Oil Corporation
+- Information about petrol pump economics
+- Regulatory and compliance details
+- Traffic and transportation data
+- Real estate information about Dwarka Sector 9
+- Information about the metro station and connectivity
+
+However, per my instructions, I need to conduct ADDITIONAL research beyond what's provided to give a truly comprehensive answer. The user specifically warns against "laziness and prematurely stopping" and emphasizes that "every website should be thoroughly examined and scraped."
+
+Since I'm in the information gathering phase and the user has emphasized the need for exhaustive research with 50+ sources, I should make tool calls to systematically gather information on:
+
+1. More detailed regulatory information (GST, licenses, compliance)
+2. Complete competitor analysis with ratings
+3. Detailed financial metrics and benchmarking
+4. Comprehensive review sentiment analysis across platforms
+5. Traffic and accessibility data
+6. Real estate and demographic context
+7. Safety and risk assessment
+8. News and media coverage
+9. Social media presence
+10. Industry benchmarking data
+
+Let me structure my tool calls to systematically gather this information.
+</think>
+
+I acknowledge the comprehensive research mandate for IndianOil Millennium Petrocare, Dwarka Sector 9. The user's directive requires systematic, multi-layered intelligence gathering across 12 strategic phases with minimum 50+ source references. 
+
+I will now execute the information gathering phase systematically across all required dimensions.
+
+<search_query>IndianOil Millennium Petrocare Dwarka Sector 9 reviews ratings JustDial Google Maps</search_query>
+
+<search_query>IndianOil GSTIN license number petroleum ministry compliance Dwarka Delhi</search_query>
+
+<search_query>Dwarka Sector 9 petrol pump competitors Hundred Percent Lamo Kargil Shaheed nearby stations</search_query>
+
+<search_query>Dwarka Sector 9 demographics population income household property rates real estate</search_query>
+
+<search_query>Delhi fuel station profitability dealer commission margins operating costs 2024 2025</search_query>
+
+<search_query>IndianOil petrol pump XP100 XP95 fuel grades available Dwarka Delhi</search_query>
+
+<search_query>Dwarka Sector 9 traffic congestion Blue Line metro accessibility airport distance</search_query>
+
+<search_query>Dwarka Delhi air pollution vehicle scrapping policy PUC certificate requirements 2025 2026</search_query>
+
+<search_query>IndianOil Millennium Petrocare Facebook Instagram social media presence customer service</search_query>
+
+<search_query>Indian Oil petrol pump safety compliance environmental certificate fire NOC regulations</search_query>
+
+<search_query>Dwarka Sector 9 residential complexes commercial areas schools hospitals landmarks</search_query>
+
+<search_query>petrol pump dealer economics India COCO CODO startup costs profitability survey</search_query>
+
+<search_query>IndianOil retail outlet dealership agreement terms commission structure recent revisions</search_query>
+
+<search_query>Dwarka Sector 9 metro station connectivity bus routes accessibility analysis</search_query>
+
+<search_query>fuel station consumer complaints short-fueling quality issues India legal cases</search_query>

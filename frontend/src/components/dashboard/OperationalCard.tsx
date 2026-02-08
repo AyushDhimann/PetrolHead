@@ -30,10 +30,13 @@ export default function OperationalCard({ promise }: Props) {
       <div className="mb-5">
         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Fuel Types</p>
         <div className="space-y-1.5">
-          {data.fuelTypes.map((ft, i) => (
+          {data.fuelTypes.map((ft, i) => {
+            // Normalize category: if name contains CNG (case-insensitive), treat as cng regardless of what the AI returned
+            const normalizedCategory = /cng/i.test(ft.name) ? "cng" : /ev|electric|charg/i.test(ft.name) ? "ev" : ft.category;
+            return (
             <div key={i} className={`flex items-start gap-2 rounded-lg px-3 py-2 text-xs border ${
-              ft.isPremium ? "bg-amber-50 border-amber-200" : ft.category === "cng" ? "bg-green-50 border-green-200"
-              : ft.category === "ev" ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
+              ft.isPremium ? "bg-amber-50 border-amber-200" : normalizedCategory === "cng" ? "bg-green-50 border-green-200"
+              : normalizedCategory === "ev" ? "bg-blue-50 border-blue-200" : "bg-gray-50 border-gray-200"
             }`}>
               <div className="flex items-center gap-1.5">
                 {ft.isPremium && <Zap className="h-3 w-3 text-amber-500" />}
@@ -43,7 +46,8 @@ export default function OperationalCard({ promise }: Props) {
                 <span className="text-gray-500 ml-auto text-[10px] leading-tight max-w-[60%] text-right">{ft.significance}</span>
               )}
             </div>
-          ))}
+          );
+          })}
         </div>
       </div>
 

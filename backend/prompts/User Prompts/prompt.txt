@@ -4,7 +4,7 @@ I need you to conduct an exhaustive, multi-layered intelligence investigation on
 
 ## Research Mandate
 
-You are building a strategic asset intelligence dashboard. This requires complete information archaeology - every data point that exists in the public domain must be discovered, verified, and structured.
+You are building a strategic asset intelligence dashboard. This requires complete information archaeology - every data point that exists in the public domain must be discovered, verified, and structured. Do have a research and dig into the source approach, every website should be thoroughly examined and scraped, getting all the data from any other linked pages too if necessary and this is a must. LAZINESS AND PRE-MATURELY STOPPING WILL NOT BE TOLERATED AND IS NOT ACCEPTABLE. YOU HAVE ALL THE TIME, TOKEN AND RESOURCES YOU NEED TO DO THE RESEARCH.
 
 ## Research Methodology
 
@@ -126,24 +126,6 @@ You are building a strategic asset intelligence dashboard. This requires complet
 
 ## Output Requirements
 
-### JSON Structure Specifications
-- Create logical, hierarchical sections that map naturally to dashboard components
-- Use clear, descriptive key names that indicate data type and purpose
-- Include metadata for every data point where possible: source, date retrieved, confidence level
-- Provide numerical scores, ratings, or metrics wherever qualitative judgments are made
-- Maintain consistent formatting: dates in ISO format, currency with symbols, percentages as decimals
-- Include arrays for multi-item categories (competitors, services, amenities)
-- Nest related information logically (e.g., owner details under entity_profile)
-- Add "notes" or "context" fields to explain complex or ambiguous data points
-
-### Data Quality Standards
-- **Verification**: Cross-reference critical facts across minimum 3 sources
-- **Specificity**: Use exact names, numbers, dates, locations - avoid "approximately" or "around" unless truly uncertain
-- **Completeness**: If information exists but is unavailable, state "Not publicly disclosed" rather than omitting
-- **Recency**: Prioritize most recent data; note data staleness if older than 6 months
-- **Attribution**: For estimated/inferred data, clearly mark as such and explain methodology
-- **Granularity**: Provide ranges when exact figures unavailable (e.g., "₹15,000-20,000" not "around ₹15,000")
-
 ### Research Depth Mandate
 You will systematically visit and extract information from:
 - Official IndianOil locator and corporate website
@@ -171,7 +153,7 @@ You will systematically visit and extract information from:
 - Do NOT stop researching when initial sources are exhausted - dig deeper into niche databases
 
 ### Quality Assurance Checklist
-Before finalizing JSON, verify:
+Please verify:
 - [ ] Regulatory identifiers present (GSTIN, license numbers, approval IDs)
 - [ ] Owner name confirmed with supporting evidence
 - [ ] At least 5 competitors identified with ratings
@@ -188,6 +170,6 @@ Before finalizing JSON, verify:
 
 ## Final Output
 
-Deliver a comprehensive JSON structure representing the complete intelligence profile of this fuel station. The JSON should be immediately parsable by a dashboard UI that dynamically creates bento grid sections. Prioritize information density, accuracy, and actionability over brevity.
+Deliver a comprehensive report representing the complete intelligence profile of this fuel station. The report should be immediately parsable by a dashboard UI that dynamically creates bento grid sections. Prioritize information density, accuracy, and actionability over brevity.
 
 **Your research is the foundation for critical business decisions. Leave no stone unturned.**

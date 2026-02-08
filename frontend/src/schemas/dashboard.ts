@@ -208,3 +208,27 @@ export const AnomaliesSchema = z.object({
 });
 
 export type Anomalies = z.infer<typeof AnomaliesSchema>;
+
+// ─── 9. Payment Methods ────────────────────────────────────────
+
+export const PaymentMethodsSchema = z.object({
+  acceptedMethods: z.array(z.object({
+    method: z.string().describe("Payment method name — 'Cash', 'UPI', 'Credit Card', 'Debit Card', 'Fleet Card', 'Paytm', 'Google Pay', 'PhonePe', etc."),
+    isAvailable: z.boolean().describe("Whether this method is confirmed available"),
+    details: z.string().nullable().describe("Additional details — 'Xtrapower Fleet Card', 'HDFC POS terminal', etc."),
+  })).describe("All payment methods accepted at the station"),
+  digitalPaymentAdoption: z.enum(["High", "Medium", "Low", "Unknown"]).describe("Overall digital payment adoption level"),
+  fleetCards: z.array(z.object({
+    name: z.string().describe("Fleet card name — 'Xtrapower', 'SmartDrive', 'HPCL DriveTrack'"),
+    provider: z.string().nullable().describe("Issuing company"),
+    details: z.string().nullable().describe("Any specifics about the fleet card program"),
+  })).describe("Fleet card programs accepted"),
+  loyaltyPrograms: z.array(z.object({
+    name: z.string().describe("Loyalty program name"),
+    details: z.string().nullable().describe("Program details — points, rewards, partnerships"),
+  })).describe("Loyalty/rewards programs available"),
+  posInfrastructure: z.string().nullable().describe("POS terminal details — brand, count, capabilities"),
+  paymentNotes: z.array(z.string()).describe("Additional notes about payment — minimum transaction limits, surcharges, etc."),
+});
+
+export type PaymentMethods = z.infer<typeof PaymentMethodsSchema>;

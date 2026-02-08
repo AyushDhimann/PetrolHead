@@ -21,6 +21,21 @@ import {
   updateSessionCookieStatus,
 } from "@/lib/cookies";
 
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+
+/** Extract **bold headline** from a thought summary string */
+function extractHeadline(thought: string): { headline: string; body: string } {
+  const match = thought.match(/\*\*(.+?)\*\*/);
+  if (match) {
+    const headline = match[1];
+    const body = thought.replace(/\*\*.+?\*\*/, "").replace(/^\s*\n*/, "").trim();
+    return { headline, body };
+  }
+  // No bold headline — use first sentence
+  const firstSentence = thought.split(/[.\n]/)[0]?.trim() || thought.slice(0, 80);
+  return { headline: firstSentence, body: thought.slice(firstSentence.length).trim() };
+}
+
 export default function ResearchProgressPage() {
   const params = useParams();
   const router = useRouter();
@@ -28,13 +43,25 @@ export default function ResearchProgressPage() {
 
   const [session, setSession] = useState<SessionStatus | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [logs, setLogs] = useState<string[]>([]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const sseRef = useRef<EventSource | null>(null);
 
   const poll = useCallback(async () => {
     try {
       const status = await api.getSessionStatus(sessionId);
       setSession(status);
       updateSessionCookieStatus(status.status);
+
+      // Add current message to logs (dedup)
+      if (status.current_message) {
+        setLogs((prev) => {
+          if (prev.length === 0 || prev[prev.length - 1] !== status.current_message) {
+            return [...prev, status.current_message].slice(-30);
+          }
+          return prev;
+        });
+      }
 
       if (status.status === "completed" || status.status === "failed") {
         if (intervalRef.current) {
@@ -47,17 +74,79 @@ export default function ResearchProgressPage() {
     }
   }, [sessionId]);
 
+  // SSE primary with polling fallback
   useEffect(() => {
-    // Initial fetch
-    poll();
+    let fallbackToPolling = false;
 
-    // Poll every 2 seconds
-    intervalRef.current = setInterval(poll, 2000);
+    try {
+      const source = new EventSource(
+        `${API_BASE}/api/research/stream/${sessionId}`
+      );
+      sseRef.current = source;
+
+      source.addEventListener("progress", (e) => {
+        const data = JSON.parse(e.data) as SessionStatus;
+        setSession(data);
+        updateSessionCookieStatus(data.status);
+        if (data.current_message) {
+          setLogs((prev) => {
+            if (prev.length === 0 || prev[prev.length - 1] !== data.current_message) {
+              return [...prev, data.current_message].slice(-30);
+            }
+            return prev;
+          });
+        }
+        // Also add thought summaries as they come in
+        if (data.thought_summaries && data.thought_summaries.length > 0) {
+          const latestThought = data.thought_summaries[data.thought_summaries.length - 1];
+          if (latestThought) {
+            const headlineMatch = latestThought.match(/\*\*(.+?)\*\*/);
+            const display = headlineMatch ? `[AI] ${headlineMatch[1]}` : `[AI] ${latestThought.slice(0, 150)}`;
+            setLogs((prev) => {
+              if (prev.length === 0 || prev[prev.length - 1] !== display) {
+                return [...prev, display].slice(-30);
+              }
+              return prev;
+            });
+          }
+        }
+      });
+
+      source.addEventListener("done", (e) => {
+        const data = JSON.parse(e.data) as SessionStatus;
+        setSession(data);
+        updateSessionCookieStatus(data.status);
+        if (data.current_message) {
+          setLogs((prev) => {
+            if (prev.length === 0 || prev[prev.length - 1] !== data.current_message) {
+              return [...prev, data.current_message].slice(-30);
+            }
+            return prev;
+          });
+        }
+        source.close();
+      });
+
+      source.onerror = () => {
+        source.close();
+        if (!fallbackToPolling) {
+          fallbackToPolling = true;
+          // Fall back to polling
+          poll();
+          intervalRef.current = setInterval(poll, 2000);
+        }
+      };
+    } catch {
+      // SSE not supported, fall back to polling
+      poll();
+      intervalRef.current = setInterval(poll, 2000);
+    }
 
     return () => {
+      sseRef.current?.close();
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [poll]);
+  }, [sessionId, poll]);
 
   // Save session cookie on first load
   useEffect(() => {
@@ -93,7 +182,7 @@ export default function ResearchProgressPage() {
     );
   }
 
-  const isRunning = session.status === "researching" || session.status === "converting" || session.status === "pending";
+  const isRunning = ["pending", "started", "researching", "streaming", "processing", "converting"].includes(session.status);
   const isComplete = session.status === "completed";
   const isFailed = session.status === "failed";
 
@@ -179,29 +268,76 @@ export default function ResearchProgressPage() {
           )}
         </div>
 
+        {/* Live Streaming Logs */}
+        {logs.length > 0 && (
+          <div className="rounded-xl border border-gray-200 bg-gray-900 p-5 shadow-sm">
+            <div className="flex items-center gap-2 mb-3">
+              <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
+              <h2 className="text-sm font-semibold text-gray-300">Live Progress</h2>
+            </div>
+            <div className="space-y-1 max-h-48 overflow-y-auto font-mono text-xs">
+              {logs.map((log, i) => (
+                <div key={i} className="text-gray-400">
+                  <span className="text-gray-600 mr-2">[{String(i + 1).padStart(2, "0")}]</span>
+                  <span className={i === logs.length - 1 ? "text-green-400" : ""}>{log}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Thought Summaries */}
         {session.thought_summaries.length > 0 && (
           <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
             <div className="flex items-center gap-2 mb-4">
               <Brain className="h-5 w-5 text-purple-500" />
               <h2 className="font-semibold text-gray-900">AI Thinking Process</h2>
+              <span className="ml-auto text-xs text-gray-400 font-mono">
+                {session.thought_summaries.length} thoughts
+              </span>
             </div>
-            <div className="space-y-3 max-h-80 overflow-y-auto">
+            <div className="space-y-3 max-h-[420px] overflow-y-auto pr-1">
               <AnimatePresence>
-                {session.thought_summaries.map((thought, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="flex gap-3 text-sm"
-                  >
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-purple-100 text-[10px] font-bold text-purple-600">
-                      {i + 1}
-                    </span>
-                    <p className="text-gray-600 leading-relaxed">{thought}</p>
-                  </motion.div>
-                ))}
+                {session.thought_summaries.map((thought, i) => {
+                  const { headline, body } = extractHeadline(thought);
+                  const isLatest = i === session.thought_summaries.length - 1;
+                  return (
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className={`flex gap-3 rounded-lg px-3 py-2.5 transition-colors ${
+                        isLatest
+                          ? "bg-purple-50 border border-purple-200"
+                          : "hover:bg-gray-50"
+                      }`}
+                    >
+                      <span className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${
+                        isLatest
+                          ? "bg-purple-500 text-white"
+                          : "bg-purple-100 text-purple-600"
+                      }`}>
+                        {i + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className={`text-sm font-semibold ${
+                          isLatest ? "text-purple-900" : "text-gray-800"
+                        }`}>
+                          {headline}
+                        </p>
+                        {body && (
+                          <p className="text-xs text-gray-500 mt-0.5 line-clamp-2 leading-relaxed">
+                            {body}
+                          </p>
+                        )}
+                      </div>
+                      {isLatest && isRunning && (
+                        <div className="h-2 w-2 rounded-full bg-purple-400 animate-pulse mt-2 shrink-0" />
+                      )}
+                    </motion.div>
+                  );
+                })}
               </AnimatePresence>
             </div>
           </div>
@@ -211,7 +347,7 @@ export default function ResearchProgressPage() {
         <div className="flex justify-center gap-3">
           {isComplete && session.has_result && (
             <button
-              onClick={() => router.push(`/dashboard/${sessionId}`)}
+              onClick={() => router.push(`/research/${sessionId}/dashboard`)}
               className="flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md hover:shadow-lg transition-all"
             >
               View Dashboard

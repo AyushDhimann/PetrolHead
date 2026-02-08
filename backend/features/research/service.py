@@ -153,9 +153,13 @@ class ResearchService:
 
         def on_thought(thought):
             thoughts_collected.append(thought)
+            # Asymptotic progress: approaches 78% as thoughts accumulate
+            # Formula: 15 + 63 * (1 - 1/(1 + count * 0.12))
+            count = len(thoughts_collected)
+            progress = int(15 + 63 * (1 - 1 / (1 + count * 0.12)))
             self._update_session(
                 session_id, ResearchStatus.STREAMING,
-                thought[:200], min(70, 20 + len(thoughts_collected) * 5),
+                thought[:200], progress,
                 provider, thought,
             )
 

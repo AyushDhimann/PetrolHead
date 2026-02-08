@@ -18,6 +18,7 @@ from features.research.router import router as research_router
 from features.converter.router import router as converter_router
 from features.dashboard.router import router as dashboard_router
 from features.session.router import router as session_router
+from features.cache.router import router as cache_router
 
 
 @asynccontextmanager
@@ -68,6 +69,7 @@ app.include_router(research_router, prefix="/api/research", tags=["Research"])
 app.include_router(converter_router, prefix="/api/converter", tags=["Converter"])
 app.include_router(dashboard_router, prefix="/api/dashboard", tags=["Dashboard"])
 app.include_router(session_router, prefix="/api/session", tags=["Session"])
+app.include_router(cache_router, prefix="/api/cache", tags=["Cache"])
 
 
 @app.get("/api/health")

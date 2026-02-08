@@ -3,8 +3,11 @@ Research Router - FastAPI endpoints for deep research operations.
 """
 
 import uuid
+import json as _json
 import asyncio
 from fastapi import APIRouter, BackgroundTasks, HTTPException
+
+from sse_starlette.sse import EventSourceResponse
 
 from config.settings import get_settings
 from config.logging_config import get_logger
@@ -43,38 +46,34 @@ async def start_research(request: ResearchRequest, background_tasks: BackgroundT
 
 
 async def _run_research_pipeline(session_id: str, query: str):
-    """Full pipeline: research → convert → save."""
+    """Full pipeline: research → (optional convert) → save."""
+    settings = get_settings()
     try:
         # Step 1: Deep research
         result = await research_service.run_research(query, session_id)
 
         if result.status == ResearchStatus.COMPLETED and result.raw_text:
-            # Step 2: Convert to JSON
+            json_data = None
+
+            # Step 2: Convert to JSON (only if converter is enabled)
+            if settings.CONVERTER_ENABLED:
+                session_store.update_progress(session_id, {
+                    "status": ResearchStatus.CONVERTING,
+                    "message": "Converting research report to dashboard JSON...",
+                    "progress_percent": 85,
+                })
+
+                json_data = await converter_service.convert_to_dashboard_json(
+                    result.raw_text, session_id
+                )
+
+            # Store result (raw_text is always saved; json_data may be None)
+            session_store.set_result(session_id, result.raw_text, json_data, result)
             session_store.update_progress(session_id, {
-                "status": ResearchStatus.CONVERTING,
-                "message": "Converting research report to dashboard JSON...",
-                "progress_percent": 85,
+                "status": ResearchStatus.COMPLETED,
+                "message": "Research complete! Dashboard ready.",
+                "progress_percent": 100,
             })
-
-            json_data = await converter_service.convert_to_dashboard_json(
-                result.raw_text, session_id
-            )
-
-            if json_data:
-                session_store.set_result(session_id, result.raw_text, json_data, result)
-                session_store.update_progress(session_id, {
-                    "status": ResearchStatus.COMPLETED,
-                    "message": "Dashboard ready!",
-                    "progress_percent": 100,
-                })
-            else:
-                # JSON conversion failed, still mark as completed with raw text
-                session_store.set_result(session_id, result.raw_text, None, result)
-                session_store.update_progress(session_id, {
-                    "status": ResearchStatus.COMPLETED,
-                    "message": "Research complete (JSON conversion pending)",
-                    "progress_percent": 95,
-                })
         else:
             session_store.update_progress(session_id, {
                 "status": ResearchStatus.FAILED,
@@ -126,3 +125,28 @@ async def get_research_result(session_id: str):
         "fallback_reason": result.get("fallback_reason"),
         "time_taken_seconds": result.get("time_taken_seconds"),
     }
+
+
+@router.get("/stream/{session_id}")
+async def stream_research_progress(session_id: str):
+    """SSE endpoint for real-time research progress updates."""
+    session = session_store.get_session(session_id)
+    if not session:
+        raise HTTPException(status_code=404, detail="Session not found")
+
+    async def event_generator():
+        while True:
+            s = session_store.get_session(session_id)
+            if not s:
+                yield {"event": "error", "data": _json.dumps({"error": "Session not found"})}
+                break
+
+            yield {"event": "progress", "data": _json.dumps(s, default=str)}
+
+            if s.get("status") in ("completed", "failed"):
+                yield {"event": "done", "data": _json.dumps(s, default=str)}
+                break
+
+            await asyncio.sleep(1.5)
+
+    return EventSourceResponse(event_generator())

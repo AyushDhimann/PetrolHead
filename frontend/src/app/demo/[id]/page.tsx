@@ -11,6 +11,7 @@ import {
   getSentimentData,
   getScoreData,
   getAnomaliesData,
+  getPaymentMethodsData,
 } from "@/actions/extract";
 
 import IdentityCard from "@/components/dashboard/IdentityCard";
@@ -21,6 +22,7 @@ import LocationCard from "@/components/dashboard/LocationCard";
 import SentimentCard from "@/components/dashboard/SentimentCard";
 import ScoreCard from "@/components/dashboard/ScoreCard";
 import AnomaliesCard from "@/components/dashboard/AnomaliesCard";
+import PaymentMethodsCard from "@/components/dashboard/PaymentMethodsCard";
 import ChatWidget from "@/components/dashboard/ChatWidget";
 import {
   IdentitySkeleton,
@@ -31,6 +33,7 @@ import {
   SentimentSkeleton,
   ScoreSkeleton,
   AnomaliesSkeleton,
+  PaymentMethodsSkeleton,
 } from "@/components/dashboard/Skeletons";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
@@ -77,6 +80,7 @@ export default async function DemoDashboardPage({ params }: Props) {
   const sentimentPromise = getSentimentData(text);
   const scorePromise = getScoreData(text);
   const anomaliesPromise = getAnomaliesData(text);
+  const paymentMethodsPromise = getPaymentMethodsData(text);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
@@ -136,8 +140,13 @@ export default async function DemoDashboardPage({ params }: Props) {
           </Suspense>
         </div>
 
-        {/* Row 4: Anomalies (full width) */}
-        <div className="lg:col-span-3">
+        {/* Row 4: Payment Methods (1 col) + Anomalies (2 cols) */}
+        <div>
+          <Suspense fallback={<PaymentMethodsSkeleton />}>
+            <PaymentMethodsCard promise={paymentMethodsPromise} />
+          </Suspense>
+        </div>
+        <div className="lg:col-span-2">
           <Suspense fallback={<AnomaliesSkeleton />}>
             <AnomaliesCard promise={anomaliesPromise} />
           </Suspense>
