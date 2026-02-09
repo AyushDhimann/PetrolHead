@@ -197,6 +197,7 @@ def prompt_for_credentials():
 
 def create_env_file(root, credentials):
     """Create .env file in backend directory."""
+    import re
     log_step("Creating backend/.env file...")
     env_file = root / "backend" / ".env"
 
@@ -214,28 +215,25 @@ def create_env_file(root, credentials):
 
     # Read example file and update with user credentials
     with open(env_example, 'r') as f:
-        env_content = f.read()
+        lines = f.readlines()
 
-    # Replace placeholders with actual values
-    env_content = env_content.replace(
-        "GEMINI_API_KEY=your_google_api_key_here",
-        f"GEMINI_API_KEY={credentials.get('GEMINI_API_KEY', 'your_google_api_key_here')}"
-    )
-    env_content = env_content.replace(
-        "PERPLEXITY_API_KEY=your_perplexity_key_here",
-        f"PERPLEXITY_API_KEY={credentials.get('PERPLEXITY_API_KEY', 'your_perplexity_key_here')}"
-    )
-    env_content = env_content.replace(
-        "SUPABASE_URL=your_supabase_url",
-        f"SUPABASE_URL={credentials.get('SUPABASE_URL', 'your_supabase_url')}"
-    )
-    env_content = env_content.replace(
-        "SUPABASE_KEY=your_supabase_anon_key",
-        f"SUPABASE_KEY={credentials.get('SUPABASE_KEY', 'your_supabase_anon_key')}"
-    )
+    # Process each line and replace values if credentials exist
+    updated_lines = []
+    for line in lines:
+        # Check if this line contains a key we need to update
+        if line.strip().startswith('GEMINI_API_KEY=') and credentials.get('GEMINI_API_KEY'):
+            updated_lines.append(f"GEMINI_API_KEY={credentials['GEMINI_API_KEY']}\n")
+        elif line.strip().startswith('PERPLEXITY_API_KEY=') and credentials.get('PERPLEXITY_API_KEY'):
+            updated_lines.append(f"PERPLEXITY_API_KEY={credentials['PERPLEXITY_API_KEY']}\n")
+        elif line.strip().startswith('SUPABASE_URL=') and credentials.get('SUPABASE_URL'):
+            updated_lines.append(f"SUPABASE_URL={credentials['SUPABASE_URL']}\n")
+        elif line.strip().startswith('SUPABASE_KEY=') and credentials.get('SUPABASE_KEY'):
+            updated_lines.append(f"SUPABASE_KEY={credentials['SUPABASE_KEY']}\n")
+        else:
+            updated_lines.append(line)
 
     with open(env_file, 'w') as f:
-        f.write(env_content)
+        f.writelines(updated_lines)
 
     log_success("backend/.env created")
     return True
