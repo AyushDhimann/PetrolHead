@@ -35,8 +35,9 @@ import {
   AnomaliesSkeleton,
   PaymentMethodsSkeleton,
 } from "@/components/dashboard/Skeletons";
+import { getApiBase } from "@/lib/api-base";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
+const API_BASE = getApiBase();
 
 async function fetchSessionText(sessionId: string): Promise<{
   text: string;

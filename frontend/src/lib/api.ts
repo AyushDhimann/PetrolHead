@@ -2,7 +2,7 @@
  * API Client - Communicates with the PetrolHead FastAPI backend
  */
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
+import { API_BASE } from './api-base';
 
 async function fetchApi<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {

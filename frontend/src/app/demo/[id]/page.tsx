@@ -35,8 +35,9 @@ import {
   AnomaliesSkeleton,
   PaymentMethodsSkeleton,
 } from "@/components/dashboard/Skeletons";
+import { getApiBase } from "@/lib/api-base";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
+const API_BASE = getApiBase();
 
 async function fetchDemoText(demoId: string): Promise<string> {
   const res = await fetch(`${API_BASE}/api/dashboard/demo/${demoId}/text`, {
