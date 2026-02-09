@@ -13,6 +13,7 @@
 ## 📋 Table of Contents
 
 - [Overview](#overview)
+- [Demos](#demos)
 - [Architecture](#architecture)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -50,7 +51,31 @@ PetrolHead is a full-stack intelligence platform that conducts deep AI research 
 
 ---
 
-## 🏗 Architecture
+## � Demos
+
+### 🌐 Live Demo
+**Experience the platform in action:** [https://petrolhead.ayushdhiman.dev/demos](https://petrolhead.ayushdhiman.dev/demos)
+
+### 📹 Visual Walkthroughs
+
+#### Website Demo
+![Website Demo](demo_results/Website%20Demo.gif)
+> ⚠️ **Note:** This GIF is 17MB and may take a moment to load. Shows the full workflow from research initiation to dashboard exploration.
+
+#### Chat Demo
+![Chat Demo](demo_results/Chat.gif)
+> Interactive agentic chat interface for real-time query handling and insight discovery.
+
+### 📄 Detailed Demo Guides (PDFs)
+Comprehensive walkthroughs with annotated screenshots and step-by-step explanations:
+
+- **[Updated Demo 1: Fuel Station Intelligence](demo_results/Updated%20Demo%201%20Fuel%20Station%20Intelligence.pdf)** — Initial research setup and basic extraction
+- **[Updated Demo 2: Fuel Station Intelligence](demo_results/Updated%20Demo%202%20Fuel%20Station%20Intelligence.pdf)** — Advanced dashboard features and filtering
+- **[Updated Demo 3: Fuel Station Intelligence](demo_results/Updated%20Demo%203%20Fuel%20Station%20Intelligence.pdf)** — Chat interface and custom queries
+
+---
+
+## �🏗 Architecture
 
 ```
 User Query / Google Maps URL
