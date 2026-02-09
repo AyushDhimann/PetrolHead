@@ -75,7 +75,9 @@ export default function HomePage() {
         startedAt: new Date().toISOString(),
         provider: res.provider || "unknown",
       });
-      router.push(`/research/${res.session_id}`);
+      const targetUrl = `/research/${res.session_id}`;
+      // Use window.location for reliable navigation
+      window.location.href = targetUrl;
     } catch (err) {
       alert(`Failed to start research: ${err}`);
       setLoading(false);

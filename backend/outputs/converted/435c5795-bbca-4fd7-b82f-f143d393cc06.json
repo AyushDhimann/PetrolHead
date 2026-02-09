@@ -1,0 +1,447 @@
+{
+  "dashboard_meta": {
+    "report_title": "Strategic Asset Intelligence Dashboard: IndianOil Sakthi Fuel Agencies, Ooty",
+    "station_name": "IndianOil Sakthi Fuel Agencies",
+    "brand": "IndianOil",
+    "location": "Charing Cross, Udhagamandalam (Ooty), Tamil Nadu",
+    "generated_on": "2024-07-29",
+    "data_confidence": "High"
+  },
+  "executive_summary": {
+    "asset_name": "IndianOil Sakthi Fuel Agencies",
+    "classification": "High-Value Retail Asset (Premium Fuel Corridor)",
+    "strategic_importance": "Critical node in Nilgiris district fuel network, positioned at high-traffic Charing Cross.",
+    "key_distinction": "High-performance fuel retailer (XP100, XP95), serving local premium vehicle owners and tourist traffic.",
+    "strengths": [
+      "Unbeatable location",
+      "Premium product mix",
+      "Strong fundamental economics"
+    ],
+    "challenges": [
+      "Severe traffic congestion at ingress/egress",
+      "Documented gaps in amenity compliance (sanitation facilities)"
+    ],
+    "ownership": "Partnership Firm (Messrs M. Thirumoorthy & C. Prasathkrishnan)",
+    "regulatory_status": "Active with GST and petroleum licensing authorities."
+  },
+  "entity_profile": {
+    "legal_entity_name": "Sakthi Fuel Agencies",
+    "trade_name": "Sakthi Fuel Agencies",
+    "ownership_structure": {
+      "type": "Partnership Firm",
+      "partners": [
+        {
+          "name": "M. Thirumoorthy",
+          "alias": "Mathan"
+        },
+        {
+          "name": "C. Prasathkrishnan",
+          "alias": "Chinna Thambi"
+        }
+      ]
+    },
+    "corporate_mapping": {
+      "parent_company": "Indian Oil Corporation Limited (IOCL)",
+      "model": "Dealer Owned Dealer Operated (DODO) - inferred"
+    },
+    "regulatory_identifiers": {
+      "gstin": "33AALFS4901K1Z3",
+      "gst_status": "Active",
+      "taxpayer_type": "Regular",
+      "tin": "33512520744",
+      "iocl_retail_outlet_codes": [
+        "134072",
+        "TN-0303"
+      ],
+      "civil_supplies_license_lock_no": "Lock No. 320"
+    },
+    "addresses": {
+      "official_registered": "Rs No 1691/3, Nilgiri Charing Cross, Ooty - 643001",
+      "alternate_regulatory": "129/A, Coonoor Road, Ooty, Nilgiris - 643001",
+      "address_duality_note": "The duality in address reflects the station's physical location at the convergence of Charing Cross and Coonoor Road. Regulatory filings often cite the survey number, while trade directories may use the road name."
+    }
+  },
+  "operational_infrastructure": {
+    "physical_assets_layout": {
+      "geolocation_coordinates": {
+        "latitude": 11.410467,
+        "longitude": 76.711571
+      },
+      "location_triangulation": "Situated immediately near Adam's Fountain and the Gandhi Statue at the Charing Cross junction. Primary entry point for traffic from Coonoor/Mettupalayam.",
+      "facility_configuration": {
+        "canopy": "Standard IndianOil RVI (Retail Visual Identity) canopy present.",
+        "automation": "Fully automated pumping units supported by IOCL’s central server.",
+        "parking": "Kerbside Parking available, though heavily constrained by junction traffic."
+      }
+    },
+    "product_portfolio": {
+      "distinction": "Premium fuel inventory catering to high-end tourism and performance bikes.",
+      "petrol_variants": [
+        {
+          "name": "XP100",
+          "octane": 100,
+          "description": "Ultra-premium petrol for high-compression engines. One of the few outlets in the district offering this."
+        },
+        {
+          "name": "XP95",
+          "octane": 95,
+          "description": "Premium petrol."
+        },
+        {
+          "name": "Regular Petrol (MS)",
+          "description": "Standard unleaded petrol."
+        }
+      ],
+      "diesel_variants": [
+        {
+          "name": "XtraGreen",
+          "description": "High-performance, eco-friendly diesel."
+        },
+        {
+          "name": "Regular Diesel (HSD)",
+          "description": "Standard high-speed diesel."
+        }
+      ],
+      "alternative_fuels": [
+        {
+          "type": "AutoGas",
+          "description": "LPG for vehicles."
+        },
+        {
+          "type": "CNG",
+          "description": "Compressed Natural Gas availability listed in station tags."
+        }
+      ],
+      "lubricants": "SERVO grade lubricants stocked."
+    },
+    "service_amenities": {
+      "payment_infrastructure": [
+        "Cash",
+        "Credit/Debit Cards (Master/Visa/Rupay)",
+        "UPI/Online Payments"
+      ],
+      "sanitation": {
+        "official_listing": [
+          "Separate Toilet",
+          "Washroom"
+        ],
+        "risk_alert": {
+          "description": "Verified customer review from Dec 2023 stated 'Toilet not available', indicating a potential compliance gap or maintenance failure.",
+          "severity": "High"
+        }
+      },
+      "utilities": [
+        "Free Air/Nitrogen",
+        "Clean Drinking Water"
+      ],
+      "digital_services": [
+        "Integrated with IndianOil's 'Fuel at Call' service for door-to-door diesel delivery."
+      ]
+    },
+    "operating_hours": {
+      "standard_schedule": "06:00 AM to 10:00 PM (Mon-Sun)",
+      "twenty_four_seven_status": "Not a 24-hour station."
+    }
+  },
+  "financial_metrics": {
+    "revenue_drivers": [
+      {
+        "description": "High-margin sales of XP100 and XP95 significantly boost gross margins per liter.",
+        "premium_product_pricing": "XP100 is priced significantly higher, targeting affluent tourists and superbike clubs."
+      },
+      {
+        "description": "Volume Estimation",
+        "catchment_flow": "Charing Cross handles the bulk of the 2.5 million+ annual tourist traffic entering the Nilgiris.",
+        "throughput_potential": "Estimated daily sales volume is likely in the top decile for the district due to the choke-point location.",
+        "diesel_delivery_stream": "'Fuel at Call' service provides a B2B revenue stream supplying diesel to nearby hotels, resorts, and tea factories for generator fuel."
+      }
+    ],
+    "cost_structure_margins": {
+      "dealer_commission_oct_2024": {
+        "petrol": {
+          "per_kl": 1868.14,
+          "percentage_billable_price": 0.875,
+          "recent_hike_per_liter": 0.65
+        },
+        "diesel": {
+          "per_kl": 1389.35,
+          "percentage_billable_price": 0.28,
+          "recent_hike_per_liter": 0.44
+        }
+      },
+      "real_estate_overhead_estimate": {
+        "commercial_land_rates_charing_cross": "₹9,700 - ₹12,000 per sq. ft.",
+        "note": "If land is owned, this represents massive equity. If leased, rental overheads would be substantial."
+      }
+    }
+  },
+  "market_dynamics": {
+    "micro_market_description": "Oligopoly of PSU retailers clustered around the Charing Cross/Commercial Road hub.",
+    "primary_competitors": [
+      {
+        "competitor_name": "Nilgiris Petroleum & Co",
+        "brand": "HPCL",
+        "distance_km": 0.05,
+        "rating_score": 3.9,
+        "rating_count": 165,
+        "strengths": [
+          "Immediate proximity (adjacent)",
+          "Higher review volume",
+          "High visibility"
+        ]
+      },
+      {
+        "competitor_name": "Sree R. Geetha Agencies",
+        "brand": "HPCL",
+        "distance_km": 0.05,
+        "rating_score": 3.5,
+        "rating_count": 8,
+        "strengths": [
+          "Located on Church Hill Lane",
+          "Secondary option for spillover traffic"
+        ]
+      },
+      {
+        "competitor_name": "Bharat Petrol (Upper Bazaar)",
+        "brand": "BPCL",
+        "distance_km": 0.075,
+        "rating_score": 3.7,
+        "rating_count": 199,
+        "strengths": [
+          "Strong presence in Upper Bazaar",
+          "Competitive pricing perception"
+        ]
+      },
+      {
+        "competitor_name": "C Govindan & Co",
+        "brand": "HPCL",
+        "distance_km": 0.79,
+        "rating_score": 4.0,
+        "rating_count": 213,
+        "strengths": [
+          "High rating",
+          "24-hour operations listed",
+          "Strong lubricant sales"
+        ]
+      },
+      {
+        "competitor_name": "Hill Pump Station",
+        "brand": "BPCL/Pvt",
+        "distance_km": 1.3,
+        "rating_score": 3.8,
+        "rating_count": 819,
+        "strengths": [
+          "High volume leader on Club Road",
+          "Massive review count suggests fleet preference"
+        ]
+      }
+    ],
+    "competitive_positioning": {
+      "unique_selling_proposition": "The only IOCL outlet right at the main Charing Cross junction, with a monopoly on XP100 availability in this micro-cluster, attracting luxury travelers.",
+      "threat_vectors": [
+        "Nilgiris Petroleum (HPCL) is virtually next door with a higher rating (3.9 vs 3.3).",
+        "Customer migration risk due to service issues (e.g., toilet complaint)."
+      ]
+    }
+  },
+  "location_intelligence": {
+    "catchment_profile": {
+      "urban_classification": "Primary Commercial Hub. Charing Cross is the 'Times Square' of Ooty, a convergence point.",
+      "demographic_mix": [
+        {
+          "segment": "Transients",
+          "percentage": "70-80%",
+          "description": "Tourists (cars/bikes) entering town."
+        },
+        {
+          "segment": "Locals",
+          "description": "Taxi operators and tea estate vehicles."
+        },
+        {
+          "segment": "Commercial",
+          "description": "Delivery trucks servicing the Commercial Road market."
+        }
+      ]
+    },
+    "commercial_ecosystem": {
+      "nearby_traffic_generators": [
+        {
+          "name": "Nahar's Hotel",
+          "distance_m": 140
+        },
+        {
+          "name": "Hotel Junior Kuppanna",
+          "distance_m": 140
+        },
+        {
+          "name": "Hotel Blue Hills",
+          "distance_m": 110
+        },
+        {
+          "name": "Breeks Memorial School"
+        },
+        {
+          "name": "Adam's Fountain (Tourism landmark)"
+        },
+        {
+          "name": "Tibetan Market"
+        },
+        {
+          "name": "Upper Bazaar"
+        }
+      ]
+    }
+  },
+  "traffic_and_accessibility": {
+    "congestion_dynamics": {
+      "severity": "Critical. Charing Cross has chaotic traffic conditions and is a 'picture of neglect'.",
+      "ingress_egress_risks": [
+        "The junction connects 5 roads; police barricades and illegal parking often obstruct flow.",
+        "Traffic Jams: During peak season, a 1km stretch can take 1 hour, severely impacting station's ability to process vehicles ('Refueling Latency')."
+      ],
+      "one_way_systems": "Police frequently enforce circular one-way traffic during peak season, which can funnel traffic into or away from the station depending on routing enforcement."
+    }
+  },
+  "customer_intelligence": {
+    "sentiment_analysis": {
+      "aggregate_rating": {
+        "justdial": "3.3/5.0",
+        "iocl_internal_google_samples": "4.0/5.0"
+      },
+      "review_volume": "Low digital engagement compared to competitors (e.g., Hill Pump Station has 800+ reviews vs. Sakthi's <10).",
+      "engagement_implication": "Indicates a transactional customer base rather than a loyal one."
+    },
+    "thematic_feedback": {
+      "positive": [
+        "Fuel Availability: Recognized for having stock when others might be dry (especially premium fuels).",
+        "Quality: Recommended on enthusiast forums (Team-BHP) for XP95 availability, citing 'clean fuel' and improved engine performance for superbikes."
+      ],
+      "negative": [
+        "Amenities: 'Toilet not available' is a specific, recent complaint (Dec 2023).",
+        "Service Speed: Implicit complaints regarding congestion at the location."
+      ]
+    }
+  },
+  "risk_and_reputation": {
+    "operational_risks": [
+      {
+        "risk": "Single Point of Failure",
+        "description": "Traffic paralysis at Charing Cross can render the station inaccessible for hours."
+      },
+      {
+        "risk": "Regulatory Risk",
+        "description": "Non-compliance with 'Swachh Bharat' mandates for toilet availability could invite penalties from OMCs or local municipal authorities."
+      }
+    ],
+    "reputation_risks": [
+      {
+        "risk": "Low Rating Disadvantage",
+        "description": "3.3-star rating on major directories puts it at a disadvantage for digital-first tourists searching for 'best petrol pump near me'."
+      }
+    ],
+    "safety_record": "No major safety incidents (fires/accidents) reported in public archives for this specific unit."
+  },
+  "regulatory_compliance": {
+    "licensing": {
+      "petroleum_class": "Class A/B Retail Outlet",
+      "peso_approval": "Active status inferred from continuous operation and fuel deliveries.",
+      "tax_compliance": {
+        "gst_registration": "33AALFS4901K1Z3",
+        "status": "Active",
+        "benefit_to_b2b": "Ensures input tax credit flow for B2B clients."
+      }
+    },
+    "environmental": {
+      "mandated_systems": "Mandatory vapor recovery systems (Stage I/II) likely installed due to 'Green' corridor regulations in Nilgiris biosphere.",
+      "missing_data": "Specific pollution control board certificate number was not publicly indexed."
+    }
+  },
+  "digital_footprint_social_signals": {
+    "social_media": {
+      "forums": {
+        "platform": "Team-BHP",
+        "recommendation": "Highly recommended by superbike owners for reliable XP95/XP100 fuel.",
+        "value": "High-value signal."
+      },
+      "facebook_instagram": {
+        "presence": "Limited direct presence.",
+        "activity": "Mostly automated check-ins."
+      }
+    },
+    "directories": {
+      "listed_on": [
+        "JustDial",
+        "IOCL Locator",
+        "Third-party fuel price apps"
+      ],
+      "seo_fragmentation_note": "Slight name variations ('Sakthi Fuel' vs 'Sakthi Fuels') create minor SEO fragmentation."
+    }
+  },
+  "strategic_recommendations": [
+    {
+      "priority": "Critical",
+      "recommendation": "Amenity Remediation",
+      "details": "Immediate reactivation/renovation of restroom facilities. The specific complaint regarding 'no toilet' is a major deterrent for tourist families and violates OMC service standards."
+    },
+    {
+      "priority": "High",
+      "recommendation": "Premium Positioning",
+      "details": "Leverage exclusive XP100/XP95 inventory. Install high-visibility signage facing traffic backlog at Charing Cross to attract high-end vehicles."
+    },
+    {
+      "priority": "High",
+      "recommendation": "Digital Reputation Management",
+      "details": "Campaign to solicit reviews from satisfied premium fuel customers (bikers/tourists) to boost local SEO visibility, addressing the anomalous 3.3-star rating."
+    },
+    {
+      "priority": "Medium",
+      "recommendation": "B2B Diesel Expansion",
+      "details": "Aggressively market 'Fuel at Call' service to hotels and resorts in Fern Hill and Elk Hill areas, bypassing Charing Cross congestion."
+    },
+    {
+      "priority": "Medium",
+      "recommendation": "Traffic Management",
+      "details": "Deploy forecourt marshals during peak hours to manage ingress/egress aggressively, preventing station entrance from being blocked by junction gridlock."
+    }
+  ],
+  "scorecard": {
+    "overall_performance_score": null,
+    "factors": [
+      {
+        "factor": "Location",
+        "score": 95,
+        "notes": "Prime choke-point in Ooty."
+      },
+      {
+        "factor": "Product Offering",
+        "score": 90,
+        "notes": "Strong premium fuel mix (XP100, XP95)."
+      },
+      {
+        "factor": "Operational Efficiency",
+        "score": 40,
+        "notes": "Severely impacted by traffic congestion."
+      },
+      {
+        "factor": "Customer Amenities",
+        "score": 30,
+        "notes": "Significant compliance gap (sanitation)."
+      },
+      {
+        "factor": "Competitive Strength",
+        "score": 70,
+        "notes": "Unique IOCL presence, but immediate HPCL competitor is strong."
+      },
+      {
+        "factor": "Digital Reputation",
+        "score": 45,
+        "notes": "Low review volume and a mediocre rating compared to competitors."
+      },
+      {
+        "factor": "Regulatory Compliance",
+        "score": 85,
+        "notes": "Active GST and petroleum licenses, but amenity compliance is questionable."
+      }
+    ]
+  }
+}

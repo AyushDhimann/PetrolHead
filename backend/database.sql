@@ -1,5 +1,5 @@
 -- ===================================================================
--- NAWGATI — Research Sessions Database Schema
+-- PETROLHEAD — Research Sessions Database Schema
 -- ===================================================================
 
 -- 1. Research Sessions

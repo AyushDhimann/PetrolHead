@@ -1,7 +1,8 @@
-# 🚀 Nawgati — Fuel Station Intelligence Platform
+# 🚀 PetrolHead — Fuel Station Intelligence Platform
 
 **AI-powered deep research & forensic intelligence dashboard for fuel station competitive analysis**
 
+[![GitHub](https://img.shields.io/badge/GitHub-AyushDhimann%2FPetrolHead-black?logo=github)](https://github.com/AyushDhimann/PetrolHead)
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.6-black?logo=next.js)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-latest-teal?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue?logo=typescript)](https://www.typescriptlang.org/)
@@ -28,7 +29,7 @@
 
 ## 🎯 Overview
 
-Nawgati is a full-stack intelligence platform that conducts deep AI research on fuel stations, then transforms the raw text reports into interactive forensic-grade dashboards. Enter a station name (or paste a Google Maps link) and the system will:
+PetrolHead is a full-stack intelligence platform that conducts deep AI research on fuel stations, then transforms the raw text reports into interactive forensic-grade dashboards. Enter a station name (or paste a Google Maps link) and the system will:
 
 1. **Deep Research** — Gemini Deep Research Agent (primary) conducts exhaustive multi-source investigation with real-time progress streaming
 2. **Fallback** — Perplexity sonar-deep-research activates automatically if Gemini fails
@@ -128,8 +129,8 @@ User Query / Google Maps URL
 - Clear history, smooth animations
 
 ### ⚡ CLI Runner
-- `python -m nawgati setup` — Install all dependencies
-- `python -m nawgati run` — Start backend (FastAPI) + frontend (Next.js) concurrently
+- `python -m petrolhead setup` — Install all dependencies
+- `python -m petrolhead run` — Start backend (FastAPI) + frontend (Next.js) concurrently
 - Cross-platform (Windows, macOS, Linux)
 - Graceful shutdown with Ctrl+C
 
@@ -165,9 +166,9 @@ User Query / Google Maps URL
 ### Infrastructure
 | Component | Port |
 |---|---|
-| Backend API | `8000` |
-| Frontend dev server | `3000` |
-| API docs (Swagger) | `8000/docs` |
+| Backend API | `6055` |
+| Frontend dev server | `5055` |
+| API docs (Swagger) | `6055/docs` |
 
 ---
 
@@ -176,43 +177,83 @@ User Query / Google Maps URL
 ### Prerequisites
 - Python 3.11+
 - Node.js 18+
-- npm or yarn
+- npm (comes with Node.js)
+- Git
 
-### 1. Clone & Setup
+### Step 1: Clone Repository
 
 ```bash
-cd Nawgati-Assignment
-python -m nawgati setup
+git clone https://github.com/AyushDhimann/PetrolHead.git
+cd PetrolHead
 ```
 
-### 2. Environment Setup
+### Step 2: Run Automated Setup
 
-**Backend** (`backend/.env`):
+The setup wizard will:
+- Create Python virtual environment
+- Install backend dependencies (from `requirements.txt`)
+- Install frontend dependencies (npm packages)
+- Prompt you for API credentials
+- Create `.env` and `.env.local` files automatically
+- Create output directories
+
+```bash
+python -m petrolhead setup
+```
+
+You'll be prompted to enter:
+- **GEMINI_API_KEY** (required) — Get from [Google AI Studio](https://aistudio.google.com/apikey)
+- **PERPLEXITY_API_KEY** (optional) — Get from [Perplexity API](https://www.perplexity.ai/api)
+- **SUPABASE_URL** (optional) — Project URL from [Supabase](https://supabase.com/dashboard)
+- **SUPABASE_KEY** (optional) — Anon key from Supabase
+
+### Step 3: (Optional) Configure Supabase
+
+If you're using Supabase for persistent data storage:
+
+1. Create a new Supabase project at [supabase.com](https://supabase.com)
+2. Go to SQL Editor → New Query
+3. Copy & paste the SQL from `backend/database.sql`
+4. Execute the query to create tables
+5. Copy your project URL and anon key to `backend/.env`:
+   ```env
+   SUPABASE_ENABLED=true
+   SUPABASE_URL=your_project_url
+   SUPABASE_KEY=your_anon_key
+   ```
+
+### Step 4: Start the Application
+
+```bash
+python -m petrolhead run
+```
+
+This starts:
+- **Backend** (FastAPI): http://localhost:6055
+- **Frontend** (Next.js): http://localhost:5055
+- **API Docs** (Swagger): http://localhost:6055/docs
+
+### Manual Environment Setup (Alternative)
+
+If you prefer manual setup, the wizard creates these files:
+
+**`backend/.env`** — Copy from `backend/.env.example` and fill in your keys:
 ```env
 GEMINI_API_KEY=your_google_api_key_here
 PERPLEXITY_API_KEY=your_perplexity_key_here
 SUPABASE_URL=your_supabase_url
 SUPABASE_KEY=your_supabase_anon_key
-SUPABASE_ENABLED=true
+SUPABASE_ENABLED=false
 DEMO_MODE_ENABLED=true
 PRIMARY_PROVIDER=gemini
 FALLBACK_PROVIDER=perplexity
+AUTO_FALLBACK_ENABLED=true
 ```
 
-**Frontend** (`frontend/.env.local`):
+**`frontend/.env.local`**:
 ```env
-NEXT_PUBLIC_API_URL=http://localhost:8000
+NEXT_PUBLIC_API_URL=http://localhost:6055
 GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key_here
-```
-
-### 3. Run Full Stack
-
-```bash
-python -m nawgati run
-
-# Backend: http://localhost:8000
-# Frontend: http://localhost:3000
-# API Docs: http://localhost:8000/docs
 ```
 
 ---
@@ -220,7 +261,7 @@ python -m nawgati run
 ## 📁 Project Structure
 
 ```
-Nawgati-Assignment/
+PetrolHead/
 ├── backend/                           # FastAPI backend
 │   ├── main.py                       # App entry + router registration
 │   ├── requirements.txt               # Python dependencies
@@ -284,8 +325,8 @@ Nawgati-Assignment/
 │   │       └── dashboard-utils.ts    # Dashboard utilities
 │   └── .cache/extractions/           # File-system extraction cache
 │
-├── nawgati/                          # CLI package
-│   ├── __main__.py                   # Entry: `python -m nawgati`
+├── petrolhead/                       # CLI package
+│   ├── __main__.py                   # Entry: `python -m petrolhead`
 │   ├── run.py                        # Concurrent backend + frontend runner
 │   └── setup.py                      # Dependency installer
 │
@@ -300,8 +341,8 @@ Nawgati-Assignment/
 
 ### Live Research
 
-1. **Start the stack:** `python -m nawgati run`
-2. **Open http://localhost:3000**
+1. **Start the stack:** `python -m petrolhead run`
+2. **Open http://localhost:5055**
 3. **Enter a station name** or **paste a Google Maps link**
 4. **Watch live progress** — real-time streaming of AI thought process
 5. **Dashboard loads** automatically when research completes — 9 forensic cards
@@ -430,11 +471,30 @@ CREATE TABLE extraction_cache (
 
 ## 🎯 Advanced
 
+### Troubleshooting Setup
+
+**Issue: `python -m petrolhead` command not found**
+- Ensure you're in the project root directory
+- Verify `. .venv/Scripts/activate` (Windows) or `source .venv/bin/activate` (macOS/Linux)
+
+**Issue: Missing API keys**
+- Edit `backend/.env` and `frontend/.env.local` manually
+- Copy from `.env.example` and fill in your credentials
+- Restart the application with `python -m petrolhead run`
+
+**Issue: Port 6055 or 5055 already in use**
+- Change port in `petrolhead/run.py` or kill existing processes
+
 ### Running Backend Only
 
 ```bash
+# Activate venv first
+source .venv/bin/activate  # macOS/Linux
+# or
+.venv\Scripts\activate  # Windows
+
 cd backend
-python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+python -m uvicorn main:app --host 0.0.0.0 --port 6055 --reload
 ```
 
 ### Running Frontend Only
@@ -442,6 +502,37 @@ python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```bash
 cd frontend
 npm run dev
+```
+
+### Manual Dependency Installation
+
+```bash
+# Backend
+pip install -r backend/requirements.txt
+
+# Frontend
+cd frontend
+npm install
+```
+
+### Resetting Setup
+
+To reset everything and start fresh:
+
+```bash
+# Remove venv
+rm -rf .venv  # macOS/Linux
+rmdir /s .venv  # Windows (PowerShell)
+
+# Remove node_modules
+rm -rf frontend/node_modules  # macOS/Linux
+rmdir /s frontend\node_modules  # Windows
+
+# Remove env files (keep backups!)
+rm backend/.env frontend/.env.local  # macOS/Linux
+
+# Rerun setup
+python -m petrolhead setup
 ```
 
 ### Environment Variables
@@ -458,12 +549,12 @@ npm run dev
 | `FALLBACK_PROVIDER` | No | Fallback provider (default: perplexity) |
 | `AUTO_FALLBACK_ENABLED` | No | Auto-switch on failure (default: true) |
 | `DEMO_MODE_ENABLED` | No | Enable demo endpoints (default: true) |
-| `CORS_ORIGINS` | No | Allowed CORS origins (default: http://localhost:3000) |
+| `CORS_ORIGINS` | No | Allowed CORS origins (default: http://localhost:5055) |
 
 **Frontend** (`frontend/.env.local`):
 | Variable | Required | Description |
 |---|---|---|
-| `NEXT_PUBLIC_API_URL` | No | Backend URL (default: http://localhost:8000) |
+| `NEXT_PUBLIC_API_URL` | No | Backend URL (default: http://localhost:6055) |
 | `GOOGLE_GENERATIVE_AI_API_KEY` | Yes | For Vercel AI SDK extraction |
 
 ### Building for Production
@@ -476,7 +567,7 @@ npm start
 
 # Backend
 cd backend
-python -m uvicorn main:app --host 0.0.0.0 --port 8000
+python -m uvicorn main:app --host 0.0.0.0 --port 6055
 ```
 
 ### Adding a New Dashboard Card

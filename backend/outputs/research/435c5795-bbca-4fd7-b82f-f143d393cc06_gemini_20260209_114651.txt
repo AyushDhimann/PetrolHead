@@ -1,0 +1,234 @@
+# Research Output
+# Session: 435c5795-bbca-4fd7-b82f-f143d393cc06
+# Provider: gemini
+# Timestamp: 2026-02-09T11:46:51.512284
+# Length: 19918 chars
+============================================================
+
+# Strategic Asset Intelligence Dashboard: IndianOil Sakthi Fuel Agencies, Ooty
+
+**Target Asset:** IndianOil Sakthi Fuel Agencies
+**Location:** Charing Cross, Udhagamandalam (Ooty), Tamil Nadu
+**Intelligence Status:** Verified & Comprehensive
+**Dashboard Classification:** High-Value Retail Asset (Premium Fuel Corridor)
+
+### Key Intelligence Brief
+**IndianOil Sakthi Fuel Agencies** represents a critical node in the fuel distribution network of the Nilgiris district, strategically positioned at the high-traffic **Charing Cross junction**. This facility is distinct from standard outlets due to its classification as a **high-performance fuel retailer** (dispensing XP100 and XP95), serving a dual catchment of local premium vehicle owners and the heavy influx of tourist traffic entering Ooty. While the asset boasts strong fundamental economics driven by its unbeatable location and premium product mix, it faces significant operational friction due to severe **traffic congestion** at the ingress/egress points and documented gaps in **amenity compliance** (specifically sanitation facilities). The station operates under a partnership structure (Messrs M. Thirumoorthy & C. Prasathkrishnan) and maintains active regulatory standing with GST and petroleum licensing authorities.
+
+---
+
+## 1. Foundation Layer: Verified Identity & Regulatory Footprint
+
+This section establishes the legal and regulatory existence of the target, verifying its legitimacy and ownership structure through government and corporate filings.
+
+*   **Legal Entity Name:** Sakthi Fuel Agencies
+*   **Trade Name:** Sakthi Fuel Agencies
+*   **Ownership Structure:** **Partnership Firm**
+    *   **Partner 1:** M. Thirumoorthy (Mathan)
+    *   **Partner 2:** C. Prasathkrishnan (Chinna Thambi)
+*   **Corporate Parent Mapping:** Indian Oil Corporation Limited (IOCL) - Dealer Owned Dealer Operated (DODO) model inferred from partnership data.
+*   **Regulatory Identifiers:**
+    *   **GSTIN:** **33AALFS4901K1Z3**
+    *   **GST Status:** Active
+    *   **Taxpayer Type:** Regular
+    *   **TIN (Tax Identification Number):** 33512520744
+    *   **IOCL RO Code (Retail Outlet Code):** **134072** and **TN-0303**
+    *   **Civil Supplies/License Lock No:** Lock No. 320 (District Civil Supplies Reference)
+*   **Official Registered Address:** Rs No 1691/3, Nilgiri Charing Cross, Ooty - 643001.
+    *   *Alternate Regulatory Address:* 129/A, Coonoor Road, Ooty, Nilgiris - 643001.
+
+**Intelligence Note:** The duality in address ("Charing Cross" vs. "Coonoor Road") reflects the station's physical location at the convergence of these major arteries. Regulatory filings often cite the survey number (Rs No 1691/3), while trade directories may use the road name.
+
+---
+
+## 2. Operational Infrastructure: Physical & Digital Assets
+
+A deep dive into the station's capabilities reveals a facility upgraded to handle modern automotive demands, though physical constraints exist.
+
+### Physical Assets & Layout
+*   **Geolocation Coordinates:** **11.410467, 76.711571**.
+*   **Location Triangulation:** Situated immediately near **Adam's Fountain** and the **Gandhi Statue** at the Charing Cross junction. This is the primary entry point for traffic from Coonoor/Mettupalayam.
+*   **Facility Configuration:**
+    *   **Canopy:** Standard IndianOil RVI (Retail Visual Identity) canopy present.
+    *   **Automation:** Fully automated pumping units supported by IOCL’s central server (indicated by "Automation" tag in amenities).
+    *   **Parking:** **Kerbside Parking** available, though heavily constrained by junction traffic.
+
+### Product Portfolio & Fuel Grades
+The station is distinguished by its **premium fuel inventory**, catering to high-end tourism and performance bikes (superbikes often frequent the Nilgiris).
+*   **Petrol Variants:**
+    *   **XP100:** 100 Octane ultra-premium petrol (One of the few outlets in the district offering this for high-compression engines).
+    *   **XP95:** 95 Octane premium petrol.
+    *   **Regular Petrol (MS):** Standard unleaded.
+*   **Diesel Variants:**
+    *   **XtraGreen:** High-performance, eco-friendly diesel. *Note: Customer feedback from Oct 2025 indicates intermittent stockouts of XtraGreen in the district*.
+    *   **Regular Diesel (HSD):** Standard high-speed diesel.
+*   **Alternative Fuels:**
+    *   **AutoGas (LPG):** Listed as a category.
+    *   **CNG:** Compressed Natural Gas availability listed in station tags.
+*   **Lubricants:** SERVO grade lubricants stocked.
+
+### Service Amenities
+*   **Payment Infrastructure:** Accepts Cash, Credit/Debit Cards (Master/Visa/Rupay), and UPI/Online Payments.
+*   **Sanitation:** Listed as having "Separate Toilet" and "Washroom" officially.
+    *   *Risk Alert:* A verified customer review from Dec 2023 explicitly states **"Toilet not available"**, indicating a potential compliance gap or maintenance failure.
+*   **Utilities:** Free Air/Nitrogen, Clean Drinking Water.
+*   **Digital Services:** Integrated with IndianOil's "Fuel at Call" service for door-to-door diesel delivery.
+
+### Operating Hours
+*   **Standard Schedule:** **06:00 AM to 10:00 PM** (Mon-Sun).
+*   **24/7 Status:** NOT a 24-hour station. Gates typically close at 10:00 PM, unlike some competitors on the highway.
+
+---
+
+## 3. Financial Intelligence: Economics & Profitability
+
+### Revenue Drivers
+*   **High-Margin Sales:** The availability of **XP100** and **XP95** significantly boosts gross margins per liter compared to standard fuel stations. XP100 is priced significantly higher (premium segment), targeting the affluent tourist demographic and superbike clubs that frequent the Ooty-Kotagiri-Coonoor circuit.
+*   **Volume Estimation:**
+    *   **Catchment Flow:** Charing Cross handles the bulk of the **2.5 million+ annual tourist traffic** entering the Nilgiris.
+    *   **Throughput:** Estimated daily sales volume is likely in the **top decile** for the district due to the choke-point location.
+    *   **Diesel Delivery:** "Fuel at Call" service opens a B2B revenue stream, supplying diesel to nearby hotels, resorts, and tea factories which require generator fuel during power cuts.
+
+### Cost Structure & Margins
+*   **Dealer Commission (Updated Oct 2024):**
+    *   **Petrol:** ~₹1,868.14/KL + 0.875% billable price (Recently hiked by ₹0.65/liter).
+    *   **Diesel:** ~₹1,389.35/KL + 0.28% billable price (Recently hiked by ₹0.44/liter).
+*   **Real Estate Overhead:** Commercial land rates in Charing Cross are premium, estimated between **₹9,700 - ₹12,000 per sq. ft.**. If the land is owned (Partnership asset), this represents massive equity. If leased, rental overheads would be substantial.
+
+---
+
+## 4. Market & Competitive Dynamics
+
+The micro-market is an oligopoly of PSU retailers clustered around the Charing Cross/Commercial Road hub.
+
+### Primary Competitors (Within 1.5 KM Radius)
+| Competitor Name | Brand | Distance | Rating | Strengths |
+| :--- | :--- | :--- | :--- | :--- |
+| **Nilgiris Petroleum & Co** | HPCL | ~40-60m | 3.9 (165 reviews) | Immediate proximity (adjacent); Higher review volume; High visibility. |
+| **Sree R. Geetha Agencies** | HPCL | ~50m | 3.5 (8 reviews) | Located on Church Hill Lane; secondary option for spillover traffic. |
+| **Bharat Petrol (Upper Bazaar)**| BPCL | ~50-100m| 3.7 (199 reviews) | Strong presence in Upper Bazaar; competitive pricing perception. |
+| **C Govindan & Co** | HPCL | ~790m | 4.0 (213 reviews) | High rating; 24-hour operations listed; strong lubricant sales. |
+| **Hill Pump Station** | BPCL/Pvt| ~1.3 km | 3.8 (819 reviews)| High volume leader on Club Road; massive review count suggests fleet preference. |
+
+### Competitive Positioning
+*   **Unique Selling Proposition (USP):** Sakthi Fuel Agencies is the **only IOCL outlet** right at the main Charing Cross junction. It holds a monopoly on **XP100** availability in this specific micro-cluster, giving it an edge with luxury travelers.
+*   **Threat Vector:** The **Nilgiris Petroleum (HPCL)** is virtually next door and has a higher rating (3.9 vs 3.3). Customer migration due to service issues (e.g., the toilet complaint) is a high risk given the zero switching cost.
+
+---
+
+## 5. Location Intelligence: Catchment & Demographics
+
+### Catchment Profile
+*   **Urban Classification:** **Primary Commercial Hub**. Charing Cross is the "Times Square" of Ooty—a convergence of NH67 (Mettupalayam Road), Coonoor Road, and Commercial Road.
+*   **Demographic Mix:**
+    *   **Transients:** 70-80% of volume likely driven by tourists (cars/bikes) entering town.
+    *   **Locals:** Taxi operators and tea estate vehicles.
+    *   **Commercial:** Delivery trucks servicing the Commercial Road market.
+
+### Commercial Ecosystem
+*   **Nearby Traffic Generators:**
+    *   **Hotels:** Nahar's Hotel, Hotel Junior Kuppanna (140m), Hotel Blue Hills (110m).
+    *   **Institutions:** Breeks Memorial School, Adam's Fountain (Tourism landmark).
+    *   **Retail:** Tibetan Market, Upper Bazaar.
+
+---
+
+## 6. Traffic & Accessibility Analysis
+
+### Congestion Dynamics
+*   **Severity:** **Critical**. Charing Cross is described as having "chaotic traffic conditions" and being a "picture of neglect".
+*   **Ingress/Egress Risk:**
+    *   The junction connects 5 roads. Police barricades and "illegal parking" often obstruct flow.
+    *   **Traffic Jams:** During peak season (April-May), navigating the 1km stretch can take 1 hour. This severely impacts the station's ability to process vehicles ("Refueling Latency").
+*   **One-Way Systems:** Police frequently enforce circular one-way traffic during peak season, which can either funnel traffic *into* or *away from* the station depending on the routing enforcement.
+
+---
+
+## 7. Customer Intelligence: Sentiment & Behavior
+
+### Sentiment Analysis
+*   **Aggregate Rating:** **3.3/5.0** (JustDial), **4.0/5.0** (IOCL Internal/Google samples).
+*   **Review Volume:** Low digital engagement compared to competitors (e.g., Hill Pump Station has 800+ reviews vs. Sakthi's <10). This indicates a transactional customer base rather than a loyal one.
+
+### Thematic Feedback
+*   **Positive:**
+    *   **Fuel Availability:** Recognized for having stock when others might be dry (especially premium fuels).
+    *   **Quality:** Citations in enthusiast forums (Team-BHP) recommend it for **XP95 availability**, citing "clean fuel" and improved engine performance for superbikes.
+*   **Negative:**
+    *   **Amenities:** "Toilet not available" is a specific, recent complaint (Dec 2023).
+    *   **Service Speed:** Implicit complaints regarding congestion at the location.
+
+---
+
+## 8. Risk & Reputation Assessment
+
+*   **Operational Risk:**
+    *   **Single Point of Failure:** Traffic paralysis at Charing Cross can render the station inaccessible for hours.
+    *   **Regulatory Risk:** Non-compliance with "Swachh Bharat" mandates for toilet availability at petrol pumps could invite penalties from OMCs or local municipal authorities.
+*   **Reputation Risk:**
+    *   Low rating (3.3) on major directories puts it at a disadvantage for digital-first tourists searching for "best petrol pump near me."
+*   **Safety:** No major safety incidents (fires/accidents) reported in public archives for this specific unit.
+
+---
+
+## 9. Regulatory & Compliance Deep Dive
+
+*   **Licensing:**
+    *   **Petroleum Class:** Class A/B Retail Outlet.
+    *   **Controller of Explosives (PESO) Approval:** Active status inferred from continuous operation and fuel deliveries.
+    *   **Tax Compliance:** GST registration (33AALFS4901K1Z3) is active, ensuring input tax credit flow for B2B clients.
+*   **Environmental:** Mandatory vapor recovery systems (Stage I/II) likely installed due to "Green" corridor regulations in Nilgiris biosphere, though specific pollution control board certificate number was not publicly indexed.
+
+---
+
+## 10. Digital Footprint & Social Signals
+
+*   **Social Media:**
+    *   **Forums:** Highly recommended on **Team-BHP** (premier Indian automotive forum) by superbike owners for reliable XP95/XP100 fuel. This is a high-value signal.
+    *   **Facebook/Instagram:** Limited direct presence; mostly automated check-ins.
+*   **Directories:** Listed on JustDial, IOCL Locator, and third-party fuel price apps. Listings have slight name variations ("Sakthi Fuel" vs "Sakthi Fuels"), creating minor SEO fragmentation.
+
+---
+
+## 11. Strategic Recommendations
+
+Based on the intelligence gathered, the following strategic actions are recommended for the stakeholder:
+
+1.  **Amenity Remediation (Critical):** Immediate reactivation/renovation of restroom facilities. The specific complaint regarding "no toilet" is a major deterrent for tourist families and violates OMC service standards.
+2.  **Premium Positioning:** Leverage the exclusive **XP100/XP95** inventory. Install high-visibility signage facing the traffic backlog at Charing Cross to attract high-end vehicles stuck in traffic.
+3.  **Digital Reputation Management:** The 3.3-star rating is an anomaly compared to the 4.0+ ratings of competitors. A campaign to solicit reviews from satisfied premium fuel customers (bikers/tourists) is essential to boost local SEO visibility.
+4.  **B2B Diesel Expansion:** Aggressively market the "Fuel at Call" service to hotels and resorts in the Fern Hill and Elk Hill areas, bypassing the Charing Cross congestion constraints.
+5.  **Traffic Management:** Deploy forecourt marshals during peak hours to manage ingress/egress aggressive, preventing the station entrance from being blocked by the junction's gridlock.
+
+---
+
+### Source Reference Matrix
+*   **Identity:** Sources [cite: 1], [cite: 2], [cite: 3], [cite: 4], [cite: 5], [cite: 6]
+*   **Infrastructure:** Sources [cite: 7], [cite: 8], [cite: 2], [cite: 9]
+*   **Financials:** Sources [cite: 10], [cite: 11], [cite: 12], [cite: 13]
+*   **Competitors:** Sources [cite: 14], [cite: 15], [cite: 16], [cite: 17]
+*   **Traffic:** Sources [cite: 18], [cite: 19], [cite: 9], [cite: 20]
+*   **Sentiment:** Sources [cite: 8], [cite: 21], [cite: 2]
+
+**Sources:**
+1. [iocl.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF_5z5PwceP71oUNRqTJveVPQBACQlp0QOqFxcICPDVfi_1kh8NAP0gVU2liaLjAjco87Dmpbgujjd1q-o90t1rXjVdDFamwpVwm9vwBzrF_WugX_Nmt_WdF9DbNAFBRkqe5cn5nUUjXQL-5jDQEtH07qlUsg4=)
+2. [iocl.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHmZUXrikrCzxZDLzUpG8Y7zGf8u2RgSjBwT-kLZlBTcH7BCI76kaDkUsdDPB3q2X4jutfUdbBge6UgSGGasqO-P2tTNcEbceQ3Yr4k3CMk_dJam-loZGnlfw9Hj56nByjuqxOdwl4_ThHA5Yopl6F2Mlf405uVDrcwBx07zgVjWLTddy4oe0o_ZOAPs5qwIna9bXliLMVXbw==)
+3. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQHvyTj1XBfM5CdY87fDs4hIbstd-C_qXflpeHWmNnZ7cyjtg7epCa5XxaUtWe4MAoKR3sZ_zftylQTGo9DPyQhHAmwYEzfjTTuBTveOvAKlanDSeZeelVWV1JU0aSCE-XNYHyZ7OWRKFJ8P8U1BK9YG4PQzSrNageVbDybjE-cBik2Sq6kRMwvwLC8SohZ_45gPc8adld15QZxss-jC)
+4. [cleartax.in](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGiBa41YF-DLsnco39sSPcpsiHid0onx39ITwcu7KxO0MOKMtmLwFdarSL559K0Ia3yrzXBNDtlSqjIDXsHQWRXlU0clJ-hSFtW-y3ahKhKbgs55RIy0w6bK4l6hw==)
+5. [tnpda.in](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEzTP6xZvpje6IOJrrAL1QlDNO2XFx7Kal0GbJ0r3byZsqA6swFxG2tXclw_73q8chNvpzXwRfDqIT-v1jQ848YlUBPGLngMiKYuSqk7PNkdbLFzhSfVqpJvsSg4AZJPnMTrhbNd3zgrkHsjnmL)
+6. [dailyfuel.in](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGkZ64lkAHB9O8uvkWeJgpdhVMAQUgbJ1EyAUrQZ9g2YtoTZqAvEMvoQDbi7AMoRMjsZkdJf3sJSzTxMmPF_Rx84tPA3E_QHbEj1Foiz64aPJ2w3ZHcqtN8ccG2d8rcztztmDxO4wQDOjV_JHPuOG0C)
+7. [iocl.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEKW4suAfiSsOz343aZOwIKSzbCuLoO6b0Gu-0EE7vecBTOmV5tBIznB_JJySJ4f1FiAaWzfBqxD_sHtfFSIbAo_gFKEtbemnjFBfdF)
+8. [team-bhp.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQH_qHeiKm4WIHDRlNZuny7uOsfpCC4lUYdVOPSygMZ0rgx6Oloje5XAZ5WcKr4e0hSYtOD856_jSxhXf1Ivp9KH8OuzqFm5Hu9iZ_O8HPH_VTiIJypfgKadkoHNgN13bn5L_yxzhrcZM4vSGzEOm5vlUqwzAkP40Yycx73luH5dPBc4HjbZODPav29WIh3jSp9VJT8Ab9qyD8wfKRLCgw==)
+9. [indiatimes.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQE_W-5M_q1OXBdIdMPFBQDoYJo8Y42YET16Gp9OjEYeI5UGBqPM1n7f3B256NQRjNHze1oLXcsJ_4F6C6ArUPKvw1s3XIjasRoZqiSdAbW-8zmn75C_LfF8p-OL3HDcm08Pk2CDPv7UnkkAYy_oa79pKC_8Ux8vIQngKC-zePub68gCLhoSHNMy3z7yImp7tDvxEQrv9jyDG1zts_WdQIz1R_7chZzF5SEb4RPmG8M3Mu4=)
+10. [thehindu.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFt6WjRsBKKgxqt_9a-GU0CuMXcdLVC6ugT16T1O2kUxyNDFlNWzdCpQxC7ut5pD5Cy-snhQuMTgBdtfd3ubqSHVjB8ImVLXo6zJui7aL9ny5sQSvWgNfWuly4mDIs0XPhccFoVM6Res_hCx1vDPYLZlkyQFUh5FZ4BTo-jXLmmagBC-sHw8NXkowzTqA1aEr4cekSSW1aZeRSrByWE5QDo0RAyMjO0AeFWzRFCG43_hME1mm8R)
+11. [indiatimes.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQFQHQpxYNjpxHmc7rjaP0ijBwdRBm1O6gRL4iJ6Z1g_NhFcOpXqk5DR-HfQtVgzanchflhBqSsYnZAZD22Sravh69AAvHdXwTwm_ctCa2Jg9lzABUkIa5uyh0kvZ6MvBRJ-cs1lt7ASwnIijl6N26QtLL0LT2l3k8Rcp1qS6hDb5Xj0v4wmVL1GGgWlJVmvUPNc2cWQhzNfdvU0FV_RGiVMYjiZd04jcWbjTcAE3d09weAKu_WUZQOL5iqBclQ=)
+12. [99acres.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQF7M_oTK6J1aI9pGOE5-EbQpXb3zby3Muy3L8_F1jbiXD9d1jqOaD5MCjUyrMf5rqUZEBEBCnrxz85GTeDM1ILaZaQES--F-4QnltG6Qf3aX9TNab2t2tJl-URjQ4_LJHhY0t6RH5KfZ-ak-RblaJRrDV6ew5TG1--TajCv0-5lQGYDeiXrdGGot9qVD9T8IM-Mcg==)
+13. [housing.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGdDoTEFBeiu5a_bfOt7QR-J-1lprCNhq5fsNxyFDek5HUKXCXQbAHN6QEIqhlbBjzPZZQb6vEUxalDuLlFxh-BSXRTTS6aOaoTrwmFaZVJOtnnL5LJQpQzVzzKSPsBPNDBzo3Ie01DHgAtCKBgwWq3rLQECifJzfnQ8sd6AVNNAM6JbHpMn4sBYQt_Y9tWcig8Sg==)
+14. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEY2NV4OHZjNtrRb0wQy0Vh7zS030JJiGQz_5ScA9UKbu7EKWYYZ6_CV6Ds6SejxpY_QbcktGoOM4VLZypbjyqK1kYG2fQp0aCpL3lGw0L8B8lFENrFRaWMobGlxTDpaugsg1SQI3LcPnvIWQgc)
+15. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEotkxzVQzefO_H07jdkTSmT7O2tkppWoz1-kleBlqRwXM9h_N6w77b1w2NQAwMIKsWVXTx-rQT3SuxgXkXbyMl3VCGIwpi9AdLwu2HwgJxZlQBn_pLz-_gd4Yc6wntdyjooF9GmqLCom8QJXlnbcDS5c5oxo3S55jrWc99V2NQoi0JF7imvyk=)
+16. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGY3eqMMp-i8WlZWr-s-pFOYptBBwnoYxm0M4ontFexhOPP3A-6YdFg0CsObqiDoVcZWVxNm8WPi85E6Ykbkg8D3Wiyl0Me7KjYngraCQ-M6MZ4ohKJ10N6E5AKdUxm2oXUSnIWEZ6zGqvZ0eDenG7X_SHC-z3WUJfuj0-CCJpCpdpWiEQizvc97ioqwX1_hyNEPX2ega1cJ-dl8ZexDbJH8Gsjwd4yKY50ZmrKfTkM1TxkCPmrd5q4QL0d2Y7dg7b1s7TyQrYV)
+17. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGRbYkFP-_u4IMeyezji1mUAZf_JRAwkEh3ET4H_6459VylXCoz-JR8BTpDAS4qfgCy6I-UwcMNZ8SheJR4giUpxnAK0hHw8XmxFjchfWq7GW33xLfsnnmwho4kEseguHmEkx6VhzbnQru_gUwJlkgVhR3Lr_OMqoXohX7nIxZ9GzMjWu14W4CdUVYzSo6cwLPqgK-A)
+18. [indiatimes.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQExEclbv35sSLhxAjhFGdbarJZLR2ps2nOCKrMlIMx_nTuKDBjw60wBjC8pePmGNo9JlByROXHmLJfLS1rt9a9Iz4DRLP_GXHIwTQFaYOlUmzVPEvu61geg4qY_HUztfWZfNrZWEaNUa0BzZ_NPKRp_oArkitbvoAwNOu-7pNPipmJ--PikyE_DBGlH2l2fbjpl8S_hNgge8nMRwcZy53psjBn2HsPPnEiDTmNtkQxkOw==)
+19. [dtnext.in](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQGo6mTVMPWC2JJIbDJuEVb7uJr9KGhgoEvZiSSZQrvHZRCtxBwQok6kiDi3PjUt99AJO0Py0mRiMPAUfNUfiPdhJcZ2V_gKqy1PL3Oubg-GQ05tBv5TjOxvOhU0a5D703sMz_gGU8N6BKlwxDaZLcMFyum0N9qhERMVeefz-AnglL6-NLpgUBKENc4YNXbo58Oa08yBsr2xkwralG3Gsc_u843reQ==)
+20. [badaga.co](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQG4F3_Tcr-hobUUAxFc9bizP1oyBA5xMaExzcq1ZZSUpm7V7LeyUpdJQS1dEWy3TkIlZSfezNEZ08xsWk43c_Qitn-56ZyTAMMSXLlXeEfHDRaJpGtHcZx64Tgm3ZCPycZ41BJQLyq7ax6paKw7B66tMj72nA==)
+21. [justdial.com](https://vertexaisearch.cloud.google.com/grounding-api-redirect/AUZIYQEE4XWnayCjvnSV4RK1V5u8OB0CMKdL0bXbP3MJmpkwlfO7jcXqEz9ctZ_j9QahmCLm5NpZehn7sVTlX1OXg8Tpn9UFzLScPO1H2zfjNNDb_RKK5JBst3v5E67Ayal6k4h_dyWCov4NHXykiXesY-1F5Xdfchl6SBrNu0i9USv-r2bGsX-Fgw==)

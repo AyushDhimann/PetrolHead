@@ -166,19 +166,121 @@ def install_node_deps(root):
         log_error("Failed to install Node.js dependencies")
         return False
 
-def check_env_file(root):
-    """Check if .env file exists in backend."""
-    log_step("Checking environment configuration...")
+def prompt_for_credentials():
+    """Prompt user for API credentials."""
+    print(f"""
+{Colors.BOLD}{Colors.YELLOW}
+╔══════════════════════════════════════════════════════════╗
+║              🔐 CREDENTIALS SETUP                        ║
+║  You'll need API keys for the system to function         ║
+╚══════════════════════════════════════════════════════════╝
+{Colors.END}""")
+
+    credentials = {}
+
+    print(f"\n{Colors.BOLD}Google Gemini API{Colors.END}")
+    print(f"  Required for AI-powered research")
+    print(f"  Get key: https://aistudio.google.com/apikey")
+    credentials["GEMINI_API_KEY"] = input("  Enter GEMINI_API_KEY (press Enter to skip): ").strip()
+
+    print(f"\n{Colors.BOLD}Perplexity API (Optional - for fallback){Colors.END}")
+    print(f"  Get key: https://www.perplexity.ai/api")
+    credentials["PERPLEXITY_API_KEY"] = input("  Enter PERPLEXITY_API_KEY (press Enter to skip): ").strip()
+
+    print(f"\n{Colors.BOLD}Supabase (Optional - for persistence){Colors.END}")
+    print(f"  Get details: https://supabase.com/dashboard")
+    print(f"  You'll need to create tables using: backend/database.sql")
+    credentials["SUPABASE_URL"] = input("  Enter SUPABASE_URL (press Enter to skip): ").strip()
+    credentials["SUPABASE_KEY"] = input("  Enter SUPABASE_KEY (press Enter to skip): ").strip()
+
+    return credentials
+
+def create_env_file(root, credentials):
+    """Create .env file in backend directory."""
+    log_step("Creating backend/.env file...")
     env_file = root / "backend" / ".env"
 
     if env_file.exists():
-        log_success(".env file found in backend/")
-        return True
-    else:
-        log_warn(".env file not found in backend/")
-        log_warn("Please create backend/.env with your API keys")
-        log_warn("See backend/.env.example for reference")
+        log_warn("backend/.env already exists")
+        overwrite = input("  Overwrite? (y/n): ").strip().lower()
+        if overwrite != 'y':
+            log_success("Keeping existing backend/.env")
+            return True
+
+    env_example = root / "backend" / ".env.example"
+    if not env_example.exists():
+        log_error(f"backend/.env.example not found")
         return False
+
+    # Read example file and update with user credentials
+    with open(env_example, 'r') as f:
+        env_content = f.read()
+
+    # Replace placeholders with actual values
+    env_content = env_content.replace(
+        "GEMINI_API_KEY=your_google_api_key_here",
+        f"GEMINI_API_KEY={credentials.get('GEMINI_API_KEY', 'your_google_api_key_here')}"
+    )
+    env_content = env_content.replace(
+        "PERPLEXITY_API_KEY=your_perplexity_key_here",
+        f"PERPLEXITY_API_KEY={credentials.get('PERPLEXITY_API_KEY', 'your_perplexity_key_here')}"
+    )
+    env_content = env_content.replace(
+        "SUPABASE_URL=your_supabase_url",
+        f"SUPABASE_URL={credentials.get('SUPABASE_URL', 'your_supabase_url')}"
+    )
+    env_content = env_content.replace(
+        "SUPABASE_KEY=your_supabase_anon_key",
+        f"SUPABASE_KEY={credentials.get('SUPABASE_KEY', 'your_supabase_anon_key')}"
+    )
+
+    with open(env_file, 'w') as f:
+        f.write(env_content)
+
+    log_success("backend/.env created")
+    return True
+
+def create_env_local_file(root, credentials):
+    """Create .env.local file in frontend directory."""
+    log_step("Creating frontend/.env.local file...")
+    env_local_file = root / "frontend" / ".env.local"
+
+    if env_local_file.exists():
+        log_warn("frontend/.env.local already exists")
+        overwrite = input("  Overwrite? (y/n): ").strip().lower()
+        if overwrite != 'y':
+            log_success("Keeping existing frontend/.env.local")
+            return True
+
+    env_local_content = f"""
+# PetrolHead Frontend Environment
+NEXT_PUBLIC_API_URL=http://localhost:6055
+GOOGLE_GENERATIVE_AI_API_KEY={credentials.get('GEMINI_API_KEY', 'your_google_api_key_here')}
+"""
+
+    with open(env_local_file, 'w') as f:
+        f.write(env_local_content.strip())
+
+    log_success("frontend/.env.local created")
+    return True
+
+def check_database_setup(root):
+    """Notify user about database setup."""
+    log_step("Database setup instructions...")
+    db_sql = root / "backend" / "database.sql"
+
+    if db_sql.exists():
+        log_success("Found backend/database.sql for Supabase schema")
+        print(f"""
+{Colors.YELLOW}
+  If you're using Supabase:
+    1. Go to https://supabase.com/dashboard
+    2. Create a new project
+    3. Run the SQL from backend/database.sql in the SQL editor
+    4. Copy the project URL and anon key to backend/.env
+{Colors.END}""")
+    else:
+        log_warn(f"backend/database.sql not found at {db_sql}")
 
 def create_output_dirs(root):
     """Create necessary output directories."""
@@ -238,11 +340,24 @@ def run_setup():
         log_warn("Skipping Node.js dependencies (Node.js not available)")
     print()
 
-    # Step 6: Check .env
-    check_env_file(root)
+    # Step 6: Prompt for credentials
+    credentials = prompt_for_credentials()
     print()
 
-    # Step 7: Create output dirs
+    # Step 7: Create .env and .env.local files
+    if not create_env_file(root, credentials):
+        log_warn("Failed to create backend/.env, but continuing...")
+    print()
+
+    if not create_env_local_file(root, credentials):
+        log_warn("Failed to create frontend/.env.local, but continuing...")
+    print()
+
+    # Step 8: Check database setup
+    check_database_setup(root)
+    print()
+
+    # Step 9: Create output dirs
     create_output_dirs(root)
     print()
 
@@ -252,7 +367,19 @@ def run_setup():
 ║              ✅ SETUP COMPLETE                           ║
 ╠══════════════════════════════════════════════════════════╣
 ║                                                          ║
-║  Next step: python -m petrolhead run                    ║
+║  Next steps:                                             ║
+║                                                          ║
+║  1. Verify credentials in:                               ║
+║     - backend/.env                                       ║
+║     - frontend/.env.local                                ║
+║                                                          ║
+║  2. If using Supabase, run database.sql in the console   ║
+║                                                          ║
+║  3. Start the application:                               ║
+║     python -m petrolhead run                            ║
+║                                                          ║
+║  Backend:  http://localhost:6055                         ║
+║  Frontend: http://localhost:5055                         ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
 {Colors.END}""")

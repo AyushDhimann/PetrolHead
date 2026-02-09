@@ -32,7 +32,7 @@ export default function ChatWidget({ reportText }: ChatWidgetProps) {
         parts: [
           {
             type: "text" as const,
-            text: "Hi! I'm your Nawgati analyst. Ask me anything about this fuel station — financials, competitors, risks, scores, or any specific detail from the report.",
+            text: "Hi! I'm your PetrolHead analyst. Ask me anything about this fuel station — financials, competitors, risks, scores, or any specific detail from the report.",
           },
         ],
       },
@@ -82,7 +82,7 @@ export default function ChatWidget({ reportText }: ChatWidgetProps) {
           <div className="flex items-center justify-between bg-gradient-to-r from-blue-500 to-indigo-600 px-4 py-3">
             <div className="flex items-center gap-2">
               <Bot className="h-5 w-5 text-white" />
-              <span className="text-sm font-semibold text-white">Nawgati Analyst</span>
+              <span className="text-sm font-semibold text-white">PetrolHead Analyst</span>
             </div>
             <div className="flex items-center gap-1">
               <button

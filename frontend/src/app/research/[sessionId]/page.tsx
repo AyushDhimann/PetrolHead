@@ -21,7 +21,7 @@ import {
   updateSessionCookieStatus,
 } from "@/lib/cookies";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
 
 /** Extract **bold headline** from a thought summary string */
 function extractHeadline(thought: string): { headline: string; body: string } {
@@ -46,22 +46,51 @@ export default function ResearchProgressPage() {
   const [logs, setLogs] = useState<string[]>([]);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const sseRef = useRef<EventSource | null>(null);
+  const prevThoughtCountRef = useRef<number>(0);
+  const logsEndRef = useRef<HTMLDivElement | null>(null);
+  const thoughtsEndRef = useRef<HTMLDivElement | null>(null);
+
+  /** Add new thought headlines to the live logs */
+  const addNewThoughtLogs = useCallback((thoughts: string[]) => {
+    const prevCount = prevThoughtCountRef.current;
+    if (thoughts.length > prevCount) {
+      const newThoughts = thoughts.slice(prevCount);
+      prevThoughtCountRef.current = thoughts.length;
+      setLogs((prev) => {
+        const newEntries = newThoughts.map((t) => {
+          const m = t.match(/\*\*(.+?)\*\*/);
+          return m ? `[AI] ${m[1]}` : `[AI] ${t.slice(0, 120)}`;
+        });
+        return [...prev, ...newEntries].slice(-50);
+      });
+    }
+  }, []);
+
+  /** Process incoming session data (from SSE or polling) */
+  const handleSessionUpdate = useCallback((data: SessionStatus) => {
+    setSession(data);
+    updateSessionCookieStatus(data.status);
+
+    // Add current message to logs (dedup)
+    if (data.current_message) {
+      setLogs((prev) => {
+        if (prev.length === 0 || prev[prev.length - 1] !== data.current_message) {
+          return [...prev, data.current_message].slice(-50);
+        }
+        return prev;
+      });
+    }
+
+    // Add all NEW thought headlines to logs
+    if (data.thought_summaries && data.thought_summaries.length > 0) {
+      addNewThoughtLogs(data.thought_summaries);
+    }
+  }, [addNewThoughtLogs]);
 
   const poll = useCallback(async () => {
     try {
       const status = await api.getSessionStatus(sessionId);
-      setSession(status);
-      updateSessionCookieStatus(status.status);
-
-      // Add current message to logs (dedup)
-      if (status.current_message) {
-        setLogs((prev) => {
-          if (prev.length === 0 || prev[prev.length - 1] !== status.current_message) {
-            return [...prev, status.current_message].slice(-30);
-          }
-          return prev;
-        });
-      }
+      handleSessionUpdate(status);
 
       if (status.status === "completed" || status.status === "failed") {
         if (intervalRef.current) {
@@ -72,81 +101,63 @@ export default function ResearchProgressPage() {
     } catch (err) {
       setError(String(err));
     }
-  }, [sessionId]);
+  }, [sessionId, handleSessionUpdate]);
 
-  // SSE primary with polling fallback
+  // Polling PRIMARY + SSE enhancement
   useEffect(() => {
-    let fallbackToPolling = false;
+    // Start polling immediately — this is the reliable transport
+    poll();
+    intervalRef.current = setInterval(poll, 2000);
 
+    // Also try SSE for faster updates
+    let sseActive = false;
     try {
       const source = new EventSource(
         `${API_BASE}/api/research/stream/${sessionId}`
       );
       sseRef.current = source;
 
+      // If SSE doesn't receive any event within 5s, close it
+      const sseTimeout = setTimeout(() => {
+        if (!sseActive) {
+          source.close();
+          sseRef.current = null;
+        }
+      }, 5000);
+
       source.addEventListener("progress", (e) => {
+        sseActive = true;
         const data = JSON.parse(e.data) as SessionStatus;
-        setSession(data);
-        updateSessionCookieStatus(data.status);
-        if (data.current_message) {
-          setLogs((prev) => {
-            if (prev.length === 0 || prev[prev.length - 1] !== data.current_message) {
-              return [...prev, data.current_message].slice(-30);
-            }
-            return prev;
-          });
-        }
-        // Also add thought summaries as they come in
-        if (data.thought_summaries && data.thought_summaries.length > 0) {
-          const latestThought = data.thought_summaries[data.thought_summaries.length - 1];
-          if (latestThought) {
-            const headlineMatch = latestThought.match(/\*\*(.+?)\*\*/);
-            const display = headlineMatch ? `[AI] ${headlineMatch[1]}` : `[AI] ${latestThought.slice(0, 150)}`;
-            setLogs((prev) => {
-              if (prev.length === 0 || prev[prev.length - 1] !== display) {
-                return [...prev, display].slice(-30);
-              }
-              return prev;
-            });
-          }
-        }
+        handleSessionUpdate(data);
       });
 
       source.addEventListener("done", (e) => {
+        sseActive = true;
         const data = JSON.parse(e.data) as SessionStatus;
-        setSession(data);
-        updateSessionCookieStatus(data.status);
-        if (data.current_message) {
-          setLogs((prev) => {
-            if (prev.length === 0 || prev[prev.length - 1] !== data.current_message) {
-              return [...prev, data.current_message].slice(-30);
-            }
-            return prev;
-          });
-        }
+        handleSessionUpdate(data);
         source.close();
+        // Also stop polling
+        if (intervalRef.current) {
+          clearInterval(intervalRef.current);
+          intervalRef.current = null;
+        }
       });
 
       source.onerror = () => {
         source.close();
-        if (!fallbackToPolling) {
-          fallbackToPolling = true;
-          // Fall back to polling
-          poll();
-          intervalRef.current = setInterval(poll, 2000);
-        }
+        sseRef.current = null;
+        clearTimeout(sseTimeout);
+        // Polling continues — it was already started above
       };
     } catch {
-      // SSE not supported, fall back to polling
-      poll();
-      intervalRef.current = setInterval(poll, 2000);
+      // SSE not available — polling handles everything
     }
 
     return () => {
       sseRef.current?.close();
       if (intervalRef.current) clearInterval(intervalRef.current);
     };
-  }, [sessionId, poll]);
+  }, [sessionId, poll, handleSessionUpdate]);
 
   // Save session cookie on first load
   useEffect(() => {
@@ -160,6 +171,14 @@ export default function ResearchProgressPage() {
       });
     }
   }, [session?.session_id]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Auto-scroll logs and thoughts to bottom
+  useEffect(() => {
+    logsEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [logs.length]);
+  useEffect(() => {
+    thoughtsEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [session?.thought_summaries?.length]);
 
   if (error && !session) {
     return (
@@ -275,13 +294,14 @@ export default function ResearchProgressPage() {
               <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
               <h2 className="text-sm font-semibold text-gray-300">Live Progress</h2>
             </div>
-            <div className="space-y-1 max-h-48 overflow-y-auto font-mono text-xs">
+            <div className="space-y-1 max-h-64 overflow-y-auto font-mono text-xs">
               {logs.map((log, i) => (
                 <div key={i} className="text-gray-400">
                   <span className="text-gray-600 mr-2">[{String(i + 1).padStart(2, "0")}]</span>
-                  <span className={i === logs.length - 1 ? "text-green-400" : ""}>{log}</span>
+                  <span className={`${i === logs.length - 1 ? "text-green-400" : ""} ${log.startsWith("[AI]") ? "text-purple-400" : ""}`}>{log}</span>
                 </div>
               ))}
+              <div ref={logsEndRef} />
             </div>
           </div>
         )}
@@ -339,6 +359,7 @@ export default function ResearchProgressPage() {
                   );
                 })}
               </AnimatePresence>
+              <div ref={thoughtsEndRef} />
             </div>
           </div>
         )}

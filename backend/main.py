@@ -1,5 +1,5 @@
 """
-Nawgati Backend - FastAPI Application Entry Point
+PetrolHead Backend - FastAPI Application Entry Point
 """
 
 import os
@@ -28,7 +28,7 @@ async def lifespan(app: FastAPI):
     settings = get_settings()
     setup_logging(settings)
     logger.info("=" * 60)
-    logger.info("NAWGATI Backend Starting")
+    logger.info("PETROLHEAD Backend Starting")
     logger.info(f"Primary Provider: {settings.PRIMARY_PROVIDER}")
     logger.info(f"Fallback Provider: {settings.FALLBACK_PROVIDER}")
     logger.info(f"Demo Mode: {settings.DEMO_MODE_ENABLED}")
@@ -43,11 +43,11 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    logger.info("NAWGATI Backend Shutting Down")
+    logger.info("PETROLHEAD Backend Shutting Down")
 
 
 app = FastAPI(
-    title="Nawgati - Fuel Station Profile Dashboard API",
+    title="PetrolHead - Fuel Station Profile Dashboard API",
     description="AI-powered deep research & dashboard generation for fuel stations",
     version="1.0.0",
     lifespan=lifespan,
@@ -76,7 +76,7 @@ app.include_router(cache_router, prefix="/api/cache", tags=["Cache"])
 async def health_check():
     return {
         "status": "healthy",
-        "service": "nawgati-backend",
+        "service": "petrolhead-backend",
         "primary_provider": settings.PRIMARY_PROVIDER,
         "demo_mode": settings.DEMO_MODE_ENABLED,
     }

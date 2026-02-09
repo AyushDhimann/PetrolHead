@@ -63,15 +63,15 @@ class Settings(BaseSettings):
     OUTPUTS_DIR: str = "outputs"
     LOG_LEVEL: str = "DEBUG"
     LOG_TO_FILE: bool = True
-    LOG_FILE_PATH: str = "outputs/logs/nawgati.log"
+    LOG_FILE_PATH: str = "outputs/logs/petrolhead.log"
     SAVE_RAW_RESPONSES: bool = True
     SAVE_INTERMEDIATE_FILES: bool = True
 
     # Server
     BACKEND_HOST: str = "0.0.0.0"
-    BACKEND_PORT: int = 8000
-    FRONTEND_PORT: int = 3000
-    CORS_ORIGINS: str = "http://localhost:3000,http://127.0.0.1:3000"
+    BACKEND_PORT: int = 6055
+    FRONTEND_PORT: int = 5055
+    CORS_ORIGINS: str = "http://localhost:5055,http://127.0.0.1:5055,http://localhost:6055,http://127.0.0.1:6055"
 
     # Session
     SESSION_EXPIRY_HOURS: int = 24

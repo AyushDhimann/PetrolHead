@@ -36,7 +36,7 @@ import {
   PaymentMethodsSkeleton,
 } from "@/components/dashboard/Skeletons";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
 
 async function fetchSessionText(sessionId: string): Promise<{
   text: string;

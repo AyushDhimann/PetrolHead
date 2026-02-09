@@ -24,7 +24,7 @@ const model = google("gemini-2.5-flash-lite");
 
 // ─── Cache Directory ────────────────────────────────────────────
 const CACHE_DIR = path.join(process.cwd(), ".cache", "extractions");
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:6055";
 
 function getShortCacheKey(text: string, section: string): string {
   const hash = crypto.createHash("md5").update(text).digest("hex").slice(0, 12);

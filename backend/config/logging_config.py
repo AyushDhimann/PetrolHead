@@ -54,4 +54,4 @@ def setup_logging(settings=None):
 
 def get_logger(name: str) -> logging.Logger:
     """Get a named logger."""
-    return logging.getLogger(f"nawgati.{name}")
+    return logging.getLogger(f"petrolhead.{name}")
