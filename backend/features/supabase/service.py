@@ -189,7 +189,12 @@ class SupabaseService:
             logger.info(f"Cached extraction: {cache_key}")
             return True
         except Exception as e:
-            logger.warning(f"Failed to cache extraction {cache_key}: {e}")
+            # RLS policies may block cache writes - this is non-critical
+            error_msg = str(e)
+            if "row-level security policy" in error_msg or "42501" in error_msg:
+                logger.debug(f"Cache write blocked by RLS for {cache_key} (non-critical)")
+            else:
+                logger.warning(f"Failed to cache extraction {cache_key}: {e}")
             return False
 
     # ── Past Researches ───────────────────────────────────────

@@ -58,7 +58,11 @@ class PerplexityResearchClient:
         payload = {
             "model": self.settings.PERPLEXITY_MODEL,
             "messages": messages,
+            "max_tokens": self.settings.PERPLEXITY_MAX_TOKENS,
+            "reasoning_effort": self.settings.PERPLEXITY_REASONING_EFFORT,
         }
+
+        logger.info(f"[{session_id}] Payload: max_tokens={self.settings.PERPLEXITY_MAX_TOKENS}, reasoning_effort={self.settings.PERPLEXITY_REASONING_EFFORT}")
 
         try:
             with httpx.Client(timeout=600.0) as client:
@@ -113,8 +117,12 @@ class PerplexityResearchClient:
         payload = {
             "model": self.settings.PERPLEXITY_MODEL,
             "messages": messages,
+            "max_tokens": self.settings.PERPLEXITY_MAX_TOKENS,
+            "reasoning_effort": self.settings.PERPLEXITY_REASONING_EFFORT,
             "stream": True,
         }
+
+        logger.info(f"[{session_id}] Streaming payload: max_tokens={self.settings.PERPLEXITY_MAX_TOKENS}, reasoning_effort={self.settings.PERPLEXITY_REASONING_EFFORT}")
 
         collected_text = []
         citations = []
