@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import fs from "fs/promises";
+import path from "path";
 
 import {
   getIdentityData,
@@ -37,9 +39,15 @@ import {
 } from "@/components/dashboard/Skeletons";
 import { getApiBase } from "@/lib/api-base";
 
-const API_BASE = getApiBase();
-
 async function fetchDemoText(demoId: string): Promise<string> {
+  // If DEMO_FETCH=frontend, read directly from public/demos/ on the server
+  if (process.env.NEXT_PUBLIC_DEMO_FETCH === "frontend") {
+    const filePath = path.join(process.cwd(), "public", "demos", `${demoId}.txt`);
+    return fs.readFile(filePath, "utf-8");
+  }
+
+  // Otherwise fetch from the backend API
+  const API_BASE = getApiBase();
   const res = await fetch(`${API_BASE}/api/dashboard/demo/${demoId}/text`, {
     cache: "no-store",
   });

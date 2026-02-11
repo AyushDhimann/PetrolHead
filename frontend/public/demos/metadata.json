@@ -1,0 +1,23 @@
+{
+  "demos": [
+    {
+      "id": "demo1",
+      "name": "Sher Service Station",
+      "brand": "Indian Oil Corporation Limited",
+      "location": "Pankha Road, Janakpuri, New Delhi - 110058"
+    },
+    {
+      "id": "demo2",
+      "name": "Jay Garud Gas Station",
+      "brand": "Indian Oil",
+      "location": "Block B Jankpuri, Community Centre, Delhi - 110058"
+    },
+    {
+      "id": "demo3",
+      "name": "Jai Shree Ganesh Filling Station",
+      "brand": "Bharat Petroleum (BPCL)",
+      "location": "NH-44 / GT Karnal Road, Alipur, Delhi - 110036"
+    }
+  ],
+  "count": 3
+}

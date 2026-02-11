@@ -1,0 +1,1483 @@
+{
+  "meta": {
+    "target_name": "Jai Shree Ganesh Filling Station",
+    "brand": "Bharat Petroleum (BPCL)",
+    "location_reference": "NH-44 / NH-1 (GT Karnal Road), near Splash Water Park & Carnival Pearl Grand, Alipur, Delhi 110036",
+    "generated_at": "2026-02-07T21:41:00+05:30",
+    "jurisdiction": {
+      "city": "Delhi",
+      "district": "North West Delhi",
+      "state": "Delhi",
+      "country": "India"
+    },
+    "overall_confidence_score": 0.72,
+    "source_summary": {
+      "approx_unique_source_count": 80,
+      "primary_source_types": [
+        "GST and tax data aggregators",
+        "Justdial and business directories",
+        "Census 2011 and citypopulation datasets",
+        "PPAC and petroleum ministry reports",
+        "News media on dealer commissions and traffic",
+        "Real-estate listing platforms",
+        "Fuel price trackers and CNG aggregators"
+      ]
+    },
+    "global_notes": "Many regulatory licences (PESO, DPCC, fire NOC, legal metrology) are not published at outlet level; where such data is missing, fields are marked as 'not publicly disclosed' with explanatory context."
+  },
+
+  "entity_profile": {
+    "legal_identity": {
+      "business_name": {
+        "value": "JAI SHREE GANESH FILLING STATION",
+        "meta": {
+          "sources": [""],
+          "confidence": 0.99,
+          "notes": "Spelling in public records is uppercase; Justdial and CNG listings use 'Jai Shree Ganesh Filling Station (Bharat Petroleum)'."
+        }
+      },
+      "gst_registration": {
+        "gstin": {
+          "value": "07AAFFJ4471P1ZU",
+          "meta": {
+            "sources": [""],
+            "confidence": 1.0,
+            "notes": "Active GST registration for this entity in Delhi." [gst.iadv](https://gst.iadv.io/JAI-SHREE-GANESH-FILLING-STATION-07AAFFJ4471P1ZU/)
+          }
+        },
+        "pan": {
+          "value": "AAFFJ4471P",
+          "meta": {
+            "sources": [""],
+            "confidence": 1.0
+          }
+        },
+        "constitution_of_business": {
+          "value": "Partnership",
+          "meta": {
+            "sources": [""],
+            "confidence": 0.95
+          }
+        },
+        "nature_of_business_activities": {
+          "value": ["Retail Business", "Office / Sale Office"],
+          "meta": {
+            "sources": [""],
+            "confidence": 0.95
+          }
+        },
+        "effective_date_of_registration": {
+          "value": "2017-07-01",
+          "meta": {
+            "sources": [""],
+            "confidence": 0.98
+          }
+        },
+        "taxpayer_category": {
+          "value": "Regular",
+          "meta": {
+            "sources": [""],
+            "confidence": 0.9
+          }
+        }
+      },
+      "registered_address": {
+        "value": "KH NO. 66/14, 66/15, G T ROAD, NATIONAL HIGHWAY 1, Alipur, North West Delhi, Delhi, 110036",
+        "meta": {
+          "sources": [""],
+          "confidence": 0.98,
+          "notes": "Matches user-provided NH-44 / GT Karnal Road description and Alipur pin code 110036." [nobroker](https://www.nobroker.in/locality-iq/alipur-new-delhi-liqlt?nbFr=NBLocalityIQ_Page)
+        }
+      },
+      "operating_trade_address_variants": [
+        {
+          "value": "Near Splash Water Park, BPCL Petrol Pump, G T Karnal Road, Alipur, Delhi 110036",
+          "meta": {
+            "sources": [],
+            "confidence": 0.9,
+            "notes": "From Justdial listing; Splash Water Park / Carnival Pearl Grand are key landmarks."
+          }
+        },
+        {
+          "value": "Village Alipur, NH-1 (NH-44), North West Delhi, Delhi 110036",
+          "meta": {
+            "sources": [""],
+            "confidence": 0.85
+          }
+        }
+      ],
+      "ownership_and_structure": {
+        "omc_brand": {
+          "value": "Bharat Petroleum Corporation Limited (BPCL)",
+          "meta": {
+            "sources": [],
+            "confidence": 0.99,
+            "notes": "Explicitly labelled '(Bharat Petroleum)' in multiple Justdial/CNG listings and BPCL references." [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations/nct-11023015/page-3)
+          }
+        },
+        "dealership_model": {
+          "value": "Likely DODO (Dealer Owned Dealer Operated)",
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.7,
+            "notes": "Name is that of private partnership, not 'COCO'; consistent with BPCL DODO naming on highways. No explicit public confirmation, hence marked as inferred." [indiafilings](https://www.indiafilings.com/learn/bpcl-retail-outlet-dealership/)
+          }
+        },
+        "partners_or_proprietors": {
+          "value": "Not publicly disclosed",
+          "meta": {
+            "confidence": 0.2,
+            "notes": "GST and directory records do not list individual partners; would require internal tax or dealership documents."
+          }
+        },
+        "historical_changes": {
+          "value": "Listed in legacy Delhi petrol-pump tables both as 'Jai Shree Ganesh Filling Station (Adhoc)' and later as 'Jai Shree Ganesh Filling Station', suggesting initial adhoc status under Delhi Police / administrative arrangements and later regularisation.",
+          "meta": {
+            "confidence": 0.6,
+            "notes": "Derived from a historical compiled list of Delhi pumps showing an '(Adhoc)' tag for this outlet; no dates or licence migration details are public."
+          }
+        }
+      }
+    },
+    "regulatory_footprint_summary": {
+      "peso_petroleum_storage_license": {
+        "status": "Required by law; outlet cannot operate without PESO licence, but specific licence number/date not publicly disclosed.",
+        "meta": {
+          "confidence": 0.6,
+          "notes": "All petroleum retail outlets must be licensed under Petroleum Rules 2002; PESO database is not openly searchable by outlet name."
+        }
+      },
+      "environmental_clearances": {
+        "dpcc_consent_to_establish_operate": {
+          "status": "Not publicly disclosed at outlet level",
+          "meta": {
+            "sources": [""],
+            "confidence": 0.4,
+            "notes": "DPCC publishes inventories and sector-level documentation, but not individual petrol-pump consents in an easily searchable form; NH-44 GT Karnal Road is identified as a corridor with significant traffic-related emissions." [dpcc.delhigovt.nic](https://www.dpcc.delhigovt.nic.in/uploads/news/ae9ce818bf8b9e12ddb90177ce3108c7.pdf)
+          }
+        }
+      },
+      "fire_safety_noc": {
+        "status": "Not publicly disclosed; mandatory under Delhi Fire Service Rules for operating fuel stations.",
+        "meta": {
+          "confidence": 0.6,
+          "notes": "Delhi Fire Service publishes only selected high-level NOC details; individual petrol-pump NOCs are not accessible online."
+        }
+      },
+      "pollution_under_control_puc_centre_authorisation": {
+        "status": "PUC centre operational at this outlet",
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.95,
+          "notes": "Listed explicitly with 'PUC' tag in Justdial petrol-pump and CNG categories." [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations/nct-11023015/page-3)
+        }
+      },
+      "legal_metrology_and_weights_measures": {
+        "status": "All retail outlets must maintain valid calibration and stamping; no public, pump-specific inspection dates or certificate numbers found.",
+        "meta": {
+          "confidence": 0.5,
+          "notes": "Legal Metrology Delhi does not provide outlet-wise inspection registers online."
+        }
+      },
+      "labour_and_social_security_registrations": {
+        "status": "Not publicly disclosed for this outlet",
+        "meta": {
+          "confidence": 0.3,
+          "notes": "ESI/PF registrations exist at entity level but are not mapped publicly to individual retail outlets."
+        }
+      }
+    }
+  },
+
+  "physical_and_digital_infrastructure": {
+    "geolocation": {
+      "address_canonical": "KH NO. 66/14, 66/15, GT Karnal Road (NH-44/NH-1), Village Alipur, North West Delhi, Delhi 110036",
+      "landmark_triangulation": {
+        "landmarks": [
+          "Splash Water Park / Carnival Pearl Grand on NH-44",
+          "Alipur village centre (approx. 1–2 km)",
+          "Singhu border (Delhi–Haryana) further north on NH-44",
+          "Blue Sapphire Motel & Resort cluster on NH-44 corridor"
+        ],
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.85,
+          "notes": "Alipur sits on NH-44; multiple hospitality and event venues line this stretch." [en.wikipedia](https://en.wikipedia.org/wiki/Alipur,_Delhi)
+        }
+      },
+      "coordinates": {
+        "value": null,
+        "meta": {
+          "confidence": 0.1,
+          "notes": "No authoritative text source could be found exposing exact latitude/longitude for this outlet. Google Maps or in-field GPS would be required for precise coordinates."
+        }
+      }
+    },
+    "site_layout_and_facilities": {
+      "dispensers_and_nozzles": {
+        "estimated_dispenser_count": {
+          "value": "4–8 multi-product dispensers (MPDs) with multiple nozzles",
+          "meta": {
+            "confidence": 0.4,
+            "notes": "Typical for BPCL highway outlets on NH corridors, but no photograph-derived pump count could be parsed. Treat as a broad estimate only, not verified."
+          }
+        },
+        "services_integrated": {
+          "value": ["Petrol", "Diesel", "CNG (via IGL partnership)"],
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.9,
+            "notes": "The outlet appears in Justdial's CNG and PUC listings and in CNG directories as a CNG dispensing site; this implies an integrated IGL CNG facility on the same forecourt." [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations-in-Rohini-Sector-11/nct-11023015/page-3)
+          }
+        }
+      },
+      "underground_storage": {
+        "tank_configuration": {
+          "value": "Not publicly disclosed; typical medium highway BPCL outlet would deploy 3–5 underground tanks (petrol, diesel, premium grades, CNG cascade not underground).",
+          "meta": {
+            "confidence": 0.3,
+            "notes": "No PESO drawings or capacity disclosures available. Any capacity figures would be guesswork and are therefore omitted."
+          }
+        }
+      },
+      "canopy_and_access": {
+        "canopy": {
+          "value": "Standard BPCL-branded forecourt canopy over fuelling lanes",
+          "meta": {
+            "confidence": 0.5,
+            "notes": "Inferred from brand norms and highway siting; photo-derived confirmation not accessible."
+          }
+        },
+        "ingress_egress": {
+          "value": "Direct access from NH-44/GT Karnal Road; likely separate entry and exit cuts aligned with highway carriageway.",
+          "meta": {
+            "confidence": 0.6,
+            "notes": "NH-44 here is a major arterial with high truck and inter-city traffic; DPCC/MoHUA recognise GT Karnal Road as a high-accident, high-flow corridor." [mohua.gov](https://mohua.gov.in/upload/uploadfiles/files/Decongesting_TrafficDelhi06.pdf)
+          }
+        }
+      },
+      "amenities": {
+        "air_filling": {
+          "value": "Available (tyre air facility)",
+          "meta": {
+            "confidence": 0.9,
+            "notes": "Justdial narrative about air for tyres is written specifically for this outlet." [justdial](https://www.justdial.com/Delhi/Jai-Shree-Ganesh-Filling-Station-Bharat-Petroleum-Near-Splash-Water-Park-Bpcl-Petrol-Pump-Alipur/011PXX11-XX11-140826182250-X3Z4_BZDET)
+          }
+        },
+        "puc_center": {
+          "value": "Available (PUC for multiple vehicle categories)",
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.95
+          }
+        },
+        "restrooms": {
+          "value": "Not explicitly confirmed; typical at BPCL highway sites but no textual confirmation found for this outlet.",
+          "meta": {
+            "confidence": 0.4,
+            "notes": "Absence of explicit mention in directories; should be physically verified."
+          }
+        },
+        "drinking_water": {
+          "value": "Not explicitly documented",
+          "meta": {
+            "confidence": 0.3
+          }
+        },
+        "convenience_store": {
+          "value": "Not clearly documented; BPCL often co-locates 'In & Out' or BeCafe stores on larger sites, but no listing names such a store at this outlet.",
+          "meta": {
+            "confidence": 0.3,
+            "notes": "No separate convenience-store listing tied directly to this outlet was found."
+          }
+        },
+        "vehicle_care_services": {
+          "car_wash": {
+            "value": "Not listed",
+            "meta": {
+              "confidence": 0.3
+            }
+          },
+          "basic_vehicle_servicing": {
+            "value": "Not listed",
+            "meta": {
+              "confidence": 0.3
+            }
+          }
+        }
+      }
+    },
+    "operations_and_hours": {
+      "operating_hours": {
+        "value": "24x7 (Open 24 hours, all days)",
+        "meta": {
+          "confidence": 0.98,
+          "notes": "Explicitly described as 'Open 24 Hrs' seven days a week in Justdial listing for this outlet, and appears in 24-hour CNG station compilations for GT Karnal Road." [justdial](https://www.justdial.com/Delhi/24-Hours-CNG-Filling-Stations-in-Gt-Karnal-Road/nct-11038618)
+        }
+      },
+      "contact_channels": {
+        "phone_numbers": {
+          "value": "Not fully exposed in public directories; Justdial masks numbers behind 'Show Number' gate.",
+          "meta": {
+            "confidence": 0.5
+          }
+        },
+        "email": {
+          "value": "Not publicly listed at outlet level",
+          "meta": {
+            "confidence": 0.2
+          }
+        },
+        "website_or_profile_links": {
+          "value": [
+            "BPCL corporate fuel station locator (station not individually named in snippets)",
+            "Justdial business profile for 'Jai Shree Ganesh Filling Station (Bharat Petroleum)'",
+            "CNG listing pages referencing this outlet"
+          ],
+          "meta": {
+            "confidence": 0.8
+          }
+        }
+      },
+      "technology_stack": {
+        "dispensing_equipment": {
+          "value": "Standard BPCL multi-product electronic dispensers with digital meters",
+          "meta": {
+            "confidence": 0.6,
+            "notes": "BPCL has near-complete migration to automated electronic dispensers across its network; mechanical meters are largely phased out." [indiafilings](https://www.indiafilings.com/learn/bpcl-retail-outlet-dealership/)
+          }
+        },
+        "automation_and_inventory": {
+          "value": "No station-specific automation description; most BPCL outlets on highways run centralised tank-gauge and billing systems, but public confirmation is absent.",
+          "meta": {
+            "confidence": 0.4
+          }
+        },
+        "digital_payments": {
+          "value": [
+            "Card (RuPay/Visa/Mastercard) – highly probable",
+            "UPI / QR-based payments – highly probable",
+            "BPCL UFill / HelloBPCL app support – very likely at network level"
+          ],
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.6,
+            "notes": "BPCL has aggressively rolled out UPI, NFC and HelloBPCL app-based payments and loyalty across its network; directories often tag outlets generically with 'multiple payment options', though not enumerated here." [bharatpetroleum](https://www.bharatpetroleum.in/our-businesses/fuels-and-services/edrive)
+          }
+        },
+        "loyalty_and_apps": {
+          "value": [
+            "HelloBPCL app and network-wide loyalty (SmartDrive / PetroCard / SmartFleet)"
+          ],
+          "meta": {
+            "sources": [""],
+            "confidence": 0.6,
+            "notes": "Assumed available as network capability; activation level at this specific RO not verifiable online."
+          }
+        },
+        "ev_charging": {
+          "value": "No evidence of an EV fast-charging point at this specific BPCL outlet.",
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.7,
+            "notes": "BPCL’s eDrive network lists 1600+ charging points nationwide, but search of eDrive and third‑party EV maps did not surface this outlet as a charger location." [bharatpetroleum](https://www.bharatpetroleum.in/our-businesses/fuels-and-services/edrive)
+          }
+        },
+        "solar_or_green_infrastructure": {
+          "value": "Not documented",
+          "meta": {
+            "confidence": 0.2
+          }
+        }
+      }
+    },
+    "product_and_service_portfolio": {
+      "fuels": {
+        "petrol_regular": {
+          "available": true,
+          "brand": "MS (Motor Spirit) – BPCL regular",
+          "retail_price_feb_2026_delhi_per_litre": 94.73,
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.98,
+            "notes": "Standard Delhi retail price; PSU outlets in Delhi uniformly follow OMC price; outlet-specific deviations are not permitted." [businesstoday](https://www.businesstoday.in/fuel-price/petrol-price-in-delhi-today)
+          }
+        },
+        "diesel_regular": {
+          "available": true,
+          "brand": "HSD – BPCL regular",
+          "retail_price_feb_2026_delhi_per_litre": 87.62,
+          "meta": {
+            "sources": ["","","",""],
+            "confidence": 0.98
+          }
+        },
+        "cng": {
+          "available": true,
+          "operator": "Indraprastha Gas Limited (IGL) on BPCL premises",
+          "retail_price_feb_2026_delhi_per_kg": 77.09,
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.98,
+            "notes": "Delhi CNG price is citywide; this station appears in Justdial CNG directories serving GT Karnal Road." [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations-in-Rohini-Sector-11/nct-11023015/page-3)
+          }
+        },
+        "premium_petrol_diesel": {
+          "available": "Not clearly confirmed; BPCL typically offers 'Speed' branded premium fuels at many outlets but there is no explicit listing for this RO.",
+          "meta": {
+            "confidence": 0.4
+          }
+        },
+        "auto_lpg": {
+          "available": false,
+          "meta": {
+            "sources": [""],
+            "confidence": 0.7,
+            "notes": "Auto LPG station lists for Delhi do not include this outlet."
+          }
+        }
+      },
+      "lubricants_and_ancillary_products": {
+        "lubricants": {
+          "value": "BPCL MAK Lubricants very likely retailed (engine oils, gear oils, greases), as per standard BPCL dealership offering.",
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.6
+          }
+        },
+        "other_products": {
+          "value": [
+            "Car-care consumables (coolant, brake fluid, windshield cleaner) – unconfirmed",
+            "Basic FMCG/snacks – unconfirmed"
+          ],
+          "meta": {
+            "confidence": 0.4
+          }
+        }
+      },
+      "ancillary_services": {
+        "puc_testing": {
+          "value": "Operational PUC testing centre for vehicles",
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.95
+          }
+        },
+        "air_and_tyres": {
+          "value": "Tyre air filling (self-service or assisted)",
+          "meta": {
+            "confidence": 0.9
+          }
+        },
+        "car_wash": {
+          "value": "Not listed",
+          "meta": {
+            "confidence": 0.3
+          }
+        }
+      }
+    }
+  },
+
+  "financial_intelligence_and_economics": {
+    "dealer_commission_and_margins": {
+      "commission_structure_2024_revision": {
+        "petrol_margin_increment_per_litre": 0.65,
+        "diesel_margin_increment_per_litre": 0.44,
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.95,
+          "notes": "Dealer margins on petrol increased by ₹0.65/litre and diesel by ₹0.44/litre from 30 Oct 2024 for PSU OMCs including BPCL." [news18](https://www.news18.com/business/oil-firms-hike-commission-paid-to-petrol-pump-dealers-no-change-in-fuel-prices-9103606.html)
+        }
+      },
+      "typical_effective_margins": {
+        "petrol_per_litre": {
+          "value_range_in_inr": [2.5, 3.2],
+          "meta": {
+            "sources": ["","","",""],
+            "confidence": 0.7,
+            "notes": "Based on PPAC commission formula (fixed ₹/KL plus % of product price) and industry analyses that estimate petrol dealer margin ≈ ₹2.8–3.5/litre after 2024 revision." [ppac.gov](https://ppac.gov.in/prices/dealers-distributors-commission-on-petrol-diesel-pds-kerosene-domestic-lpg)
+          }
+        },
+        "diesel_per_litre": {
+          "value_range_in_inr": [1.8, 2.4],
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.7
+          }
+        }
+      }
+    },
+    "volume_and_revenue_estimates": {
+      "industry_benchmarks": {
+        "average_throughput_psu_retail_outlets_klpm": {
+          "value": 160,
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.9,
+            "notes": "CRISIL research and IBP/IOC data indicate PSU outlet throughput ≈160–170 kilolitres per month on average." [img.saurenergy](https://img.saurenergy.com/2019/06/outlet-overkill-20june2019.pdf)
+          }
+        },
+        "highway_vs_urban_notes": {
+          "value": "Highway and high-traffic urban outlets often exceed average throughput; rural and oversupplied areas may be below break-even volumes.",
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.85
+          }
+        }
+      },
+      "estimated_throughput_for_this_outlet": {
+        "monthly_total_fuel_volume_kl": {
+          "low_case": 140,
+          "base_case": 190,
+          "high_case": 260,
+          "meta": {
+            "confidence": 0.55,
+            "methodology": "Base case anchored on PSU average throughput (~160 KLPM) adjusted upward for NH-44 highway location and CNG co-location (slightly higher draw), but downward for presence of 5+ competing pumps within ~3–5 km micro-corridor. Range reflects uncertainty, not measured data."
+          }
+        },
+        "product_mix_share_estimate": {
+          "petrol_percent":, [justdial](https://www.justdial.com/Delhi/24-Hours-CNG-Filling-Stations-in-Alipur/nct-11038618)
+          "diesel_percent":, [petrolpump.hpretail](https://petrolpump.hpretail.in/hindustan-petroleum-corporation-limited-shri-ganesh-filling-station-petrol-pump-jalali-aligarh-410506/Contact-Us)
+          "cng_energy_equivalent_percent":, [indiasthan](https://indiasthan.com/place/haryana/199496/jay-shree-ganesh-filling-satation-bharat-petroleum-petrol-pump)
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.5,
+            "notes": "Nationally, transport consumes ~70% of diesel and ~99.6% of petrol; 2‑wheelers dominate petrol at 59% of outlet sales, with passenger cars at 30%. A highway corridor like NH-44 tends to skew towards diesel trucks and buses; CNG provides an additional share." [pib.gov](https://www.pib.gov.in/newsite/printrelease.aspx?relid=102799)
+          }
+        },
+        "monthly_gross_commission_estimate_in_inr": {
+          "low_case": 350000,
+          "base_case": 500000,
+          "high_case": 750000,
+          "meta": {
+            "confidence": 0.55,
+            "methodology": "Apply blended per‑litre commission ~₹2.3–3.0 across 140–260 KL throughput. Aligned with independent profit breakdowns where pumps selling ~100 KLPM earn ~₹2.5–3.5 lakh in commission, and highly busy urban pumps at ~600 KLPM earn ~₹15 lakh gross margin." [youtube](https://www.youtube.com/watch?v=Gd-VYUBHkLw)
+          }
+        }
+      },
+      "operating_cost_structure_estimate": {
+        "staffing": {
+          "headcount_range":, [justdial](https://www.justdial.com/Delhi/JAI-Sri-Ganesh-Pump-Station-Alipur/011PXX11-XX11-140128154717-S1J9_BZDET)
+          "monthly_cost_range_in_inr": ,
+          "meta": {
+            "confidence": 0.6,
+            "notes": "Typical highway pump with multiple shifts, separate CNG crew, PUC operators, and cashiers. Indian pump case studies show 30 attendants + ~10 managers/accounts costing ≈₹7 lakh/month at very high-volume city sites; scaled down here for mid-volume highway site." [linkedin](https://www.linkedin.com/posts/aaditya-iyengar-cfa-4683b6203_petrol-pump-is-not-a-money-making-machine-activity-7328663805389914113-bZad)
+          }
+        },
+        "electricity_and_dg_costs": {
+          "monthly_cost_range_in_inr": ,
+          "meta": {
+            "confidence": 0.5,
+            "notes": "Includes forecourt lighting, compressors, dispensers, office load, and CNG compression share (where passed through). Highly sensitive to local tariffs and DG usage."
+          }
+        },
+        "maintenance_and_repairs": {
+          "monthly_cost_range_in_inr": ,
+          "meta": {
+            "confidence": 0.5
+          }
+        },
+        "statutory_and_insurance": {
+          "monthly_avg_range_in_inr": ,
+          "meta": {
+            "confidence": 0.4,
+            "notes": "Annual PESO, fire safety, public liability and asset insurance amortised monthly."
+          }
+        },
+        "other_overheads": {
+          "monthly_cost_range_in_inr": ,
+          "meta": {
+            "confidence": 0.4,
+            "notes": "Security, IT, bank charges, consumables, housekeeping."
+          }
+        },
+        "total_monthly_operating_cost_estimate_in_inr": {
+          "low_case": 650000,
+          "base_case": 850000,
+          "high_case": 1100000,
+          "meta": {
+            "confidence": 0.55,
+            "notes": "Synthesised from Indian petrol-pump business breakdowns and lender due‑diligence templates." [tataaig](https://www.tataaig.com/knowledge-center/car-insurance/how-to-open-a-petrol-pump-business-in-india)
+          }
+        }
+      },
+      "profitability_ranges": {
+        "monthly_net_profit_before_tax_in_inr": {
+          "low_case": 0,
+          "base_case": 150000,
+          "high_case": 400000,
+          "meta": {
+            "confidence": 0.5,
+            "notes": "At lower end of throughput range, profitability may be marginal once full costs are considered; at base/high cases, net incomes of ₹1.5–4 lakh/month align with widely reported dealer economics and ROI examples." [reddit](https://www.reddit.com/r/AskIndia/comments/1e7r0et/how_much_can_be_monthly_earning_with_a_petrol_pump/)
+          }
+        },
+        "net_margin_on_gross_sales_percent": {
+          "value_range": [1.5, 4.0],
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.6
+          }
+        },
+        "gst_turnover_band": {
+          "value": "Likely between ₹8–20 crore annual fuel + CNG sales",
+          "meta": {
+            "confidence": 0.5,
+            "methodology": "Assuming 140–260 KL per month, average blended MRP ≈₹90/litre (petrol+dsl) and CNG at ₹77/kg gives annual gross billings in the high single‑digit to low‑teen crore range; exact filings are not public." [ndtv](https://www.ndtv.com/fuel-prices/diesel-price-in-new-delhi-city)
+          }
+        }
+      },
+      "capital_investment_and_roi": {
+        "setup_cost_excluding_land_in_inr": {
+          "estimated_range": ,
+          "meta": {
+            "sources": ["","","",""],
+            "confidence": 0.6,
+            "notes": "Industry guides place petrol-pump opening cost without land between ₹60 lakh and ₹2 crore depending on size, automation and highway format." [myindifuels](https://myindifuels.com/blog-petrol-pump-opening-cost-in-india.html)
+          }
+        },
+        "working_capital_requirement": {
+          "value_range_in_inr": ,
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.6,
+            "notes": "High inventory and credit to fleet/customers often require ≥₹1 crore in working capital for a mid-sized highway RO." [reddit](https://www.reddit.com/r/AskIndia/comments/1e7r0et/how_much_can_be_monthly_earning_with_a_petrol_pump/)
+          }
+        },
+        "payback_period_years": {
+          "value_range":, [justdial](https://www.justdial.com/Delhi/Petrol-Pumps-in-Nangli-Poona/nct-10360538)
+          "meta": {
+            "sources": ["","","","",""],
+            "confidence": 0.6,
+            "notes": "Petrol-pump ROI case studies show realistic payback of 3–5 years for strong sites, extending to 7–8 years where land costs are high or throughput is modest."
+          }
+        }
+      }
+    }
+  },
+
+  "market_and_competitive_dynamics": {
+    "micro_market_definition": {
+      "radius_km": 3,
+      "description": "NH-44 / GT Karnal Road corridor around Alipur between Delhi Singhu Border and Khampur / Hamidpur, plus Alipur village core.",
+      "meta": {
+        "confidence": 0.8
+      }
+    },
+    "identified_competitors_within_corridor": [
+      {
+        "name": "Nem Chand Tara Chand (Bharat Petroleum)",
+        "brand": "BPCL",
+        "address": "10/7 Mile Stone, G T Karnal Road, Alipur, Delhi 110036",
+        "approx_relationship": "Very close competitor on same NH-44 stretch; same pincode.",
+        "rating": 3.9,
+        "rating_source": "Justdial snippet & GST address mapping",
+        "meta": {
+          "sources": ["","","",""],
+          "confidence": 0.9,
+          "notes": "GST details confirm 10/7 milestone address on GT Karnal Road Alipur." [gst.iadv](https://gst.iadv.io/NEM-CHAND-TARA-CHAND-07AACFN3221E1ZU/)
+        }
+      },
+      {
+        "name": "Jio BP Fueling Station, Bakoli",
+        "brand": "Jio‑BP (Reliance-BP JV)",
+        "address": "GT Karnal Road, Bakoli, Delhi",
+        "rating": 4.0,
+        "rating_count": 308,
+        "meta": {
+          "sources": [],
+          "confidence": 0.85,
+          "notes": "Listed in Justdial Alipur petrol-pump cluster with 4.0 rating and 308 reviews; approx distance likely within ~3–5 km north on NH-44."
+        }
+      },
+      {
+        "name": "Ajanta Pump Station",
+        "brand": "Likely BPCL/IOCL (not explicit)",
+        "address": "GT Karnal Road, Khampur, Delhi",
+        "rating": 4.5,
+        "rating_count": 2027,
+        "meta": {
+          "confidence": 0.85,
+          "notes": "High-rating outlet on same GT Karnal Road corridor; offers fuel service, oil change, PUC."
+        }
+      },
+      {
+        "name": "Pauls Petro Mart (Bharat Petroleum)",
+        "brand": "BPCL",
+        "address": "GT Karnal Road, Hamidpur, Delhi",
+        "rating": 3.8,
+        "rating_count": 796,
+        "meta": {
+          "confidence": 0.85
+        }
+      },
+      {
+        "name": "JS Pump Station",
+        "brand": "Unspecified PSU",
+        "address": "Bakhtawar Pur Village, Delhi",
+        "rating": 4.3,
+        "rating_count": 33,
+        "meta": {
+          "confidence": 0.8
+        }
+      },
+      {
+        "name": "Harjeet Pump Station",
+        "brand": "Unspecified PSU (likely IOCL/BPCL)",
+        "address": "10/7 Alipur, Delhi",
+        "rating": 4.3,
+        "rating_count": 2,
+        "meta": {
+          "confidence": 0.7
+        }
+      },
+      {
+        "name": "Green Enviro Pump Station",
+        "brand": "Unspecified",
+        "address": "Sohna Road, Alipur, Delhi",
+        "rating": 3.7,
+        "rating_count": 376,
+        "meta": {
+          "confidence": 0.75
+        }
+      },
+      {
+        "name": "IOC Petrol Pump, Samaypur Badli",
+        "brand": "IOCL",
+        "address": "NH-1 Samaypur Badli, Delhi",
+        "rating": 3.6,
+        "rating_count": 368,
+        "meta": {
+          "confidence": 0.75
+        }
+      },
+      {
+        "name": "Amar Shahid Sudish Pump Station",
+        "brand": "Unspecified PSU",
+        "address": "Narela Shahpur Garhi, Delhi",
+        "rating": 4.1,
+        "rating_count": 163,
+        "meta": {
+          "confidence": 0.75
+        }
+      }
+    ],
+    "competition_analysis": {
+      "pump_density": {
+        "value": "High along NH-44 Alipur–Khampur–Hamidpur belt",
+        "meta": {
+          "confidence": 0.8,
+          "notes": "At least 7–10 branded outlets (BPCL, IOCL, Jio‑BP, HPCL) within a few kilometres on this national highway segment, indicating a competitive, mature corridor."
+        }
+      },
+      "brand_mix_in_corridor": {
+        "value": {
+          "bpcl_share_outlets": "Multiple (target + Nem Chand Tara Chand + Pauls Petro Mart + others)",
+          "iocl_and_hpcl_outlets": "Several nearby including IOC Samaypur Badli and JS/Harjeet/other HPCL pumps",
+          "private_players": "Jio‑BP Bakoli present"
+        },
+        "meta": {
+          "confidence": 0.8
+        }
+      },
+      "relative_positioning_of_target": {
+        "strengths": [
+          "CNG + PUC + 24x7 operation on NH-44 gives broad service coverage (liquid fuels + gas + compliance certificates).",
+          "Located near amusement/banquet cluster (Splash / Carnival Pearl Grand), capturing leisure and event traffic.",
+          "BPCL brand with updated dealer margins from 2024."
+        ],
+        "weaknesses": [
+          "Customer rating around 3.8–3.9 vs Ajanta Pump Station at 4.5 and some competitors ≥4.0, indicating middling service/satisfaction.",
+          "No documented premium-offer differentiation (XP95/XP100 equivalents, EV charging, or strong convenience store)."
+        ],
+        "meta": {
+          "confidence": 0.7
+        }
+      },
+      "micro_market_share_estimation": {
+        "value": "Target outlet likely commands low‑to‑mid double‑digit share of immediate fuel demand within ~2–3 km, but faces strong share competition from Nem Chand Tara Chand (same brand, very close) and high‑rated Ajanta Pump Station.",
+        "meta": {
+          "confidence": 0.45,
+          "notes": "No transaction data; inference drawn from rating volumes (≈900+ reviews vs 2000+ at Ajanta) and network density."
+        }
+      }
+    }
+  },
+
+  "location_intelligence_and_demographics": {
+    "macro_demographics_alipur_census_town": {
+      "population_2011": {
+        "value": 20332,
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.99,
+          "notes": "Ali Pur Census Town population as per Census 2011." [census2011.co](https://www.census2011.co.in/data/town/63910-ali-pur-delhi.html)
+        }
+      },
+      "estimated_population_2026": {
+        "value": 30300,
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.7,
+          "notes": "Based on projection cited in census portal for 2026; actual 2021 census is delayed." [census2011.co](https://www.census2011.co.in/data/town/63910-ali-pur-delhi.html)
+        }
+      },
+      "gender_split_2011": {
+        "male": 11217,
+        "female": 9115,
+        "sex_ratio": 813,
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.98
+        }
+      },
+      "literacy_rate_2011_percent": {
+        "overall": 86.47,
+        "male": 92.22,
+        "female": 79.38,
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.98
+        }
+      },
+      "religious_composition_percent": {
+        "hindu": 92.13,
+        "muslim": 6.59,
+        "other": 1.28,
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.95
+        }
+      },
+      "administrative_classification": {
+        "value": "Census Town; part of Narela sub-division; zone P-I in DDA’s Master Plan.",
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.9,
+          "notes": "Alipur is administrative HQ for a sub-division of North Delhi; falls under DDA Zone P-I." [rgplan](https://rgplan.com/planningmust/PM-10FunctionsofDDA.pdf)
+        }
+      }
+    },
+    "socioeconomic_profile": {
+      "land_use_and_economy": {
+        "value": "Mixed-use corridor with: (a) highway-oriented logistics and warehousing clusters along GT Karnal Road; (b) village-scale residential pockets; (c) educational institutions and small commercial clusters.",
+        "meta": {
+          "sources": ["","","",""],
+          "confidence": 0.8
+        }
+      },
+      "income_and_class_mix": {
+        "value": "Predominantly LIG–MIG with logistics‑linked commercial activity; large godowns/warehouses and affordable rentals attract transporters and small industrial units.",
+        "meta": {
+          "sources": ["","","",""],
+          "confidence": 0.6,
+          "notes": "Warehouse rents ≈₹1.05–1.1 lakh for ~6300–6750 sq ft implies ~₹16–17/sq ft/month, indicating mid‑range commercial land values while nearby housing rentals remain modest." [housing](https://housing.com/commercial/rent/commercial-property-for-rent-in-alipur-village-new-delhi-P3e4t5ad552wfqxd5)
+        }
+      },
+      "vehicle_ownership_and_usage": {
+        "value": "High vehicle penetration with significant share of 2‑wheelers, cars, and commercial trucks; Delhi-wide, 2‑wheelers account for ~59% of petrol consumption and passenger cars 30%, while trucks dominate diesel usage.", [ppac.gov](https://ppac.gov.in/uploads/whatsnew/1663838452_ExecutiveSummarySectoralConsumptionStudy.pdf)
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.8
+        }
+      }
+    },
+    "nearby_institutions_and_generators_within_approx_3_5km": {
+      "education": [
+        "Swami Shraddhanand College (Delhi University campus in Alipur)",
+        "Government Boys Senior Secondary School, Alipur",
+        "Multiple paramedical and local colleges referenced in locality guides"
+      ],
+      "healthcare": [
+        "Vedant Multispeciality Hospital (Alipur area)",
+        "North Delhi Multispeciality Medical Centre",
+        "Several clinics serving NH-44 and Alipur village"
+      ],
+      "hospitality_and_events": [
+        "Splash Water Park / Carnival Pearl Grand (immediate neighbour)",
+        "Blue Sapphire Motel & Resort and similar highway resorts on NH‑44 corridor" [yandex](https://yandex.com/maps/org/blue_sapphire_motel_resort_by_devam/29862055571/)
+      ],
+      "retail_and_markets": [
+        "Local Alipur village market",
+        "Logistics and warehouse hubs on Budhpur, Bakoli, and Bawana roads",
+        "Nearest mall: DD Mall (as per locality data, somewhat farther but relevant for broader catchment)" [nobroker](https://www.nobroker.in/locality-iq/alipur-new-delhi-liqlt)
+      ],
+      "meta": {
+        "sources": ["","","","",""],
+        "confidence": 0.7
+      }
+    },
+    "real_estate_metrics": {
+      "warehouse_rentals": {
+        "typical_rent_per_sqft_per_month_in_inr": {
+          "value_range":, [makemytrip](https://www.makemytrip.com/bus-tickets/gurgaon-noida-bus-ticket-booking.html)
+          "meta": {
+            "sources": ["","","","",""],
+            "confidence": 0.8,
+            "notes": "Examples: 6750 sq ft warehouse at ₹1.1 lakh/month (~₹16.3/sq ft); 6300 sq ft godown at ₹1.05 lakh (~₹16.7/sq ft). Larger warehouses quoted at similar implied rates." [realestateindia](https://www.realestateindia.com/delhi-property/property-for-rent-in-alipur.htm)
+          }
+        }
+      },
+      "industrial_land_and_building_sales": {
+        "indicative_values": {
+          "industrial_building_alipur_gt_karnal_road": "Listing at ₹7 crore (area not fully specified, likely 8000–25000 sq ft built-up).",
+          "industrial_plots_gt_karnal_corridor": "Land parcels around 1000 sq yd quoted near ₹30 crore in broader GT Karnal Road context."
+        },
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.5
+        }
+      },
+      "residential_rentals": {
+        "small_unit_rents_in_inr_per_month": {
+          "range": ,
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.7,
+            "notes": "Studio/1RK ≈₹4k–9k/month; 1BHK ≈₹9k/month in Alipur, indicating relatively affordable housing." [nobroker](https://www.nobroker.in/properties-for-rent-in-alipur-new-delhi)
+          }
+        }
+      }
+    }
+  },
+
+  "traffic_and_accessibility": {
+    "road_network_and_access": {
+      "primary_corridor": {
+        "value": "National Highway 44 (old NH‑1), also known as GT Karnal Road – major radial connecting Delhi with Sonipat, Panipat, Karnal and further towards Amritsar.",
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.95,
+          "notes": "GT Karnal Road is explicitly identified among high‑accident and high‑traffic corridors in Delhi traffic decongestion studies." [mohua.gov](https://mohua.gov.in/upload/uploadfiles/files/Decongesting_TrafficDelhi06.pdf)
+        }
+      },
+      "internal_connectivity": {
+        "value": "Access to Alipur village roads, Budhpur/Bakoli connectors, and Bawana/Narela industrial belts via linking roads from NH‑44.",
+        "meta": {
+          "confidence": 0.8
+        }
+      }
+    },
+    "public_transport_connectivity": {
+      "nearest_metro_stations": [
+        {
+          "name": "Samaypur Badli (Yellow Line)",
+          "distance_km": 6.4,
+          "travel_time_road_minutes": 19,
+          "meta": {
+            "sources": ["","",""],
+            "confidence": 0.9,
+            "notes": "YoMetro lists Alipur ~6.41 km from Samaypur Badli; distance calculators show ~10 km road distance from Samaypur Badli to Alipur depending on route." [distancesfrom](https://www.distancesfrom.com/distance-from-Samaypur-Badli-Metro-Station-to-Alipur-New-Delhi/DistanceHistory/41550745.aspx)
+          }
+        },
+        {
+          "name": "Rohini Sector 18–19 (Red Line extension adjacency)",
+          "distance_km": 7.1,
+          "meta": {
+            "sources": [""],
+            "confidence": 0.8
+          }
+        }
+      ],
+      "nearest_railway_stations": {
+        "value": [
+          "Holambi Kalan (~5.5 km, as per locality data for Alipur)" [nobroker](https://www.nobroker.in/locality-iq/alipur-new-delhi-liqlt)
+        ],
+        "meta": {
+          "sources": [""],
+          "confidence": 0.7
+        }
+      },
+      "airport_access": {
+        "value": "IGI Airport (T3) is on the opposite side of Delhi; typical road distance ~40–45 km via Outer Ring Road / NH‑44–Ring Road–Airport corridor.",
+        "meta": {
+          "confidence": 0.6
+        }
+      }
+    },
+    "congestion_and_travel_times": {
+      "city_level_congestion": {
+        "tomtom_traffic_index_2023": {
+          "rank_worldwide": 44,
+          "avg_travel_time_minutes_per_10km": 21.67,
+          "avg_rush_hour_speed_kmph": 24,
+          "congestion_level_percent": 48,
+          "meta": {
+            "sources": ["","","",""],
+            "confidence": 0.95,
+            "notes": "Delhi ranked 44th most congested city centre globally in 2023; congestion ~48%, with 10 km taking 21m 40s on average." [timesofindia.indiatimes](https://timesofindia.indiatimes.com/city/delhi/delhi-traffic-ranking-44th-most-congested-city-centre-in-the-world/articleshow/107374527.cms)
+          }
+        }
+      },
+      "peak_hour_patterns": {
+        "value": "Centre for Science and Environment study indicates 'rush hour' in Delhi effectively runs from 8:00 to 20:00, with very small difference between peak and off‑peak speeds; weekend congestion can be worse than weekdays.", [scroll](https://scroll.in/latest/843382/delhi-traffic-is-virtually-the-same-during-peak-and-non-peak-hours-finds-study)
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.9
+        }
+      },
+      "corridor_specific_risk": {
+        "value": "GT Karnal Road (NH‑44) is among corridors with high accident and fatality counts, especially for pedestrians and vulnerable road users, as per decongestion and safety reports.", [mohua.gov](https://mohua.gov.in/upload/uploadfiles/files/Decongesting_TrafficDelhi06.pdf)
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.8
+        }
+      }
+    },
+    "traffic_composition_and_patterns_near_outlet": {
+      "vehicle_mix_estimate": {
+        "cars_suvs_percent":, [justdial](https://www.justdial.com/Delhi/24-Hours-CNG-Filling-Stations/nct-11038618)
+        "two_wheelers_percent":, [scribd](https://www.scribd.com/document/677872770/T2LIST)
+        "light_commercial_vehicles_percent":, [tenders.iglonline](https://tenders.iglonline.net/north-west-delhi-cng-outlets)
+        "heavy_trucks_and_buses_percent":, [tenders.iglonline](https://tenders.iglonline.net/north-west-delhi-cng-outlets)
+        "meta": {
+          "confidence": 0.45,
+          "notes": "Derived qualitatively from highway function (inter‑city freight + city commuters) and sectoral diesel usage data where trucks account for ~64% of diesel consumption." [ppac.gov](https://ppac.gov.in/uploads/whatsnew/1663838452_ExecutiveSummarySectoralConsumptionStudy.pdf)
+        }
+      },
+      "peak_demand_windows_for_fuel": {
+        "value": [
+          "Morning heavy truck and commuter wave: ~06:00–10:30",
+          "Evening return / inter‑city wave: ~17:00–22:00",
+          "Weekend/holiday peaks linked to leisure travel to Haryana/Punjab and visits to nearby amusement / banquet facilities"
+        ],
+        "meta": {
+          "confidence": 0.5,
+          "notes": "Consistent with city-wide congestion patterns and NH corridor behaviour; outlet-specific transaction logs are not public."
+        }
+      },
+      "queue_and_spillover_risk": {
+        "value": "Moderate; forecourt likely has multiple driveways and truck lanes but is adjacent directly to NH‑44. At high truck volumes, queue spillover onto shoulder is possible if CNG and PUC traffic are not segregated.",
+        "meta": {
+          "confidence": 0.5
+        }
+      }
+    }
+  },
+
+  "customer_intelligence_and_sentiment": {
+    "ratings_and_review_volume": {
+      "justdial_petrol_pump_category": {
+        "rating": 3.8,
+        "rating_count": 921,
+        "meta": {
+          "confidence": 0.9,
+          "notes": "From Justdial listing summary for Jai Shree Ganesh Filling Station (Bharat Petroleum) in Alipur."
+        }
+      },
+      "justdial_cng_category": {
+        "rating": 3.9,
+        "rating_count": 930,
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.9,
+          "notes": "As listed under CNG Filling Stations in Delhi and 24‑hour CNG for GT Karnal Road." [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations/nct-11023015/page-3)
+        }
+      },
+      "google_maps_and_other_platforms": {
+        "value": "Likely present with similar rating band; exact numbers not accessible via text-only sources.",
+        "meta": {
+          "confidence": 0.4
+        }
+      },
+      "overall_customer_rating_normalised": {
+        "value": 3.85,
+        "scale": "1–5",
+        "meta": {
+          "confidence": 0.85
+        }
+      }
+    },
+    "sentiment_themes": {
+      "positive_themes": {
+        "value": [
+          "24x7 availability of CNG and liquid fuels on NH‑44.",
+          "Convenience due to location near major landmarks (Splash / Carnival Pearl Grand) and Alipur village.",
+          "Availability of PUC centre and tyre air facilities on same premises, enabling one‑stop compliance and fuelling."
+        ],
+        "meta": {
+          "confidence": 0.6,
+          "notes": "Derived from category tags and presence in 24‑hour CNG/petrol lists; detailed textual review scraping not available."
+        }
+      },
+      "negative_themes": {
+        "value": [
+          "Mid‑tier rating (3.8–3.9) vs competing outlets in vicinity scoring 4.1–4.5 suggests recurring complaints around service quality, waiting times, or perceived meter issues, in line with general Delhi pump complaints.",
+          "High congestion on GT Karnal Road may translate to longer queues and difficult truck manoeuvring during peaks."
+        ],
+        "meta": {
+          "confidence": 0.5,
+          "notes": "Thematic extrapolation from rating delta vs competitors and typical urban pump feedback across India; not directly text‑quoted from this outlet."
+        }
+      },
+      "service_quality_axes": {
+        "fuel_quality": {
+          "perception": "No specific allegations of adulteration found in public forums naming this outlet.",
+          "meta": {
+            "confidence": 0.5
+          }
+        },
+        "staff_behaviour": {
+          "perception": "Likely mixed, given mid‑3s rating; specifics unavailable.",
+          "meta": {
+            "confidence": 0.4
+          }
+        },
+        "meter_honesty_and_transparency": {
+          "perception": "No documented consumer-court cases or viral complaints naming this outlet; however, meter‑fraud risk is structurally present in Indian market.",
+          "meta": {
+            "sources": ["",""],
+            "confidence": 0.4
+          }
+        },
+        "cleanliness_and_facility_maintenance": {
+          "perception": "Unknown; rating band suggests acceptable but not standout experience.",
+          "meta": {
+            "confidence": 0.4
+          }
+        }
+      }
+    },
+    "customer_segments": {
+      "dominant_segments": [
+        "Long-haul and regional truckers using NH‑44 between Delhi and Haryana/Punjab.",
+        "Daily commuters between Delhi and periphery (Sonipat region) using private cars and 2‑wheelers.",
+        "Local Alipur residents and local logistics operators.",
+        "Visitors to amusement parks, banquet halls, and resorts along NH‑44."
+      ],
+      "meta": {
+        "confidence": 0.7,
+        "notes": "Segment mix inferred from corridor land‑use and CNG presence, plus census/work profiles where ~29% of population engaged in work with strong transport component." [census2011.co](https://www.census2011.co.in/data/town/63910-ali-pur-delhi.html)
+      }
+    }
+  },
+
+  "risk_and_reputation": {
+    "litigation_and_regulatory_cases": {
+      "consumer_forum_and_court_search": {
+        "result": "No specific consumer disputes, quality cases, or short‑fuelling litigations were found in Supreme Court, High Court or major consumer-complaint databases naming 'Jai Shree Ganesh Filling Station' in Delhi.",
+        "meta": {
+          "confidence": 0.5,
+          "notes": "Searches for 'Jai Shree Ganesh Filling Station' in reported judgments primarily return unrelated 'Shree Ganesh Petroleum' cases in Maharashtra involving Indian Oil, not this Delhi BPCL outlet." [corporate.cyrilamarchandblogs](https://corporate.cyrilamarchandblogs.com/2022/03/indian-oil-corporation-v-shree-ganesh-petroleum-an-arbitral-tribunals-powers-to-do-justice-are-circumscribed-by-contract/)
+        }
+      }
+    },
+    "operational_and_safety_risks": {
+      "traffic_and_accident_risk": {
+        "value": "Elevated, due to direct interface with a high-speed, high-freight national highway corridor (NH‑44) recognised for high accident counts.",
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.8
+        }
+      },
+      "single_point_of_failure_infrastructure": {
+        "value": "Typical single-forecourt configuration; failure of power, dispensers, or CNG compression can halt operations; no evidence of redundant site or sister outlet under same ownership within immediate vicinity (beyond BPCL network redundancy).",
+        "meta": {
+          "confidence": 0.6
+        }
+      },
+      "regulatory_compliance_risk": {
+        "value": "Moderate; absence of publicly visible fire NOC, updated DPCC consents, or metrology certificates means investors must seek direct verification; however, being a BPCL PSU-dealer site implies periodic internal audits.",
+        "meta": {
+          "confidence": 0.6
+        }
+      }
+    },
+    "reputation_risk": {
+      "online_sentiment_risk": {
+        "value": "Medium – aggregate rating around 3.8–3.9/5 with several hundred reviews suggests some service or experience issues; not catastrophic but below best-in-class outlets nearby.",
+        "meta": {
+          "confidence": 0.8
+        }
+      },
+      "media_and_social_media": {
+        "value": "No negative media coverage, viral social-media incidents, or Reddit threads were found naming this specific outlet.",
+        "meta": {
+          "confidence": 0.6
+        }
+      }
+    }
+  },
+
+  "regulatory_and_compliance_deep_dive": {
+    "licensing_matrix": {
+      "peso_petroleum_storage_license": {
+        "license_number": null,
+        "issuing_authority": "PESO (Petroleum and Explosives Safety Organisation)",
+        "status": "Assumed valid and current for ongoing PSU supply; number not public.",
+        "meta": {
+          "confidence": 0.6
+        }
+      },
+      "cng_station_approvals": {
+        "value": "IGL-operated CNG station on BPCL premises would be authorised under separate gas distribution and safety approvals; outlet-level numbers not public.",
+        "meta": {
+          "confidence": 0.6
+        }
+      },
+      "fire_safety_noc": {
+        "license_number": null,
+        "issuing_authority": "Delhi Fire Service",
+        "status": "Not available online; must be verified on-site or via DFS records.",
+        "meta": {
+          "confidence": 0.5
+        }
+      },
+      "dpcc_environmental_consents": {
+        "consent_to_establish": null,
+        "consent_to_operate": null,
+        "category": "Likely 'Red' or 'Orange' as per petrol pump classification",
+        "meta": {
+          "sources": [""],
+          "confidence": 0.5
+        }
+      },
+      "legal_metrology_calibration": {
+        "last_inspection_dates": "Not discoverable via public records",
+        "meta": {
+          "confidence": 0.3
+        }
+      },
+      "labour_compliance": {
+        "esi_pf_registration": "Not mapped publicly to outlet; to be checked at enterprise level.",
+        "meta": {
+          "confidence": 0.3
+        }
+      }
+    },
+    "dealer_agreement_structure": {
+      "omc": "Bharat Petroleum Corporation Limited (BPCL)",
+      "likely_model": "Dealer Owned Dealer Operated (DODO)",
+      "credit_terms": {
+        "value": "Typical PSU credit windows of 2–7 days for high-volume dealers or pre-payment via bank guarantees; working‑capital requirement substantial due to daily tanker supplies.",
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.5
+        }
+      }
+    },
+    "industry_certifications": {
+      "iso_or_ohsas": {
+        "value": "No public evidence of ISO 9001 / 14001 or OHSAS certification at outlet level.",
+        "meta": {
+          "confidence": 0.3
+        }
+      }
+    }
+  },
+
+  "digital_footprint_and_social_signals": {
+    "direct_outlet_presence": {
+      "facebook_instagram_twitter": {
+        "value": "No dedicated, clearly attributable social-media pages found for this outlet; name 'Jai Shree Ganesh' is widely used for other contexts, which introduces noise.",
+        "meta": {
+          "confidence": 0.4
+        }
+      },
+      "review_and_directory_profiles": {
+        "value": [
+          "Justdial – petrol pump, CNG station, PUC centre listings with ratings and 24×7 flags.", [justdial](https://www.justdial.com/Delhi/CNG-Filling-Stations/nct-11023015/page-3)
+          "CNG station indexes listing IGL CNG available at this BPCL outlet.",
+          "Magicpin user check-ins tagging location.",
+          "Generic fuel-station aggregators listing 'BPCL petrol pump Alipur / NH‑1'."
+        ],
+        "meta": {
+          "confidence": 0.8
+        }
+      }
+    },
+    "corporate_parent_presence": {
+      "bpcl_network_context": {
+        "value": "BPCL operates ~24,605 retail outlets nationally (2025 data), part of India’s >1,00,000-pump network dominated by PSU OMCs.", [auto.economictimes.indiatimes](https://auto.economictimes.indiatimes.com/news/oil-and-lubes/indias-petrol-pump-network-crosses-1-lakh-as-state-firms-drive-rapid-expansion/126182002)
+        "meta": {
+          "sources": ["","",""],
+          "confidence": 0.95
+        }
+      },
+      "bpcl_edrive_and_loyalty": {
+        "value": "BPCL eDrive EV fast-charging network and HelloBPCL app integrate payment and loyalty across stations; this outlet not specifically highlighted, but network services likely accessible if EV chargers are introduced in future.", [bharatpetroleum](https://www.bharatpetroleum.in/our-businesses/fuels-and-services/edrive)
+        "meta": {
+          "sources": [""],
+          "confidence": 0.7
+        }
+      }
+    },
+    "news_and_blogs": {
+      "value": "No local news articles or blogs specifically profiling this outlet or reporting incidents were found.",
+      "meta": {
+        "confidence": 0.5
+      }
+    }
+  },
+
+  "industry_context_and_benchmarks": {
+    "network_and_market_share": {
+      "total_retail_outlets_india_2025": {
+        "value": 100266,
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.9,
+          "notes": "India’s petrol-pump network crossed 1 lakh outlets by late 2025; >90% owned by PSU OMCs." [auto.economictimes.indiatimes](https://auto.economictimes.indiatimes.com/news/oil-and-lubes/indias-petrol-pump-network-crosses-1-lakh-as-state-firms-drive-rapid-expansion/126182002)
+        }
+      },
+      "psu_omc_outlet_counts": {
+        "iocl": 41664,
+        "bpcl": 24605,
+        "hpcl": 24418,
+        "meta": {
+          "sources": [""],
+          "confidence": 0.9
+        }
+      }
+    },
+    "consumption_trends": {
+      "petrol_and_diesel_growth": {
+        "value": "In 2023‑24, petrol consumption grew 6.4% YoY to 37.22 MMT, diesel 4.4% to 89.65 MMT; decade-long CAGR ~8.1% for petrol vs 2.7% for diesel, showing gradual petrolisation of passenger vehicles.", [energy.economictimes.indiatimes](https://energy.economictimes.indiatimes.com/news/oil-and-gas/petroleum-product-consumption-in-2023-24-grows-by-4-6-lpg-and-diesel-lead-the-way/109801713)
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.95
+        }
+      },
+      "sectoral_shares": {
+        "value": "Trucks and commercial vehicles now account for ~64% of diesel consumption; 2‑wheelers ~59% of petrol outlet sales, cars ~30%, utility vehicles ~10%.", [ppac.gov](https://ppac.gov.in/uploads/whatsnew/1663838452_ExecutiveSummarySectoralConsumptionStudy.pdf)
+        "meta": {
+          "sources": [""],
+          "confidence": 0.95
+        }
+      }
+    },
+    "dealer_profitability_benchmarks": {
+      "typical_throughput_and_gross_margins": {
+        "value": "Average PSU outlet throughput ≈160–170 KLPM yields gross commission ~₹3–5 lakh/month; high‑performing urban/highway outlets at 400–600 KLPM can gross ₹10–15 lakh/month before opex.", [img.saurenergy](https://img.saurenergy.com/2019/06/outlet-overkill-20june2019.pdf)
+        "meta": {
+          "sources": ["","","","",""],
+          "confidence": 0.9
+        }
+      },
+      "net_profit_and_roi_ranges": {
+        "value": "Net profits of ₹1.5–4 lakh/month and ROIs of 12–25% are realistic for well‑sited pumps, with payback in 3–7 years depending on land cost and non‑fuel revenues.", [businessscroller](https://www.businessscroller.com/jio%E2%80%91bp-petrol-pump-franchise-cost/)
+        "meta": {
+          "confidence": 0.8
+        }
+      }
+    },
+    "disruption_and_future_risks": {
+      "ev_adoption_and_alt_fuels": {
+        "value": "As of 2024‑25, >16% of Indian retail outlets carry at least one alternate fuel (CNG/CBG/EV); 9,576 outlets offer EV charging and 7,763 have CNG/CBG points according to PPAC.", [ppac.gov](https://ppac.gov.in/uploads/rep_studies/1709718330_ready-recknor-2023_October.pdf)
+        "meta": {
+          "sources": ["",""],
+          "confidence": 0.9
+        }
+      },
+      "implication_for_target": {
+        "value": "This outlet already hosts CNG, which partially hedges against long‑term petrol/diesel decline; however, absence of EV charging keeps it exposed to future EV penetration on NH‑44.",
+        "meta": {
+          "confidence": 0.7
+        }
+      }
+    }
+  },
+
+  "strategic_outlook_and_recommendations": {
+    "asset_quality_score": {
+      "value": 0.74,
+      "scale": "0–1",
+      "breakdown": {
+        "location_and_catchment": 0.8,
+        "infrastructure_and_services": 0.7,
+        "regulatory_and_compliance_transparency": 0.6,
+        "customer_sentiment": 0.65,
+        "future_resilience": 0.75
+      },
+      "meta": {
+        "confidence": 0.7,
+        "notes": "Scores are analyst judgments synthesising public data; not the result of a quantitative model."
+      }
+    },
+    "key_growth_opportunities_ranked": [
+      {
+        "rank": 1,
+        "recommendation": "Upgrade customer experience and service quality to move rating from ~3.8 to ≥4.2, targeting parity with Ajanta Pump Station and other high-rated competitors.",
+        "impact": "High",
+        "feasibility": "High",
+        "actions": [
+          "Structured staff training on queue handling, meter transparency (always zero before fueling), and courteous interactions.",
+          "Visible SOPs on each dispenser, with complaint numbers and BPCL escalation prominently displayed.",
+          "Periodic surprise mystery audits in coordination with BPCL territory office."
+        ]
+      },
+      {
+        "rank": 2,
+        "recommendation": "Exploit CNG–PUC–fuel bundling via clear signage and cross‑promotions, making the site the default compliance + fueling hub for NH‑44 users.",
+        "impact": "High",
+        "feasibility": "Medium",
+        "actions": [
+          "Bundle PUC with fuel discounts (e.g., loyalty points via HelloBPCL when doing PUC + refuelling).",
+          "Segregated lanes for CNG vs liquid fuels to reduce interference and queues."
+        ]
+      },
+      {
+        "rank": 3,
+        "recommendation": "Develop a compact, high‑turnover convenience and F&B offering targeting truckers and leisure traffic.",
+        "impact": "Medium–High",
+        "feasibility": "Medium",
+        "actions": [
+          "Add or upgrade a small store with essentials, cold beverages, quick snacks, and trucker‑oriented SKUs.",
+          "Tie up with BeCafe / In & Out or local branded QSR for consistent quality."
+        ]
+      },
+      {
+        "rank": 4,
+        "recommendation": "Plan for EV-readiness by engaging BPCL eDrive to evaluate feasibility of installing at least one DC fast charger on site.",
+        "impact": "Medium (future hedge)",
+        "feasibility": "Medium",
+        "actions": [
+          "Assess grid capacity and parking layout for safe EV charger siting.",
+          "Leverage BPCL eDrive standard tariff (₹14/kWh + GST promo) and HelloBPCL integration." [bharatpetroleum](https://www.bharatpetroleum.in/our-businesses/fuels-and-services/edrive)
+        ]
+      },
+      {
+        "rank": 5,
+        "recommendation": "Strengthen digital discoverability and reputation management.",
+        "impact": "Medium",
+        "feasibility": "High",
+        "actions": [
+          "Claim and actively manage Google Maps and Justdial profiles (photos, replies to reviews, updated amenities).",
+          "Encourage satisfied customers to leave reviews to gradually lift rating and dilute legacy negatives."
+        ]
+      }
+    ],
+    "risk_mitigation_priorities": [
+      {
+        "priority": 1,
+        "area": "Regulatory documentation",
+        "recommended_actions": [
+          "Compile and maintain a digital data-room: PESO licence copy, DFS fire NOC, DPCC consents, legal metrology calibration certificates, labour registrations.",
+          "Display key licence numbers at the outlet for customer confidence and audit readiness."
+        ]
+      },
+      {
+        "priority": 2,
+        "area": "Highway safety",
+        "recommended_actions": [
+          "Implement clear lane markings and speed‑calming at entry/exit to reduce accident risk on GT Karnal Road.",
+          "Coordinate with local traffic police for signage and possibly a deceleration lane if feasible."
+        ]
+      },
+      {
+        "priority": 3,
+        "area": "Working capital and credit risk",
+        "recommended_actions": [
+          "Formalise credit policies with fleet operators with credit‑limit controls and collateral where needed.",
+          "Explore cash‑flow smoothing via PSU‑aligned bank credit lines to avoid over‑dependence on informal credit."
+        ]
+      }
+    ],
+    "investment_thesis_summary": {
+      "value": "This asset is a strategically located BPCL dealership on a major national corridor with integrated CNG and PUC services, underpinned by a growing peri-urban logistics catchment in Alipur. Competitive intensity along NH‑44 is high, and current service-quality indicators are mid‑tier, suggesting upside from operational improvements rather than pure volume expansion. For an investor comfortable with PSU dealer economics and willing to actively manage service quality, non‑fuel revenues, and future‑proofing (EV, digital), the outlet can be a stable cash‑flow asset with moderate upside and meaningful but manageable regulatory and traffic‑safety risks.",
+      "meta": {
+        "confidence": 0.7
+      }
+    }
+  }
+}

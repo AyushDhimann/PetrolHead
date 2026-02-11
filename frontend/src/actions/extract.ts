@@ -60,6 +60,11 @@ async function writeCache<T>(cacheKey: string, data: T): Promise<void> {
 // ─── Supabase Cache Layer ───────────────────────────────────────
 
 async function readSupabaseCache<T>(shortKey: string): Promise<T | undefined> {
+  // Skip Supabase in standby mode (no API_BASE configured)
+  if (!API_BASE) {
+    return undefined;
+  }
+  
   try {
     const res = await fetch(`${API_BASE}/api/cache/get/${shortKey}`);
     if (res.ok) {
@@ -76,6 +81,11 @@ async function readSupabaseCache<T>(shortKey: string): Promise<T | undefined> {
 }
 
 async function writeSupabaseCache(shortKey: string, section: string, textHash: string, data: unknown): Promise<void> {
+  // Skip Supabase in standby mode (no API_BASE configured)
+  if (!API_BASE) {
+    return;
+  }
+  
   try {
     await fetch(`${API_BASE}/api/cache/set`, {
       method: "POST",
@@ -112,6 +122,12 @@ async function extractSection<T>(
     // Write to file cache for faster future access
     await writeCache(key, supabaseCached);
     return supabaseCached;
+  }
+
+  // In standby mode (no API_BASE), don't call Gemini - return null
+  if (!API_BASE) {
+    console.log(`[extract] Standby mode - no API available for: ${sectionName}`);
+    return null;
   }
 
   try {

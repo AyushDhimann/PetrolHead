@@ -21,6 +21,11 @@ async function fetchApi<T>(path: string, options?: RequestInit): Promise<T> {
   return res.json();
 }
 
+// Helper to check if we should use frontend demos
+function useFrontendDemos(): boolean {
+  return process.env.NEXT_PUBLIC_DEMO_FETCH === "frontend";
+}
+
 // Types
 export interface Demo {
   id: string;
@@ -94,13 +99,43 @@ export interface PastResearch {
   created_at?: string;
 }
 
+// Frontend demo functions
+async function listDemosFromFrontend(): Promise<DemoListResponse> {
+  const res = await fetch('/demos/metadata.json');
+  if (!res.ok) throw new Error('Failed to fetch demo metadata');
+  return res.json();
+}
+
+async function getDemoTextFromFrontend(id: string): Promise<string> {
+  const res = await fetch(`/demos/${id}.txt`);
+  if (!res.ok) throw new Error(`Failed to fetch demo text: ${id}`);
+  return res.text();
+}
+
 // API Functions
 export const api = {
   health: () => fetchApi<HealthResponse>("/api/health"),
 
   // Demos
-  listDemos: () => fetchApi<DemoListResponse>("/api/dashboard/demos"),
+  listDemos: () => {
+    if (useFrontendDemos()) {
+      return listDemosFromFrontend();
+    }
+    return fetchApi<DemoListResponse>("/api/dashboard/demos");
+  },
+  
   getDemoData: (id: string) => fetchApi<DemoDashboardResponse>(`/api/dashboard/demo/${id}`),
+  
+  getDemoText: async (id: string): Promise<string> => {
+    if (useFrontendDemos()) {
+      return getDemoTextFromFrontend(id);
+    }
+    // Fallback to backend
+    const res = await fetch(`${API_BASE}/api/dashboard/demo/${id}/text`);
+    if (!res.ok) throw new Error(`Failed to fetch demo text: ${res.status}`);
+    const data = await res.json();
+    return data.text;
+  },
 
   // Research
   startResearch: (query: string) =>

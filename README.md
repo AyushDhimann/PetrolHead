@@ -131,12 +131,35 @@ User Query / Google Maps URL
 2. **Supabase cache** — `extraction_cache` table with 30-day TTL per section
 3. **API call** — Only when both caches miss
 - Console logs `CACHE HIT` / `CACHE MISS` per section for transparency
+- **Frontend demos**: When `NEXT_PUBLIC_DEMO_FETCH=frontend`, demo files are served as static assets with automatic browser caching
+
+### 🛑 Standby Mode
+- Configure maintenance/cost-saving mode with `NEXT_PUBLIC_STANDBY_MODE=true`
+- Shows a beautiful landing page explaining service status
+- Provides contact information (contact.ayush.dhiman@gmail.com)
+- Links to demo dashboards (still functional)
+- Links to GitHub repository
+- Ideal for pausing live research while keeping demos accessible
+
+### 📦 Offline Demo Support
+- **Zero API calls** in standby mode — no Gemini, no Supabase, no backend required
+- Pre-generated extraction cache in `.cache/extractions/` (27 files, ~67KB total)
+- Cache files are **committed to git** for instant offline functionality
+- All 3 demos load instantly from file cache
+- Perfect for static hosting, showcasing, or when minimizing costs
 
 ### 📂 Researches Page
 - View all ongoing, completed, and failed research sessions at `/researches`
 - Auto-refreshes every 5 seconds for live progress updates
 - Merges in-memory sessions with Supabase-persisted past researches
 - Direct links to progress page or dashboard
+
+### 📄 Flexible Demo Modes
+- **Backend mode** (default): Demos served via FastAPI with full backend integration
+- **Frontend mode**: Demos served as static files from `public/demos/` for zero-backend operation
+- Configure via `NEXT_PUBLIC_DEMO_FETCH` feature flag
+- Frontend mode uses browser caching for optimal performance
+- Ideal for cost-saving deployments or static hosting
 
 ### 🎨 Rich Data Visualization
 - **9 interactive pastel-themed cards** in a responsive bento grid layout
@@ -279,6 +302,14 @@ AUTO_FALLBACK_ENABLED=true
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:6055
 GOOGLE_GENERATIVE_AI_API_KEY=your_google_api_key_here
+
+# --- Feature Flags ---
+# STANDBY_MODE: When true, shows a maintenance/standby landing page
+NEXT_PUBLIC_STANDBY_MODE=false
+
+# DEMO_FETCH: Controls where demos are fetched from
+# Options: "backend" (default) or "frontend" (uses local JSON files)
+NEXT_PUBLIC_DEMO_FETCH=backend
 ```
 
 ---
@@ -581,6 +612,58 @@ python -m petrolhead setup
 |---|---|---|
 | `NEXT_PUBLIC_API_URL` | No | Backend URL (default: http://localhost:6055) |
 | `GOOGLE_GENERATIVE_AI_API_KEY` | Yes | For Vercel AI SDK extraction |
+| `NEXT_PUBLIC_STANDBY_MODE` | No | Enable standby/maintenance mode (default: false) |
+| `NEXT_PUBLIC_DEMO_FETCH` | No | Demo source: "backend" or "frontend" (default: backend) |
+
+### Feature Flags
+
+#### Standby Mode (`NEXT_PUBLIC_STANDBY_MODE`)
+When set to `true`, the entire application shows a maintenance/standby landing page instead of the normal interface. This is useful when:
+- You want to pause the service to save API costs
+- You're performing maintenance
+- You want to temporarily disable live research features
+
+The standby page:
+- Displays project information
+- Explains why the service is paused
+- Provides contact information
+- Links to demo dashboards (which still work)
+- Links to the GitHub repository
+
+Example:
+```env
+# In frontend/.env.local
+NEXT_PUBLIC_STANDBY_MODE=true
+```
+
+#### Demo Fetch Mode (`NEXT_PUBLIC_DEMO_FETCH`)
+Controls where demo dashboards are fetched from:
+- **`backend`** (default): Fetches demos from the FastAPI backend via API calls
+- **`frontend`**: Fetches demos from static files in `frontend/public/demos/`
+
+The frontend mode:
+- Eliminates backend dependency for demos
+- Uses browser caching for better performance
+- No database calls on every reload
+- Ideal for static hosting or when backend is unavailable
+
+Example:
+```env
+# In frontend/.env.local
+NEXT_PUBLIC_DEMO_FETCH=frontend
+```
+
+Demo files when using frontend mode:
+```
+frontend/public/demos/
+├── metadata.json      # List of demos with metadata
+├── demo1.json         # Full JSON data
+├── demo1.txt          # Plain text report
+├── demo2.json
+├── demo2.txt
+├── demo3.json
+└── demo3.txt
+```
 
 ### Building for Production
 
@@ -594,26 +677,6 @@ npm start
 cd backend
 python -m uvicorn main:app --host 0.0.0.0 --port 6055
 ```
-
-### Adding a New Dashboard Card
-
-1. **Create Zod schema** in `frontend/src/schemas/dashboard.ts`
-2. **Create extraction function** in `frontend/src/actions/extract.ts`
-3. **Create skeleton loader** in `frontend/src/components/dashboard/Skeletons.tsx`
-4. **Create card component** in `frontend/src/components/dashboard/YourCard.tsx`
-5. **Wire into pages** — `demo/[id]/page.tsx` and `research/[sessionId]/dashboard/page.tsx`
-
----
-
-## 📊 Demo Reports
-
-3 pre-built reports in `backend/demo_outputs/PlainTexts/`:
-
-| Demo | Station | Brand | Location |
-|---|---|---|---|
-| DO1 | Sher Service Station | IndianOil | Janakpuri, Delhi |
-| DO2 | Jay Garud Gas Station | IndianOil | Janakpuri, Delhi |
-| DO3 | Jai Shree Ganesh Filling Station | BPCL | NH-44, Delhi |
 
 ---
 

@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IMPORTANT: .cache/extractions/ is COMMITTED for offline demo support
+# This contains pre-generated extraction cache for demo1, demo2, demo3
+# so demos work without API calls in standby mode

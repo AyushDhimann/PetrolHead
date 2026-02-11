@@ -7,8 +7,9 @@ import { Search, Fuel, Sparkles, ArrowRight, Zap, Globe, BarChart3, Radio } from
 import Link from "next/link";
 import { api, Demo } from "@/lib/api";
 import { getSessionCookie, clearSessionCookie, saveSessionCookie } from "@/lib/cookies";
+import StandbyMode from "@/components/StandbyMode";
 
-export default function HomePage() {
+function HomePageContent() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [demos, setDemos] = useState<Demo[]>([]);
@@ -267,4 +268,16 @@ export default function HomePage() {
       )}
     </div>
   );
+}
+
+export default function HomePage() {
+  // Check if standby mode is enabled
+  const isStandbyMode = process.env.NEXT_PUBLIC_STANDBY_MODE === "true";
+
+  // If standby mode is on, show standby page
+  if (isStandbyMode) {
+    return <StandbyMode />;
+  }
+
+  return <HomePageContent />;
 }
