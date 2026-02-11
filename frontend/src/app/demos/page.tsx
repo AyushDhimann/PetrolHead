@@ -1,32 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Fuel, ArrowRight, Loader2 } from "lucide-react";
-import { api, Demo } from "@/lib/api";
+import { Fuel, ArrowRight } from "lucide-react";
+import { DEMOS } from "@/lib/demo-config";
 
 export default function DemosPage() {
-  const [demos, setDemos] = useState<Demo[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    api
-      .listDemos()
-      .then((res) => {
-        setDemos(res.demos);
-        setLoading(false);
-      })
-      .catch(() => setLoading(false));
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="flex min-h-[60vh] items-center justify-center">
-        <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
-      </div>
-    );
-  }
+  const demos = DEMOS;
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
@@ -71,12 +51,6 @@ export default function DemosPage() {
         ))}
       </div>
 
-      {demos.length === 0 && (
-        <div className="text-center py-16">
-          <p className="text-gray-500">No demo dashboards available.</p>
-          <p className="text-sm text-gray-400 mt-1">Make sure the backend is running.</p>
-        </div>
-      )}
     </div>
   );
 }

@@ -5,14 +5,15 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { Search, Fuel, Sparkles, ArrowRight, Zap, Globe, BarChart3, Radio } from "lucide-react";
 import Link from "next/link";
-import { api, Demo } from "@/lib/api";
+import { api } from "@/lib/api";
 import { getSessionCookie, clearSessionCookie, saveSessionCookie } from "@/lib/cookies";
+import { DEMOS } from "@/lib/demo-config";
 import StandbyMode from "@/components/StandbyMode";
 
 function HomePageContent() {
   const router = useRouter();
   const [query, setQuery] = useState("");
-  const [demos, setDemos] = useState<Demo[]>([]);
+  const demos = DEMOS;
   const [loading, setLoading] = useState(false);
   const [activeSession, setActiveSession] = useState<{
     sessionId: string;
@@ -21,8 +22,6 @@ function HomePageContent() {
   } | null>(null);
 
   useEffect(() => {
-    api.listDemos().then((res) => setDemos(res.demos)).catch(() => {});
-
     // Check for active research session via cookie
     const cookie = getSessionCookie();
     if (cookie && !["completed", "failed"].includes(cookie.status)) {

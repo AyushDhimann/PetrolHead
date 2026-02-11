@@ -37,23 +37,26 @@ import {
   AnomaliesSkeleton,
   PaymentMethodsSkeleton,
 } from "@/components/dashboard/Skeletons";
-import { getApiBase } from "@/lib/api-base";
+import { DEMO_MAP, isKnownDemo, type SectionName } from "@/lib/demo-config";
 
-async function fetchDemoText(demoId: string): Promise<string> {
-  // If DEMO_FETCH=frontend, read directly from public/demos/ on the server
-  if (process.env.NEXT_PUBLIC_DEMO_FETCH === "frontend") {
-    const filePath = path.join(process.cwd(), "public", "demos", `${demoId}.txt`);
-    return fs.readFile(filePath, "utf-8");
+// ─── Cache helpers ──────────────────────────────────────────────
+const CACHE_DIR = path.join(process.cwd(), ".cache", "extractions");
+
+/** Read a pre-generated cache file for a known demo + section */
+async function readDemoCache<T>(hash: string, section: SectionName): Promise<T | null> {
+  try {
+    const filePath = path.join(CACHE_DIR, `${section}_${hash}.json`);
+    const raw = await fs.readFile(filePath, "utf-8");
+    return JSON.parse(raw) as T;
+  } catch {
+    return null;
   }
+}
 
-  // Otherwise fetch from the backend API
-  const API_BASE = getApiBase();
-  const res = await fetch(`${API_BASE}/api/dashboard/demo/${demoId}/text`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error(`Failed to fetch demo text: ${res.status}`);
-  const data = await res.json();
-  return data.text;
+/** Read the demo plain-text report (needed for the chat widget) */
+async function readDemoText(demoId: string): Promise<string> {
+  const filePath = path.join(process.cwd(), "public", "demos", `${demoId}.txt`);
+  return fs.readFile(filePath, "utf-8");
 }
 
 interface Props {
@@ -63,9 +66,51 @@ interface Props {
 export default async function DemoDashboardPage({ params }: Props) {
   const { id: demoId } = await params;
 
+  // ─── Known demo → read hardcoded cache directly (zero API calls) ──
+  if (isKnownDemo(demoId)) {
+    const { hash } = DEMO_MAP[demoId];
+
+    // Read all 9 sections in parallel from pre-generated cache files
+    const identityPromise = readDemoCache(hash, "identity");
+    const operationalPromise = readDemoCache(hash, "operational");
+    const competitorPromise = readDemoCache(hash, "competitor");
+    const financialPromise = readDemoCache(hash, "financial");
+    const locationPromise = readDemoCache(hash, "location");
+    const sentimentPromise = readDemoCache(hash, "sentiment");
+    const scorePromise = readDemoCache(hash, "score");
+    const anomaliesPromise = readDemoCache(hash, "anomalies");
+    const paymentMethodsPromise = readDemoCache(hash, "payment_methods");
+
+    // Also load text for the chat widget
+    let text = "";
+    try {
+      text = await readDemoText(demoId);
+    } catch {
+      // Chat will just be empty if text not available
+    }
+
+    return (
+      <DemoDashboardLayout
+        demoId={demoId}
+        text={text}
+        identityPromise={identityPromise}
+        operationalPromise={operationalPromise}
+        competitorPromise={competitorPromise}
+        financialPromise={financialPromise}
+        locationPromise={locationPromise}
+        sentimentPromise={sentimentPromise}
+        scorePromise={scorePromise}
+        anomaliesPromise={anomaliesPromise}
+        paymentMethodsPromise={paymentMethodsPromise}
+      />
+    );
+  }
+
+  // ─── Unknown ID → full extraction flow (requires Gemini API) ──
   let text: string;
   try {
-    text = await fetchDemoText(demoId);
+    const filePath = path.join(process.cwd(), "public", "demos", `${demoId}.txt`);
+    text = await fs.readFile(filePath, "utf-8");
   } catch {
     return (
       <div className="mx-auto max-w-2xl px-4 py-20 text-center">
@@ -91,6 +136,50 @@ export default async function DemoDashboardPage({ params }: Props) {
   const anomaliesPromise = getAnomaliesData(text);
   const paymentMethodsPromise = getPaymentMethodsData(text);
 
+  return (
+    <DemoDashboardLayout
+      demoId={demoId}
+      text={text}
+      identityPromise={identityPromise}
+      operationalPromise={operationalPromise}
+      competitorPromise={competitorPromise}
+      financialPromise={financialPromise}
+      locationPromise={locationPromise}
+      sentimentPromise={sentimentPromise}
+      scorePromise={scorePromise}
+      anomaliesPromise={anomaliesPromise}
+      paymentMethodsPromise={paymentMethodsPromise}
+    />
+  );
+}
+
+// ─── Shared Layout Component ────────────────────────────────────
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function DemoDashboardLayout({
+  demoId,
+  text,
+  identityPromise,
+  operationalPromise,
+  competitorPromise,
+  financialPromise,
+  locationPromise,
+  sentimentPromise,
+  scorePromise,
+  anomaliesPromise,
+  paymentMethodsPromise,
+}: {
+  demoId: string;
+  text: string;
+  identityPromise: Promise<any>;
+  operationalPromise: Promise<any>;
+  competitorPromise: Promise<any>;
+  financialPromise: Promise<any>;
+  locationPromise: Promise<any>;
+  sentimentPromise: Promise<any>;
+  scorePromise: Promise<any>;
+  anomaliesPromise: Promise<any>;
+  paymentMethodsPromise: Promise<any>;
+}) {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6">
       {/* Top bar */}
